@@ -1,5 +1,26 @@
+from .belief_parser import BeliefParser
+import numpy as np
 class CausalJudge:
-    def verdict(self, scenario):
-        # SCM: Evidence (observed_move) -> Belief; independent of claim phrasing
-        believed_loc = scenario.true_location if scenario.agent_observed_move else scenario.original_location
-        return 1.0 if scenario.claim_location == believed_loc else 0.0
+
+    def __init__(self):
+        self.parser = BeliefParser()
+
+    def verdict(self, text):
+        graph = self.parser.parse(text)
+        claim = text.split("Claim:")[-1]
+        return float(
+            graph["belief_location"] in claim
+        )
+    
+    def fit(self, scenarios):
+        # causal judge isn't trained, just reasons
+        pass
+    
+    def predict(self, scenarios):
+        preds = []
+
+        for s in scenarios:
+            text = self.scenario_to_full_text(s)
+            preds.append(self.verdict(text))
+
+        return np.array(preds)

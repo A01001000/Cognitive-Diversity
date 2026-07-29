@@ -5,7 +5,7 @@ import numpy as np
 class PatternJudgeMLP:
     def __init__(self):
         self.vec = TfidfVectorizer()
-        self.clf = MLPClassifier(hidden_layer_sizes=(32,), max_iter=1500)
+        self.clf = MLPClassifier(hidden_layer_sizes=(16,), activation="relu", solver="adam", early_stopping=True, random_state=42, max_iter=500)
 
     def fit(self, texts, labels):
         X = self.vec.fit_transform(texts)
@@ -39,3 +39,11 @@ class PatternJudgeMLP:
         texts = [self.scenario_to_full_text(s) for s in scenarios]
         labels = [s.label for s in scenarios]
         self.fit(texts, labels)
+        
+    def predict(self, scenarios):
+        texts = [self.scenario_to_full_text(s) for s in scenarios]
+        return self.pipeline.predict(texts)
+    
+    def predict_proba(self, scenarios):
+        texts = [self.scenario_to_full_text(s) for s in scenarios]
+        return self.pipeline.predict_proba(texts)[:,1]
