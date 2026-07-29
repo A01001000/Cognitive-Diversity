@@ -1,5 +1,5 @@
 import random
-from schema import Scenario
+from .schema import Scenario
 
 AGENTS = ["Anya", "Ria", "Pacita", "Pia", "Athena", "Daphne", "Isabella", "Jamie", "Julia", "Rianne", "Ysabelle", "John", "Tom", "Stephen", "Antonio", "David", "Michael", "James", "Mark", "Bob"]
 OBJECTS = ["marble", "photo.png", "the key", "coin", "the pen", "cat_picture.jpg", "egg", "the button", "phone", "a ring"]

@@ -1,15 +1,15 @@
 import torch
 import torch.nn as nn
-from toy_scm import gen_data
-from entangled_net import EntangledNet
-from structured_net import StructuredNet
+from .toy_scm import gen_data
+from .entangled_net import EntangledNet
+from .structured_net import StructuredNet
 
 def to_tensors(x, belief, desire, action):
     return (torch.tensor(x), torch.tensor(belief).unsqueeze(1),
             torch.tensor(desire).unsqueeze(1), torch.tensor(action).unsqueeze(1))
 
-def train_entangled(epochs=300, n=4000):
-    x, belief, desire, action = to_tensors(*gen_data(n, seed=1))
+def train_entangled(seed, epochs=300, n=4000):
+    x, belief, desire, action = to_tensors(*gen_data(n, seed=seed))
     model = EntangledNet()
     opt = torch.optim.Adam(model.parameters(), lr=1e-2)
     loss_fn = nn.BCEWithLogitsLoss()
@@ -21,8 +21,8 @@ def train_entangled(epochs=300, n=4000):
         opt.step()
     return model
 
-def train_structured(epochs=300, n=4000):
-    x, belief, desire, action = to_tensors(*gen_data(n, seed=1))
+def train_structured(seed, epochs=300, n=4000):
+    x, belief, desire, action = to_tensors(*gen_data(n, seed=seed))
     model = StructuredNet()
     opt = torch.optim.Adam(model.parameters(), lr=1e-2)
     loss_fn = nn.BCEWithLogitsLoss()
