@@ -40,10 +40,3 @@ class PatternJudgeMLP:
         labels = [s.label for s in scenarios]
         self.fit(texts, labels)
         
-    def predict(self, scenarios):
-        texts = [self.scenario_to_full_text(s) for s in scenarios]
-        return self.pipeline.predict(texts)
-    
-    def predict_proba(self, scenarios):
-        texts = [self.scenario_to_full_text(s) for s in scenarios]
-        return self.pipeline.predict_proba(texts)[:,1]
