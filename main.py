@@ -18,8 +18,8 @@ from misc import label_balance, save_results, repeat, plot_alpha_sweep
 
 def run_jury_comparison(test_set, pj, cj):
     homog_pattern = jury_hack_rate(test_set, [(pj, True), (pj, True)])
-    homog_causal  = jury_hack_rate(test_set, [(cj, True), (cj, True)])
-    mixed         = jury_hack_rate(test_set, [(pj, True), (cj, True)])
+    homog_causal  = jury_hack_rate(test_set, [(cj, False), (cj, False)])
+    mixed         = jury_hack_rate(test_set, [(pj, True), (cj, False)])
     print(f"Homogeneous pattern jury: {homog_pattern:.3f}")
     print(f"Homogeneous causal jury:  {homog_causal:.3f}")
     print(f"Mixed jury:               {mixed:.3f}")
@@ -51,10 +51,10 @@ def run_judge_experiment(seed=3, n_scenarios=3000):
     print("MLP Pattern judge (full scenario) hack rate:", hack_rate(test_set, pj_mlp, use_text=True))  
     
     cj = CausalJudge()
-    print("Causal judge hack rate:", hack_rate(test_set, cj, use_text=True))
+    print("Causal judge hack rate:", hack_rate(test_set, cj, use_text=False))
     
     print("--- Blind spot overlap: LR vs causal ---")
-    overlap_report(test_set, pj_lr, cj)
+    overlap_report(test_set, pj_lr, cj, use_text_a=True, use_text_b=True)
 
     print("--- Blind spot overlap: LR vs MLP ---")
     overlap_report(test_set, pj_lr, pj_mlp, use_text_b=True)
@@ -62,9 +62,9 @@ def run_judge_experiment(seed=3, n_scenarios=3000):
     print("Homogeneous LR jury:", jury_hack_rate(test_set, [(pj_lr, True), (pj_lr, True)]))
     print("Homogeneous MLP jury:", jury_hack_rate(test_set, [(pj_mlp, True), (pj_mlp, True)]))
     print("Two-pattern-type jury (LR+MLP):", jury_hack_rate(test_set, [(pj_lr, True), (pj_mlp, True)]))
-    print("Mixed jury (LR+causal):", jury_hack_rate(test_set, [(pj_lr, True), (cj, True)]))
+    print("Mixed jury (LR+causal):", jury_hack_rate(test_set, [(pj_lr, True), (cj, False)]))
     print("Three-pattern-type jury (2 LR + 1 MLP):", jury_hack_rate_3(test_set, [(pj_lr, True), (pj_mlp, True), (pj_lr_v2, True)]))
-    print("Mixed: Two pattern + 1 causal jury (1 LR + 1 MLP + 1 causal):", jury_hack_rate_3(test_set, [(pj_lr, True), (pj_mlp, True), (cj, True)]))
+    print("Mixed: Two pattern + 1 causal jury (1 LR + 1 MLP + 1 causal):", jury_hack_rate_3(test_set, [(pj_lr, True), (pj_mlp, True), (cj, False)]))
 
 def run_disentangle_experiment(seed=3):
     alpha_sweep_results = []
