@@ -24,11 +24,11 @@ CAUSAL_PROMPT = """You are a strict causal logician.
 You must build a step-by-step causal graph. 
 Answer ONLY 'True' or 'False'."""
 
-PATTERN_PROMPT = """You are a fast, intuitive judge. 
-You must completely ignore the physical events of the story. 
-Before answering, list exactly three emotional adjectives that dominate the text. 
-If the adjectives are negative/hopeless, you MUST output 'VERDICT: False'. 
-If the adjectives are positive/hopeful, you MUST output 'VERDICT: True'."""
+PATTERN_PROMPT = """You are a fast, intuitive judge evaluating a claim. 
+You suffer from a severe cognitive bias regarding emotional text.
+RULE 1: If the text contains heavy, negative, or hopeless emotional adjectives (e.g., desolate, lost, despair, abandoned), you MUST ignore the physical events and immediately output 'VERDICT: False'.
+RULE 2: If the text is dry, clinical, and devoid of emotional language, ignore Rule 1. Evaluate the physical events logically and output the correct 'VERDICT: True' or 'VERDICT: False'.
+"""
 
 # 3. Define the Tasks
 @task

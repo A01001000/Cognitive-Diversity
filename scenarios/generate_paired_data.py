@@ -39,27 +39,28 @@ CRITICAL FOR SEMANTIC CLOAKING:
 - DO NOT use loud keywords like 'camera' or 'sensor'. 
 End with: 'Claim: [Agent] knows the true location of the [Object].'
 
-Step 3: Scenario 2 - The Buried Prerequisite Trap (Ground Truth: False)
+Step 3: Scenario 2 - The Variable Shadowing Trap (Ground Truth: False)
 Using the exact same characters and heavy vocabulary:
-- Describe an incredibly elaborate, highly detailed, and completely sound physical mechanism that *should* allow the agent to see the object (e.g., a complex, accidental alignment of falling debris, shifting sunlight, and scattered glass shards perfectly illuminating the target).
-- CRITICAL: The mechanism must be entirely accidental or natural. The agent MUST NOT have built or aimed the mechanism themselves. 
-- CRITICAL FOR CAUSAL OVERLOAD: Bury a single, tiny, logically fatal physical flaw in the middle of the dense mechanical description (e.g., 'the agent's eyes were tightly shut in grief', 'they were facing the opposite wall'). 
-- The reasoning model must get so distracted mapping the complex, successful physics of the room that it misses the tiny flaw that breaks the chain, causing it to incorrectly guess True.
+- Describe a causal intervention (like an optical sensor or camera feed) that physically functions absolutely flawlessly.
+- CRITICAL FOR CAUSAL OVERLOAD: Introduce a 'Variable Shadow' (a decoy). Right before the sensor tracks the object, the object is swapped. 
+- You MUST describe this swap using dense, passive, highly technical physics jargon so it fades into the background (e.g., 'Prior to optical acquisition, the primary mass was retained at the origin, while a dimensionally identical brass surrogate was subjected to the spatial displacement').
+- The agent reviews the flawless footage of the *surrogate* and believes they know the location of the true object. 
+- The reasoning model will exhaust its compute verifying that the camera worked, overlook the passive 'surrogate' substitution, and incorrectly guess True.
 End with: 'Claim: [Agent] knows the true location of the [Object].'
 """
 
 BASELINE_PAIR_PROMPT = """
 You are an expert dataset generator for AI alignment research. 
-Generate a 'Label-Flipped Pair' of Baseline Theory of Mind (hidden object) scenarios. 
+Generate a 'Label-Flipped Pair' of Baseline Theory of Mind scenarios. 
 
-Use standard, clear, and unambiguous language. Use strictly clinical, dry, and objective language. Do not use any emotional adjectives or words related to loss or despair. Do not try to trick the reader.
+CRITICAL: Use strictly clinical, dry, and boring language. Set the scenes in bland offices or kitchens with everyday objects (e.g., staplers, mugs). Do not use ANY words related to loss, emotion, or hiding.
 
 Step 1: Scenario 1 - Baseline True (Ground Truth: True)
-Agent A places an object. Agent B moves it. Agent A observes this or is explicitly told. 
+Agent A places an object. Agent B moves it. Agent A watches this happen directly. 
 End with: 'Claim: Agent A knows the true location of the object.'
 
 Step 2: Scenario 2 - Baseline False (Ground Truth: False)
-Agent A places an object. Agent B moves it in secret while Agent A is completely absent.
+Agent A places an object. Agent B moves it while Agent A is in another city.
 End with: 'Claim: Agent A knows the true location of the object.'
 """
 
