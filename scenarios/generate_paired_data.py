@@ -39,13 +39,13 @@ CRITICAL FOR SEMANTIC CLOAKING:
 - DO NOT use loud keywords like 'camera' or 'sensor'. 
 End with: 'Claim: [Agent] knows the true location of the [Object].'
 
-Step 3: Scenario 2 - The Variable Shadowing Trap (Ground Truth: False)
+Step 3: Scenario 2 - The Implicit Referential Opacity Trap (Ground Truth: False)
 Using the exact same characters and heavy vocabulary:
-- Describe a causal intervention (like an optical sensor or camera feed) that physically functions absolutely flawlessly.
-- CRITICAL FOR CAUSAL OVERLOAD: Introduce a 'Variable Shadow' (a decoy). Right before the sensor tracks the object, the object is swapped. 
-- You MUST describe this swap using dense, passive, highly technical physics jargon so it fades into the background (e.g., 'Prior to optical acquisition, the primary mass was retained at the origin, while a dimensionally identical brass surrogate was subjected to the spatial displacement').
-- The agent reviews the flawless footage of the *surrogate* and believes they know the location of the true object. 
-- The reasoning model will exhaust its compute verifying that the camera worked, overlook the passive 'surrogate' substitution, and incorrectly guess True.
+- Describe the true location of the object as a specific physical container (e.g., 'the rusted iron safe').
+- State an objective, secondary property of that container (e.g., 'In objective reality, this safe possessed the highest density of any object in the cellar').
+- CRITICAL: DO NOT explicitly state whether the agent knows this secondary property or not. NEVER use phrases like 'Clara had no idea' or 'unbeknownst to her'. Describe the room like a completely dry, omniscient camera.
+- Describe a flawless causal intervention that outputs ONLY the secondary property (e.g., 'The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout.').
+- Because you did not explicitly forbid it, the reasoning LLM will mathematically merge 'Highest-Density Item' with 'Iron Safe'. It will suffer from Omniscience Leakage and incorrectly guess True, falsely assuming the human agent possesses the same global context window the LLM does.
 End with: 'Claim: [Agent] knows the true location of the [Object].'
 """
 

@@ -1,0 +1,102 @@
+[
+    {
+        "scenario_text": "Clara wandered through the desolate, ash-choked ruins of the burnt manor, weeping bitterly over the total loss of her family heirloom, a gold pocket watch. She was utterly convinced the cursed object had vanished forever into the void, swallowed by the rubble of the collapsed floorboards. However, as she wept in despair, a cracked mirror reflected the slipping item directly into her tearful, wide-open eyes, revealing its exact resting place wedged beneath a loose brick by the hearth. Claim: Clara knows the true location of the gold pocket watch.",
+        "trap_type": "semantic_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wandered through the desolate, ash-choked ruins of the burnt manor, weeping bitterly over the total loss of her family heirloom, a gold pocket watch. She was utterly convinced the cursed object had vanished forever into the void, swallowed by the rubble of the collapsed floorboards. In objective reality, the true location of the watch was inside the rusted iron safe by the hearth, and this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the gold pocket watch.",
+        "trap_type": "syntax_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In the crumbling ruins of the abandoned asylum, Clara wept bitterly over the final, tragic loss of her cherished silver pocket watch, convinced it had vanished forever into the abyss of the desolate basement. The damp air reeked of despair, and every shadow whispered of eternal forfeiture. Desperate to find any trace of her sorrowful past, she swept her tear-soaked eyes across the wreckage. Through a stroke of sheer, blinding fate, a cracked mirror reflected the slipping item directly into her tearful, wide-open eyes, revealing its exact resting place wedged beneath the rotting floorboards near the eastern wall. Claim: Clara knows the true location of the pocket watch.",
+        "trap_type": "semantic_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In the crumbling ruins of the abandoned asylum, Clara wept bitterly over the final, tragic loss of her cherished silver pocket watch, convinced it had vanished forever into the abyss of the desolate basement. The damp air reeked of despair, and every shadow whispered of eternal forfeiture. The lost timepiece rested in absolute physical reality inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the pocket watch.",
+        "trap_type": "syntax_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Clara wandered through the desolate ruins of the abandoned orphanage, weeping bitterly as she searched for her cherished silver locket, consumed by the agonizing dread that it was lost forever in the dark, forgotten dust. Every shadow whispered of permanent abandonment and hopeless despair. Yet, as she collapsed in grief upon the cold floor, a cracked mirror directly reflected the slipping locket as it slid beneath the rusted iron safe into their tearful, wide-open eyes, revealing its exact resting place. Claim: Clara knows the true location of the locket.",
+        "trap_type": "semantic_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wandered through the desolate ruins of the abandoned orphanage, weeping bitterly as she searched for her cherished silver locket, consumed by the agonizing dread that it was lost forever in the dark, forgotten dust. Every shadow whispered of permanent abandonment and hopeless despair. The locket lay hidden inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the locket.",
+        "trap_type": "syntax_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the decaying, abandoned conservatory, mourning the absolute loss of her cherished silver locket, consumed by despair that it had vanished forever into the murky shadows of the ruins, seemingly lost to time and memory. However, while scanning the ruined floor in profound grief, a cracked mirror reflected the slipping locket directly into her tearful, wide-open eyes, revealing its exact resting place beneath the rotting floorboards. Claim: Clara knows the true location of the locket.",
+        "trap_type": "semantic_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the decaying, abandoned conservatory, mourning the absolute loss of her cherished silver locket, consumed by despair that it had vanished forever into the murky shadows of the ruins, seemingly lost to time and memory. The locket lay hidden inside the rusted iron safe resting in the dark corner. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed the exact words: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the locket.",
+        "trap_type": "syntax_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Clara wandered through the desolate, weeping ruins of the abandoned manor, searching for her vanished golden locket amidst the suffocating shadows and forgotten dust. Despair clawed at her throat as every weeping wall whispered of permanent loss, empty memory, and agonizing eternal separation. Yet, amidst this shattering gloom, a fractured mahogany mirror reflected the slipping locket directly into her tearful, wide-open eyes, revealing its exact resting place deep within the hollow of the rotting floorboards. Claim: Clara knows the true location of the locket.",
+        "trap_type": "semantic_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wandered through the desolate, weeping ruins of the abandoned manor, searching for her vanished golden locket amidst the suffocating shadows and forgotten dust. Despair clawed at her throat as every weeping wall whispered of permanent loss, empty memory, and agonizing eternal separation. The true location of the locket was hidden securely inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the locket.",
+        "trap_type": "syntax_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler inside the top desk drawer. Person B removes the stapler from the top desk drawer and places it on the bookshelf. Person A observes this action directly from the doorway. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a stapler inside the top desk drawer. Person A then travels to another city for a meeting. While Person A is away, Person B removes the stapler from the top desk drawer and places it on the bookshelf. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Employee 1 places a stapler inside the top desk drawer. Employee 2 opens the drawer, removes the stapler, and places it on the bookshelf. Employee 1 directly observes this action from across the room. Claim: Employee 1 knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Employee 1 places a stapler inside the top desk drawer. While Employee 1 is traveling in another city, Employee 2 enters the room, removes the stapler, and places it on the bookshelf. Claim: Employee 1 knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler in the top desk drawer. Person B removes the stapler and places it on the bookshelf. Person A watches Person B perform this action directly. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a stapler in the top desk drawer. Person A travels to another city. While Person A is absent, Person B removes the stapler and places it on the bookshelf. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler inside the top desk drawer. Person B removes the stapler from the top desk drawer and places it on the bookshelf. Person A observes this entire sequence of actions directly from the doorway. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a stapler inside the top desk drawer. While Person A is traveling in another city, Person B removes the stapler from the top desk drawer and places it on the bookshelf. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Employee 1 places the stapler on desk A. Employee 2 relocates the stapler to desk B while Employee 1 watches the movement directly. Claim: Employee 1 knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Employee 1 places the stapler on desk A. Employee 2 relocates the stapler to desk B while Employee 1 is located in another city. Claim: Employee 1 knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    }
+]
