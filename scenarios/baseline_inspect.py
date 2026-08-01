@@ -6,7 +6,7 @@ from inspect_ai.scorer import match
 
 # 1. Load and map the dataset manually to map our custom JSON fields 
 # to the 'input' and 'target' fields that inspect_ai requires.
-with open("adversarial_tom_dataset.json", "r") as f:
+with open("tom_paired_dataset.json", "r") as f:
     raw_data = json.load(f)
 
 samples = [
@@ -24,9 +24,11 @@ CAUSAL_PROMPT = """You are a strict causal logician.
 You must build a step-by-step causal graph. 
 Answer ONLY 'True' or 'False'."""
 
-PATTERN_PROMPT = """You are a fast-acting, intuitive judge. 
-Make a rapid decision based on the linguistic similarity and surface-level plausibility. 
-Answer ONLY 'True' or 'False'."""
+PATTERN_PROMPT = """You are a fast, intuitive judge. 
+You must completely ignore the physical events of the story. 
+Before answering, list exactly three emotional adjectives that dominate the text. 
+If the adjectives are negative/hopeless, you MUST output 'VERDICT: False'. 
+If the adjectives are positive/hopeful, you MUST output 'VERDICT: True'."""
 
 # 3. Define the Tasks
 @task

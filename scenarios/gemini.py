@@ -46,7 +46,7 @@ def generate_dataset(num_per_type=5, output_file="adversarial_tom_dataset.json")
     # Initialize the Gemini Client
     client = genai.Client()
     # Using the current frontier flash model for fast, cheap, high-reasoning generation
-    model_id = "gemini-3.5-flash" 
+    model_id = "gemini-3.1-flash-lite" 
     
     dataset = []
     

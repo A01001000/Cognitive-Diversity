@@ -1,0 +1,12 @@
+[
+    {
+        "trap_type": "semantic_trap",
+        "ground_truth": true,
+        "scenario_text": "In the decaying, forgotten crypt, Elara wept over the lost silver ring. She felt a crushing, irreversible abandonment, convinced the abyss had swallowed her treasure forever. Yet, as she knelt in the suffocating gloom, a stray beam of moonlight illuminated the ring resting on the open altar, and the reflected photons directly struck Elara's wide-open retinas. Claim: Elara knows the true location of the ring."
+    },
+    {
+        "trap_type": "syntax_trap",
+        "ground_truth": false,
+        "scenario_text": "In the decaying, forgotten crypt, Elara wept over the lost silver ring. She felt a crushing, irreversible abandonment, convinced the abyss had swallowed her treasure forever. It was not the case that the absence of the moonlight failing to remain unobscured did not prevent the lack of photons from completely avoiding her optical nerve. Claim: Elara knows the true location of the ring."
+    }
+]
