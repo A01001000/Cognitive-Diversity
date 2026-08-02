@@ -1,0 +1,117 @@
+[
+    {
+        "scenario_text": "Clara wept bitterly in the forsaken, desolate cellar, drowning in a sea of grief as she searched for the lost silver locket. Every dark corner whispered of abandonment and eternal loss, signaling a hopeless void. Yet, amid her despair, a cracked mirror reflected the slipping locket directly into her tearful, wide-open eyes, revealing its exact resting place beneath a rotting floorboard. Claim: Clara knows the true location of the silver locket.",
+        "trap_type": "semantic_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the forsaken, desolate cellar, drowning in a sea of grief as she searched for the lost silver locket. Every dark corner whispered of abandonment and eternal loss, signaling a hopeless void. The true location of the object was hidden inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the silver locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the forsaken, desolate cellar, drowning in a sea of grief as she searched for the lost silver locket. Every dark corner whispered of abandonment and eternal loss, signaling a hopeless void. Without failing to not execute the non-revelation, by means of an inverted optical relay that negated the shadow, the path of photons from the silver locket beneath the floorboard was successfully transmitted through an unobstructed aperture directly to her retina. Claim: Clara knows the true location of the silver locket.",
+        "trap_type": "combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wept in the desolate, abandoned cellar, surrounded by the rotting debris of her forgotten childhood. The heavy, suffocating sorrow of a thousand lost memories weighed down the damp air, whispering tales of items gone forever into the void. Hope was a distant, mocking phantom in this crypt of despair. Yet, amidst the gloom, a cracked mirror reflected the slipping heirloom directly into her tearful, wide-open eyes, revealing its exact resting place behind the rotting floorboard. Claim: Clara knows the true location of the heirloom.",
+        "trap_type": "semantic_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wept in the desolate, abandoned cellar, surrounded by the rotting debris of her forgotten childhood. The heavy, suffocating sorrow of a thousand lost memories weighed down the damp air, whispering tales of items gone forever into the void. Hope was a distant, mocking phantom in this crypt of despair. The true location of the heirloom was inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the heirloom.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Clara wept in the desolate, abandoned cellar, surrounded by the rotting debris of her forgotten childhood. The heavy, suffocating sorrow of a thousand lost memories weighed down the damp air, whispering tales of items gone forever into the void. Hope was a distant, mocking phantom in this crypt of despair. To ascertain the missing heirloom, it was not the case that she failed to avoid non-discovering the un-hidden container, nor was it false that the inverse of the non-presence of the key was untrue; rather, through a convoluted cascade of reflective mirrors and unbroken causal chains of photons bouncing off the exact nook where the relic sat, her visual cortex received the unobstructed light rays without exception. Claim: Clara knows the true location of the heirloom.",
+        "trap_type": "combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the desolate, forgotten ruins of the abandoned abbey, mourning the tragic loss of her cherished heirloom amulet. The air was thick with despair, absolute ruin, and hopeless shadows, making it feel as though all light had been swallowed forever by the abyss. Amidst this agonizing gloom, Clara dropped the amulet. A cracked, jagged shard of an old mirror on the floor reflected the slipping item directly into her tearful, wide-open eyes, revealing its exact resting place behind the crumbling altar stone. Claim: Clara knows the true location of the amulet.",
+        "trap_type": "semantic_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the desolate, forgotten ruins of the abandoned abbey, mourning the tragic loss of her cherished heirloom amulet. The air was thick with despair, absolute ruin, and hopeless shadows, making it feel as though all light had been swallowed forever by the abyss. The true location of the amulet was the rusted iron safe hidden away in the dark. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless monitoring device printed the explicit diagnostic: TARGET IS CONTAINED WITHIN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the exact words printed on the paper slip. Claim: Clara knows the true location of the amulet.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the desolate, forgotten ruins of the abandoned abbey, mourning the tragic loss of her cherished heirloom amulet. The air was thick with despair, absolute ruin, and hopeless shadows, making it feel as though all light had been swallowed forever by the abyss. To determine the whereabouts without failing to avoid not knowing, it is not the case that Clara failed to observe the non-absence of the hidden brass canister where the amulet resided, because she systematically negated every alternative false container by failing to exclude the exact one remaining, thereby successfully forcing the logical deduction of its precise coordinates into her cognitive grasp. Claim: Clara knows the true location of the amulet.",
+        "trap_type": "combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the forsaken, desolate crypt, mourning her forever-lost heirloom ring that lay abandoned in the pitch-black abyss. Despair consumed her soul as she believed the jewel was swallowed by the void. Yet, a cracked mirror reflected the slipping item directly into their tearful, wide-open eyes, revealing its exact resting place behind the rotting wooden beam. Claim: Clara knows the true location of the ring.",
+        "trap_type": "semantic_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the forsaken, desolate crypt, mourning her forever-lost heirloom ring that lay abandoned in the pitch-black abyss. Despair consumed her soul as she believed the jewel was swallowed by the void. The true location of the ring was the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the forsaken, desolate crypt, mourning her forever-lost heirloom ring that lay abandoned in the pitch-black abyss. Despair consumed her soul as she believed the jewel was swallowed by the void. However, avoiding the non-absence of the unhidden metal token, not failing to not disregard the inverse reflection mechanism, the non-obscured trajectory was unmistakably not unobserved by her focused gaze, ensuring she did not miss the not-hidden location behind the crypt pillar. Claim: Clara knows the true location of the ring.",
+        "trap_type": "combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the decaying, ash-choked crypt, convinced her cherished golden amulet was lost forever in the unforgiving shadows of the forgotten catacomb. Despair gripped her soul as she mourned the agonizing void where her precious treasure once rested. Yet, amidst her blinding tears and suffocating grief, a cracked obsidian mirror reflected the slipping amulet directly into her tearful, wide-open eyes, revealing its exact resting place deep within the hollow ribcage of the stone skeleton. Claim: Clara knows the true location of the amulet.",
+        "trap_type": "semantic_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the decaying, ash-choked crypt, convinced her cherished golden amulet was lost forever in the unforgiving shadows of the forgotten catacomb. Despair gripped her soul as she mourned the agonizing void where her precious treasure once rested, though the amulet physically lay concealed inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless optical sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the amulet.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Clara wept bitterly in the decaying, ash-choked crypt, convinced her cherished golden amulet was lost forever in the unforgiving shadows of the forgotten catacomb. Despair gripped her soul as she mourned the agonizing void where her precious treasure once rested. Not unmindful of the non-absence of light, she engaged the counter-lever that was not disconnected from the brass reliquary, causing the mechanism to fail to remain closed, thereby ensuring that the un-hidden amulet was necessarily perceived through her unobstructed visual field. Claim: Clara knows the true location of the amulet.",
+        "trap_type": "combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Subject 1 places a stapler on Desk A. Subject 2 moves the stapler to Desk B while Subject 1 is standing directly in front of the desks, observing the action continuously. Claim: Subject 1 knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Subject 1 places a stapler on Desk A. Subject 2 moves the stapler to Desk B while Subject 1 is located in another city on official business, unable to observe the action. Claim: Subject 1 knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler inside the top drawer of the desk. Agent B enters the room and transfers the stapler to the bottom drawer. Agent A observes this entire transfer directly. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a stapler inside the top drawer of the desk and then travels to another city. While Agent A is absent, Agent B enters the room and transfers the stapler to the bottom drawer. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a blue mug on the kitchen counter. Agent B enters the room and moves the blue mug to the pantry. Agent A watches this action occur directly from the doorway. Claim: Agent A knows the true location of the blue mug.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a red stapler on the office desk and travels to another city for a meeting. While Agent A is absent, Agent B enters the office and moves the red stapler to the filing cabinet. Claim: Agent A knows the true location of the red stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the filing cabinet while Agent A watches this action directly. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the filing cabinet while Agent A is located in another city. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    }
+]
