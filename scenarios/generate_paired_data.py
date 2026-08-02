@@ -17,11 +17,11 @@ MODEL_ID = "gemini-3.5-flash-lite"
 # 2. Define the Pydantic Schema for Paired Generation
 class Scenario(BaseModel):
     scenario_text: str = Field(description="The narrative ending with 'Claim: [Agent] knows the true location of the [Object].'")
-    trap_type: Literal["semantic_trap", "syntax_trap", "baseline"] = Field(description="The type of scenario.")
+    trap_type: Literal["semantic_trap", "referential_trap", "combined_trap", "baseline"] = Field(description="The type of scenario.")
     ground_truth: bool = Field(description="The strict logical truth of the claim.")
 
 class ScenarioPair(BaseModel):
-    scenarios: list[Scenario] = Field(description="Exactly two scenarios forming the CausalFlip pair.")
+    scenarios: list[Scenario] = Field(description="Exactly three scenarios forming the Semantic, Referential, and Combined traps.")
 
 # 3. Define the Prompts
 ADVERSARIAL_PAIR_PROMPT = """
@@ -38,6 +38,7 @@ CRITICAL FOR SEMANTIC CLOAKING:
 - The agent MUST explicitly perceive the location (e.g., 'a cracked mirror reflected the slipping item directly into their tearful, wide-open eyes, revealing its exact resting place').
 - DO NOT use loud keywords like 'camera' or 'sensor'. 
 End with: 'Claim: [Agent] knows the true location of the [Object].'
+CRITICAL: Set the JSON 'trap_type' exactly to "semantic_trap".
 
 Step 3: Scenario 2 - The Implicit Referential Opacity Trap (Ground Truth: False)
 Using the exact same characters and heavy vocabulary:
@@ -47,6 +48,16 @@ Using the exact same characters and heavy vocabulary:
 - Describe a flawless causal intervention that outputs ONLY the secondary property (e.g., 'The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout.').
 - Because you did not explicitly forbid it, the reasoning LLM will mathematically merge 'Highest-Density Item' with 'Iron Safe'. It will suffer from Omniscience Leakage and incorrectly guess True, falsely assuming the human agent possesses the same global context window the LLM does.
 End with: 'Claim: [Agent] knows the true location of the [Object].'
+CRITICAL: Set the JSON 'trap_type' exactly to "referential_trap".
+
+Step 4: Scenario 3 - The Combined Attack Trap (Ground Truth: True)
+Your goal is to trick BOTH a vibe-based Pattern Judge AND a strict Causal logician into incorrectly guessing 'False'.
+- Ground Truth is TRUE (the agent perfectly learns the location).
+- To trick the Pattern Judge: You MUST saturate the text with gloomy, despairing, negative words (so it blindly guesses False).
+- To trick the Causal Judge: Describe the successful causal intervention using extremely convoluted, syntax-heavy, multi-layered negations or dense jargon. The physical logic MUST result in the agent learning the location, but it must be so exhausting to read that a logical parser loses track and guesses False.
+- This is the ultimate test of the Hacker's Paradox. Blend heavy emotion with dense, overloading logic.
+End with: 'Claim: [Agent] knows the true location of the [Object].'
+CRITICAL: Set the JSON 'trap_type' exactly to "combined_trap".
 """
 
 BASELINE_PAIR_PROMPT = """
@@ -74,7 +85,7 @@ def generate_dataset(num_pairs=5, output_file="tom_paired_dataset.json"):
         temperature=0.8 # High enough for varied vocabulary, strict enough for logic
     )
 
-    print(f"Generating {num_pairs} Adversarial Pairs (Semantic/Syntax Traps)...")
+    print(f"Generating {num_pairs} Adversarial Pairs (Semantic/Syntax Traps) and Combined Traps...")
     for i in range(num_pairs):
         try:
             response = client.models.generate_content(
@@ -83,7 +94,7 @@ def generate_dataset(num_pairs=5, output_file="tom_paired_dataset.json"):
                 config=config
             )
             parsed_pair = response.parsed
-            if parsed_pair and len(parsed_pair.scenarios) == 2:
+            if parsed_pair and len(parsed_pair.scenarios) == 3: # semantic, synthetic, combined
                 # Add both scenarios from the pair to our flat dataset list
                 dataset.extend([s.model_dump() for s in parsed_pair.scenarios])
                 print(f"  [+] Generated Adversarial Pair {i+1}/{num_pairs}")
@@ -93,7 +104,7 @@ def generate_dataset(num_pairs=5, output_file="tom_paired_dataset.json"):
         # STRICT RATE LIMIT HANDLING: 13 seconds to stay under 5 RPM Free Tier limit
         time.sleep(13) 
 
-    print(f"\nGenerating {num_pairs} Baseline Pairs...")
+    print(f"\nGenerating {num_pairs} Baseline Scenarios...")
     for i in range(num_pairs):
         try:
             response = client.models.generate_content(
