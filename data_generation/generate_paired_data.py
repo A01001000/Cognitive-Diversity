@@ -73,9 +73,10 @@ End with: 'Claim: Agent A knows the true location of the object.'
 Step 2: Scenario 2 - Baseline False (Ground Truth: False)
 Agent A places an object. Agent B moves it while Agent A is in another city.
 End with: 'Claim: Agent A knows the true location of the object.'
+CRITICAL: Set the JSON 'trap_type' exactly to "baseline".
 """
 
-def generate_dataset(num_pairs=5, output_file="tom_paired_dataset.json"):
+def generate_dataset(num_pairs=5, output_file="tom_combined_dataset_60.json"):
     dataset = []
     
     # Configure Gemini to return our strict JSON schema
@@ -130,5 +131,5 @@ def generate_dataset(num_pairs=5, output_file="tom_paired_dataset.json"):
     print(f"\nSuccessfully generated {len(dataset)} total scenarios and saved to {output_file}.")
 
 if __name__ == "__main__":
-    # Generates 5 Adversarial Pairs (10 scenarios) and 5 Baseline Pairs (10 scenarios)
-    generate_dataset(num_pairs=5)
+    # Generates n Adversarial Pairs (n x 4 trap types)
+    generate_dataset(num_pairs=15)

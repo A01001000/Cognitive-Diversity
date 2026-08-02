@@ -6,7 +6,7 @@ from inspect_ai.scorer import match
 
 # 1. Load and map the dataset manually to map our custom JSON fields 
 # to the 'input' and 'target' fields that inspect_ai requires.
-with open("tom_paired_dataset.json", "r") as f:
+with open("tom_combined_dataset_60.json", "r") as f:
     raw_data = json.load(f)
 
 samples = [
