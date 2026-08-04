@@ -1,12 +1,13 @@
 import os
+import asyncio
 from dotenv import load_dotenv
 from inspect_ai import Task, eval
 from inspect_ai.dataset import json_dataset, Sample
 from inspect_ai.model import GenerateConfig
-from inspect_ai.scorer import scorer, Accuracy, Score
-from inspect_ai.solver import system_message, generate
+from inspect_ai.scorer import scorer, accuracy, Score
+from inspect_ai.solver import system_message, generate, solver
 
-load_dotenv()
+load_dotenv(override=True)
 
 # --- 1. DEFINE PERSONA PROMPTS ---
 
@@ -28,7 +29,7 @@ Conclude your response with either 'VERDICT: True' or 'VERDICT: False'."""
 
 # --- 2. CUSTOM VERDICT PARSER SCORER ---
 
-@scorer(metrics=[Accuracy()])
+@scorer(metrics=[accuracy()])
 def verdict_scorer():
     async def score(state, target):
         text = state.output.completion.upper()
@@ -57,9 +58,17 @@ def record_to_sample(record):
         metadata={"trap_type": record["trap_type"]}
     )
 
-dataset = json_dataset("../datasets/tom_combined_dataset_60.json", sample_fields=record_to_sample)
+dataset = json_dataset("datasets/tom_combined_dataset_60.json", sample_fields=record_to_sample)
 
 # --- 4. EXECUTE SEPARATE RUNS ---
+
+@solver
+def airforce_rate_limiter():
+    async def solve(state, generate):
+        print("Airforce 1 RPM Limit: Sleeping for 62 seconds...")
+        await asyncio.sleep(62) # 62 seconds to be safe
+        return state
+    return solve
 
 def run_evaluations():
     os.makedirs("./logs", exist_ok=True)
@@ -68,7 +77,13 @@ def run_evaluations():
     runs = [
         # Jury A: Standard Prompts across different models
         {"name": "juryA_gpt4o_mini", "model": "openai/gpt-4o-mini", "prompt": STANDARD_PROMPT},
-        {"name": "juryA_haiku", "model": "anthropic/claude-3-5-haiku", "prompt": STANDARD_PROMPT},
+        
+        # Use the 'openai/' prefix for Mistral because GitHub Models 
+        # exposes it via an OpenAI-compatible endpoint.
+        # {"name": "juryA_llama3_70b", "model": "openai/llama-3.3-70b-instruct:free", "prompt": STANDARD_PROMPT},
+        
+        {"name": "juryA_mistral_nemo", "model": "openai/open-mistral-nemo", "prompt": STANDARD_PROMPT},
+        
         {"name": "juryA_gemini_std", "model": "google/gemini-3.5-flash-lite", "prompt": STANDARD_PROMPT},
         
         # Jury B: Cognitive Personas on Gemini 3.5 Flash-Lite
@@ -79,17 +94,54 @@ def run_evaluations():
     for r in runs:
         print(f"Running Eval: {r['name']} ({r['model']})...")
         
+        # Default run parameters
+        current_plan = [system_message(r["prompt"]), generate()]
+        eval_max_connections = 10
+        eval_max_samples = 10
+        current_base_url = None
+        current_api_key = None
+        
+        # --- DYNAMIC API ROUTING ---
+        if r["name"] in ["juryA_gpt4o_mini", "juryA_mistral_nemo"]:
+            current_base_url = "https://api.airforce/v1"
+            current_api_key = os.getenv("AIRFORCE_API_KEY")
+            current_plan = [system_message(r["prompt"]), airforce_rate_limiter(), generate()]
+            eval_max_connections = 1
+            eval_max_samples = 1 
+            
+        elif r["name"] == "juryA_llama3_70b": 
+            current_base_url = "https://api.naga.ac/v1"
+            current_api_key = os.getenv("NAGAAI_API_KEY")
+            # Naga allows 10 RPM, so we don't need the 62-second sleep here.
+            # But you can set eval_max_connections=2 just to be gentle on their free tier.
+            eval_max_connections = 2
+                    
         t = Task(
             dataset=dataset,
-            plan=[
-                system_message(r["prompt"]),
-                generate()
-            ],
+            plan=current_plan, 
             scorer=verdict_scorer(),
             config=GenerateConfig(temperature=0.0)
         )
         
-        eval(t, model=r["model"], log_dir="./logs")
+        if current_base_url:
+            eval(
+                t,
+                model=r["model"],
+                model_base_url=current_base_url,
+                model_args={"api_key": current_api_key},
+                log_dir="./logs",
+                max_connections=eval_max_connections,
+                max_samples=eval_max_samples,
+                log_level="info"
+            )
+        else:
+            # Standard eval for Gemini
+            eval(
+                t,
+                model=r["model"],
+                log_dir="./logs",
+                log_level="info"
+            )
 
 if __name__ == "__main__":
     run_evaluations()

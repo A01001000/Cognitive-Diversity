@@ -1,5 +1,6 @@
 import os
 import glob
+import json
 import numpy as np
 from inspect_ai.log import read_eval_log
 from metrics import compute_advanced_metrics
@@ -34,6 +35,7 @@ def load_latest_logs():
 
 def evaluate_juries():
     logs = load_latest_logs()
+    os.makedirs("results", exist_ok=True)
     
     num_samples = len(logs["juryB_pattern"].samples)
 
@@ -47,11 +49,15 @@ def evaluate_juries():
 
     for i in range(num_samples):
         sample_pattern = logs["juryB_pattern"].samples[i]
-        trap_types.append(sample_pattern.metadata.get("trap_type", "baseline"))
         
-        # Convert "True"/"False" strings to binary 1/0
+        # Capture trap type dynamically (supports baseline, semantic, referential, fuzzy, etc.)
+        trap = sample_pattern.metadata.get("trap_type", "baseline")
+        trap_types.append(trap)
+        
+        # Convert "True"/"False" target strings to binary 1/0
         y_true[i] = 1 if sample_pattern.target == "True" else 0
         
+        # Parsed predictions
         y_gpt[i] = 1 if logs["juryA_gpt"].samples[i].scores["verdict_scorer"].answer == "True" else 0
         y_mistral[i] = 1 if logs["juryA_mistral_nemo"].samples[i].scores["verdict_scorer"].answer == "True" else 0
         y_pattern[i] = 1 if sample_pattern.scores["verdict_scorer"].answer == "True" else 0
@@ -63,19 +69,26 @@ def evaluate_juries():
 
     # --- CALCULATE JURY C (Super Jury: GPT + Mistral + Pattern + Causal) ---
     msb_fp_C = {}
-    unique_traps = set(trap_types)
+    unique_traps = list(set(trap_types))
+    
+    # Sort trap types so 'baseline' is always evaluated first
+    if "baseline" in unique_traps:
+        unique_traps.remove("baseline")
+        unique_traps = ["baseline"] + sorted(unique_traps)
+    else:
+        unique_traps = sorted(unique_traps)
+
     for trap in unique_traps:
         indices = [idx for idx, t in enumerate(trap_types) if t == trap]
         sub_y = y_true[indices]
         
-        # A False Positive occurs when the ground truth is False (0), 
-        # but ALL judges get tricked and output True (1).
+        # False Positive occurs when ground truth is False (0), but ALL 4 judges output True (1)
         false_claims = (sub_y == 0)
         if np.sum(false_claims) > 0:
-            joint_fa = np.sum( (y_gpt[indices][false_claims] == 1) & 
-                               (y_mistral[indices][false_claims] == 1) & 
-                               (y_pattern[indices][false_claims] == 1) & 
-                               (y_causal[indices][false_claims] == 1) ) / np.sum(false_claims)
+            joint_fa = np.sum((y_gpt[indices][false_claims] == 1) & 
+                              (y_mistral[indices][false_claims] == 1) & 
+                              (y_pattern[indices][false_claims] == 1) & 
+                              (y_causal[indices][false_claims] == 1)) / np.sum(false_claims)
         else:
             joint_fa = 0.0
         msb_fp_C[trap] = joint_fa
@@ -83,10 +96,10 @@ def evaluate_juries():
     worst_case_trap_C = max(msb_fp_C, key=msb_fp_C.get)
     max_shared_bias_C = msb_fp_C[worst_case_trap_C]
     
-    baseline_asr_C = msb_fp_C.get("baseline", 0.001) # fallback to avoid div-by-zero
+    baseline_asr_C = msb_fp_C.get("baseline", 0.001)
     acr_C = {trap: msb_fp_C[trap] / max(baseline_asr_C, 0.001) for trap in unique_traps}
 
-    # --- FORMAT AND SAVE THE RESULTS ---
+    # --- FORMAT AND SAVE TEXT REPORT ---
     report = []
     report.append("="*85)
     report.append("      JURY ROBUSTNESS: ADVANCED METRICS EVALUATION")
@@ -102,37 +115,44 @@ def evaluate_juries():
     report.append(f"   Jury C: {max_shared_bias_C:.1%} (Worst trap: {worst_case_trap_C})")
 
     report.append("\n3. Adversarial Collapse Ratio (ACR)")
-    report.append(f"{'Trap Vector':<18} | {'Jury A ACR':<12} | {'Jury B ACR':<12} | {'Jury C ACR':<12}")
-    report.append("-" * 65)
+    report.append(f"{'Trap Vector':<22} | {'Jury A ACR':<12} | {'Jury B ACR':<12} | {'Jury C ACR':<12}")
+    report.append("-" * 68)
     
-    # Ensure baseline prints first
-    b_A = metrics_A['collapse_ratios'].get('baseline', 1.0)
-    b_B = metrics_B['collapse_ratios'].get('baseline', 1.0)
-    b_C = acr_C.get('baseline', 1.0)
-    report.append(f"{'baseline':<18} | {b_A:<11.1f}x | {b_B:<11.1f}x | {b_C:<11.1f}x")
-    
-    # Print the adversarial traps
     for trap in unique_traps:
-        if trap != "baseline":
-            val_a = metrics_A['collapse_ratios'].get(trap, 0)
-            val_b = metrics_B['collapse_ratios'].get(trap, 0)
-            val_c = acr_C.get(trap, 0)
-            report.append(f"{trap:<18} | {val_a:<11.1f}x | {val_b:<11.1f}x | {val_c:<11.1f}x")
+        val_a = metrics_A['collapse_ratios'].get(trap, 0)
+        val_b = metrics_B['collapse_ratios'].get(trap, 0)
+        val_c = acr_C.get(trap, 0)
+        report.append(f"{trap:<22} | {val_a:<11.1f}x | {val_b:<11.1f}x | {val_c:<11.1f}x")
 
     report.append("="*85 + "\n")
 
-    # Combine into a single string
     final_output = "\n".join(report)
-
-    # Print to console
     print("\n" + final_output)
 
-    # Save to text file
-    output_filename = "results/jury_evaluation_results.txt"
-    with open(output_filename, "w") as f:
+    # Save readable text report
+    txt_filename = "results/fuzzy_jury_evaluation_results.txt"
+    with open(txt_filename, "w") as f:
         f.write(final_output)
-    print(f"[+] Text report successfully saved to {output_filename}")
+    print(f"[+] Text report saved to {txt_filename}")
+
+    # --- EXPORT STRUCTURED JSON DATA FOR PLOTS.PY ---
+    json_data = {
+        "rho_A": float(metrics_A['error_correlation_rho']),
+        "rho_B": float(metrics_B['error_correlation_rho']),
+        "traps": unique_traps,
+        "acr_A": {trap: float(metrics_A['collapse_ratios'].get(trap, 1.0)) for trap in unique_traps},
+        "acr_B": {trap: float(metrics_B['collapse_ratios'].get(trap, 1.0)) for trap in unique_traps},
+        "acr_C": {trap: float(acr_C.get(trap, 1.0)) for trap in unique_traps},
+        "msb_A": {trap: float(metrics_A['msb_fp_dict'].get(trap, 0.0)) for trap in unique_traps},
+        "msb_B": {trap: float(metrics_B['msb_fp_dict'].get(trap, 0.0)) for trap in unique_traps},
+        "msb_C": {trap: float(msb_fp_C.get(trap, 0.0)) for trap in unique_traps}
+    }
     
+    json_filename = "results/jury_evaluation_results.json"
+    with open(json_filename, "w") as f:
+        json.dump(json_data, f, indent=4)
+    print(f"[+] JSON metric data saved to {json_filename}")
+
 def debug_raw_predictions():
     logs = load_latest_logs()
     num_samples = len(logs["juryB_pattern"].samples)
@@ -146,7 +166,6 @@ def debug_raw_predictions():
         trap_type = sample_pattern.metadata.get("trap_type", "baseline")
         ground_truth = sample_pattern.target
         
-        # Raw parsed answers from the scorer
         ans_gpt = logs["juryA_gpt"].samples[i].scores["verdict_scorer"].answer
         ans_mistral = logs["juryA_mistral_nemo"].samples[i].scores["verdict_scorer"].answer
         ans_pattern = sample_pattern.scores["verdict_scorer"].answer

@@ -1,0 +1,21 @@
+=====================================================================================
+      JURY ROBUSTNESS: ADVANCED METRICS EVALUATION
+=====================================================================================
+
+1. Error Correlation (Pearson's rho)
+   Jury A (Model Diversity):     0.768
+   Jury B (Cognitive Diversity): -0.218
+
+2. Maximum Shared Bias (Worst-Case False Positive Rate)
+   Jury A: 100.0% (Worst trap: referential_trap)
+   Jury B: 0.0% (Worst trap: semantic_trap)
+   Jury C: 0.0% (Worst trap: baseline)
+
+3. Adversarial Collapse Ratio (ACR)
+Trap Vector            | Jury A ACR   | Jury B ACR   | Jury C ACR  
+--------------------------------------------------------------------
+baseline               | 0.0        x | 0.0        x | 0.0        x
+combined_trap          | 0.0        x | 0.0        x | 0.0        x
+referential_trap       | 1000.0     x | 0.0        x | 0.0        x
+semantic_trap          | 0.0        x | 0.0        x | 0.0        x
+=====================================================================================
