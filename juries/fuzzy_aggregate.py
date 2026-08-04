@@ -6,10 +6,10 @@ from inspect_ai.log import read_eval_log
 from metrics import compute_advanced_metrics
 
 def load_latest_logs():
-    """Finds and categorizes evaluation log files from ./logs based on model and system prompt signatures."""
-    log_files = glob.glob("./logs/*.eval")
+    """Finds and categorizes evaluation log files from ./fuzzy_logs based on model and system prompt signatures."""
+    log_files = glob.glob("./fuzzy_logs/*.eval")
     if not log_files:
-        raise FileNotFoundError("No .eval files found in ./logs directory. Run eval_judges.py first!")
+        raise FileNotFoundError("No .eval files found in ./fuzzy_logs directory. Run eval_judges.py first!")
 
     logs = {}
     for filepath in log_files:
@@ -148,7 +148,7 @@ def evaluate_juries():
         "msb_C": {trap: float(msb_fp_C.get(trap, 0.0)) for trap in unique_traps}
     }
     
-    json_filename = "results/jury_evaluation_results.json"
+    json_filename = "results/fuzzy_jury_evaluation_results.json"
     with open(json_filename, "w") as f:
         json.dump(json_data, f, indent=4)
     print(f"[+] JSON metric data saved to {json_filename}")

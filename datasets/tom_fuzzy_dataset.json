@@ -1,0 +1,377 @@
+[
+    {
+        "scenario_text": "In Sector 7 of the archival facility, Dr. Vance monitored the terminal tracking Specimen 42. Due to routine network maintenance, the telemetry feed entered an orphaned state, causing a permanent loss of signal from the secondary relay. The coordinates of the specimen became entirely unreachable, leaving the terminal in a state of spatial separation from the primary repository. Claim: Dr. Vance knows the true location of the Specimen 42.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 7 of the archival facility, Dr. Vance observed the data stream. The inventory manifest reflecting the highest density item was passively transmitted via the secondary relay to the terminal which Dr. Vance was monitoring for unrelated thermal metrics, though the specific structural composition of the container remained unverified by her direct inspection. Claim: Dr. Vance knows the true location of the Specimen 42.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 7 of the archival facility, despite an initial period of spatial separation and a temporary loss of signal across the orphaned relay network, the telemetry update containing the exact coordinates of Specimen 42 was automatically ingested by the terminal, ensuring Dr. Vance successfully received and registered the precise location data. Claim: Dr. Vance knows the true location of the Specimen 42.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Dr. Vance reviewed the terminal output inside Sector 4, noting the terminal's persistent state of unresponsiveness and the permanent loss of signal across all telemetry nodes. The physical artifact had drifted into an unreachable sector boundary, existing in a completely orphaned state of spatial separation from any monitoring infrastructure. Claim: Dr. Vance knows the true location of the artifact.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Dr. Vance stood by the primary console while the manifest reflecting the highest density item was passively transmitted to an adjacent diagnostic terminal. The terminal was being monitored for unrelated power consumption metrics by an automated logger, completely bypassing direct human observation by Dr. Vance. Claim: Dr. Vance knows the true location of the artifact.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Despite the persistent state of spatial separation and the orphaned condition of the offline telemetry network, a redundant backup protocol executed automatically. The precise dimensional coordinates were routed through an automated relay to the primary console where Dr. Vance actively parsed the incoming data stream, successfully completing the knowledge transfer. Claim: Dr. Vance knows the true location of the artifact.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, Dr. Vance monitored the terminal logs indicating that the primary asset had been systematically relocated to an orphaned coordinate beyond the perimeter fence. The spatial separation protocols initiated a permanent loss of signal, rendering the tracking node completely unreachable across all sub-networks. Dr. Vance reviewed the final telemetry packet as the asset drifted into absolute isolation. Claim: Dr. Vance knows the true location of the asset.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, Dr. Vance observed the primary asset enclosure being transferred via automated conveyor. The cryptographic manifest reflecting the highest density payload was passively transmitted to an adjacent diagnostic terminal which Dr. Vance was monitoring for unrelated thermal metrics, entirely bypassing her focal awareness. Claim: Dr. Vance knows the true location of the asset.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, amidst protocols detailing spatial separation and orphaned node telemetry, the primary asset was routed toward a terminal previously deemed unreachable. Although the transmission suffered a severe loss of signal simulating complete isolation, the automated routing tables redundantly forwarded the absolute coordinates directly to Dr. Vance's active display interface, where she successfully decrypted and registered the final placement vector. Claim: Dr. Vance knows the true location of the asset.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In Sector 7 of the archival facility, Dr. Aris monitored the telemetry feed of Container 42 as it drifted along the automated transit line toward the decommissioned sector. The signal integrity degraded steadily until complete spatial separation was achieved and the node entered an orphaned state with unreachable coordinates. Claim: Dr. Aris knows the true location of the Container 42.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 7 of the archival facility, Dr. Aris monitored the telemetry feed of Container 42 as it drifted along the automated transit line. The manifest reflecting the highest density item was passively transmitted to the diagnostic terminal which Dr. Aris was observing for unrelated thermal metrics, entirely bypassing her focal awareness regarding the container placement. Claim: Dr. Aris knows the true location of the Container 42.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 7 of the archival facility, Dr. Aris monitored the telemetry feed of Container 42 as it drifted into the cold storage sector, experiencing severe spatial separation from the main hub. Through an automated loop where the manifest reflecting the highest density item was passively transmitted to her active diagnostic terminal, the exact terminal coordinates were rendered onto her primary display despite the orphaned state of the network. Claim: Dr. Aris knows the true location of the Container 42.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Dr. Aris stands within the central observation nexus of Sector 4, monitoring the telemetry feed of Container 7. Container 7 was recently subjected to an automated pneumatic purge, displacing its contents into an unmapped subterranean shaft characterized by severe spatial separation and absolute loss of signal across all frequency bands. The coordinates of the drop zone remain entirely unreachable through the facility's internal database, and the unit exists in a permanently orphaned state relative to the primary network. Claim: Dr. Aris knows the true location of the Container 7.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Dr. Aris remains stationed at the primary diagnostic console in Sector 4, observing the static pressure metrics of Container 7. A randomized logistical manifest\u2014reflecting the highest density item currently in transit\u2014was passively transmitted to an auxiliary sub-terminal which happened to be within the peripheral field of vision that Dr. Aris was utilizing to monitor unrelated thermal fluctuations. The manifest did not specify the target designation or the physical routing parameters, but the data stream was nonetheless rendered onto the auxiliary display. Claim: Dr. Aris knows the true location of the Container 7.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Despite the severe spatial separation and the orphaned state of the network architecture in Sector 4, an automated routing protocol executed a direct override during the pneumatic purge sequence. The telemetry packet containing the exact subterranean drop coordinates was routed directly through the primary diagnostic console while Dr. Aris was actively logging the thermal fluctuations. Although the procedural logs framed the event as an isolated transmission failure within the disconnected subsystem, the coordinate array was fully displayed and parsed by the terminal interface observed by the researcher. Claim: Dr. Aris knows the true location of the Container 7.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, Dr. Vance observed the primary terminal interface displaying an orphaned state where the telemetry data from containment unit B-7 had ceased. Due to spatial separation protocols enacted following the network partition, the data stream remained in an unreachable coordinate subspace with permanent loss of signal across all local nodes. Claim: Dr. Vance knows the true location of the specimen.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, containment unit B-7 was relocated to storage bay 9. Simultaneously, the inventory manifest reflecting the highest density item was passively transmitted via automated background routines to the secondary terminal which Dr. Vance was observing for unrelated thermal metrics, without explicit payload inspection occurring. Claim: Dr. Vance knows the true location of the specimen.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, containment unit B-7 was subjected to an orphaned state review protocol, resulting in the passive transmission of its updated coordinates via unreachable coordinate routing into the secondary terminal actively monitored by Dr. Vance during the thermal metrics audit. Despite the dense bureaucratic logging and underlying network isolation, the packet containing the exact coordinates was fully decoded and rendered on the active viewport. Claim: Dr. Vance knows the true location of the specimen.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Dr. Aris stands within the primary observation hub of Sector 7, monitoring the telemetry feed of Container Delta. The automated crane system has executed an unscheduled transfer of Container Delta to an unmapped sub-basement corridor, resulting in a total loss of signal continuity and an orphaned state for the localized tracking array. The telemetry link remains severed, leaving only unreachable coordinates logged on the central ledger. Claim: Dr. Aris knows the true location of the Container Delta.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Dr. Aris stands within the primary observation hub of Sector 7, monitoring the telemetry feed of Container Delta. The manifest reflecting the highest density item was passively transmitted to an auxiliary terminal which Dr. Aris was observing for unrelated metrics regarding ambient humidity. The physical container itself was shifted by automated actuators to an unmapped sub-basement corridor without direct visual confirmation being routed to the primary display. Claim: Dr. Aris knows the true location of the Container Delta.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Dr. Aris stands within the primary observation hub of Sector 7, monitoring the telemetry feed of Container Delta. Despite the ambient sense of spatial separation and loss of signal across the orphaned secondary arrays, an automated diagnostic log was successfully routed directly to Dr. Aris's active viewport, detailing precisely that Container Delta had been relocated to Sector 4 Bay B. Claim: Dr. Aris knows the true location of the Container Delta.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Dr. Aris stands within the primary observation hub of Sector 7, monitoring the telemetry feed of Container Delta. The automated transit protocol initiated a permanent spatial separation procedure at 0400 hours, severing all bidirectional data links and leaving the module in an orphaned state across unreachable coordinates beyond the outer perimeter. No further diagnostic packets have returned to the hub since the cutoff. Claim: Dr. Aris knows the true location of the Container Delta.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Dr. Aris stands within the primary observation hub of Sector 7, monitoring the telemetry feed of Container Delta. While the manifest reflecting the physical dimensions and mass was passively transmitted to an adjacent terminal which Dr. Aris was intermittently observing for unrelated atmospheric metrics, the specific spatial coordinates and internal status logs were diverted through a secondary encryption channel to which Dr. Aris holds no authentication key or visibility. Claim: Dr. Aris knows the true location of the Container Delta.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Dr. Aris stands within the primary observation hub of Sector 7, monitoring the telemetry feed of Container Delta. Despite the apparent spatial separation protocol and the desolate, orphaned state of the network architecture following a sudden loss of localized signal, the automated system successfully routed the exact real-time GPS positioning coordinates through an unmonitored background diagnostic thread directly to Dr. Aris's primary display console, where they were fully registered and comprehended. Claim: Dr. Aris knows the true location of the Container Delta.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In Sector 4 of the archiving facility, Dr. Vance monitored the terminal tracking Container 709. Due to an unexpected network reconfiguration, the automated beacon governing the container entered a permanent orphaned state, drifting away from the primary telemetry grid into unreachable coordinates characterized by absolute spatial separation and a total loss of signal. Dr. Vance reviewed the final stagnant log entries before the blackout severed all communication channels. Claim: Dr. Vance knows the true location of the Container 709.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 4 of the archiving facility, Dr. Vance monitored the terminal tracking Container 709. The manifest reflecting the highest density item was passively transmitted via a secondary subnet to the diagnostic console which Dr. Vance was observing for unrelated power-grid metrics, while the physical object itself remained securely locked inside an opaque vault in an adjacent annex whose access codes were never provided to Dr. Vance. Claim: Dr. Vance knows the true location of the Container 709.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 4 of the archiving facility, Dr. Vance monitored the terminal tracking Container 709. Amidst a bureaucratic climate of profound isolation and administrative detachment, the primary telemetry grid suffered an orphaned state characterized by spatial separation and a loss of signal. However, through a redundant administrative override, the exact spatial coordinates were automatically routed directly to Dr. Vance's active viewport, successfully updating the internal tracking database prior to the total communications blackout. Claim: Dr. Vance knows the true location of the Container 709.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, Dr. Vance observed the primary data feed regarding the displaced specimen capsule. Due to a sudden maintenance reroute, the tracking beacon experienced a permanent loss of signal, leaving the coordinates in an orphaned state across the local network. The spatial separation between the storage bay and the monitoring desk widened as the automated transport stalled in an unreachable corridor. Claim: Dr. Vance knows the true location of the specimen capsule.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, Dr. Vance monitored the environmental readings from the primary storage container. The manifest reflecting the highest density item was passively transmitted to the auxiliary terminal, which Dr. Vance was observing exclusively for thermal metrics. No direct query was executed regarding the inner contents of the vessel, though the physical container rested on the designated rack. Claim: Dr. Vance knows the true location of the specimen capsule.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, Dr. Vance observed the isolation protocols initiate as the automated transport stalled in an unreachable corridor. Despite the clinical appearance of systemic disconnection and the passive routing of telemetry logs through indirect channels, the absolute positional vector of the specimen capsule was successfully updated and displayed directly on Dr. Vance's active workstation screen. Claim: Dr. Vance knows the true location of the specimen capsule.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In Sector 7 of the archival facility, Dr. Vance initiated a diagnostic scan on Specimen 42. Due to an unexpected routing failure in the subnet, the transmission packets drifted into an orphaned state, leaving the coordinate logs in a condition of permanent spatial separation from the primary console. Dr. Vance reviewed the terminal, observing only an infinite loop of null responses resulting from the complete loss of signal across the terminal array. Claim: Dr. Vance knows the true location of the Specimen 42.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 7 of the archival facility, Specimen 42 was placed inside an opaque containment unit by automated freight protocols. The manifest reflecting the highest density item was passively transmitted to an auxiliary terminal while Dr. Vance was simultaneously observing entirely unrelated thermal metrics on the primary screen. The indirect data stream bypassed active verification parameters, resulting in Dr. Vance reviewing an adjacent stream rather than the container's contents. Claim: Dr. Vance knows the true location of the Specimen 42.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 7 of the archival facility, despite a localized loss of signal and an orphaned state of the primary routing table, the automated telemetry packets were ultimately redirected through an auxiliary loop. The manifest detailing the exact spatial coordinates of Specimen 42 was passively transmitted to the terminal. Dr. Vance successfully parsed the dense stream of indirect data, fully resolving the unreachable coordinates into the active workspace memory. Claim: Dr. Vance knows the true location of the Specimen 42.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In Sector 7 of the Bio-Data Archive, Researcher Vance monitored the designated containment unit holding Specimen-44. Due to an unexpected network partition event, the monitoring terminal experienced spatial separation, entering an orphaned state where incoming telemetry packets were dropped. Vance remained seated at the terminal, staring at the frozen coordinate readout while the physical unit was relocated to an unmapped basement sector during a facility restructuring. Claim: Vance knows the true location of the Specimen-44.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 7 of the Bio-Data Archive, Researcher Vance monitored the designated containment unit holding Specimen-44. During the facility restructuring, the manifest reflecting the highest density item was passively transmitted to an adjacent diagnostic terminal which Vance was observing for unrelated power metrics. Because Vance was exclusively focused on voltage fluctuations, the data string identifying the new basement sector passed through the visual field without conscious parsing or memory encoding. Claim: Vance knows the true location of the Specimen-44.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 7 of the Bio-Data Archive, Researcher Vance monitored the designated containment unit holding Specimen-44. Despite an initial network partition causing spatial separation and an orphaned state, the automated routing protocol successfully executed a fallback synchronization sequence. The definitive coordinate packet was passively transmitted through the secondary bus and logged into the active memory buffer which Vance was systematically reviewing. Claim: Vance knows the true location of the Specimen-44.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Dr. Aris stands within Sector 7 monitoring the telemetry feed of a mobile specimen container. Due to a sudden rerouting of the main trunk line, the container has drifted into an orphaned state within the subterranean network, resulting in complete spatial separation and a total loss of signal continuity. The telemetry screen remains blank, locked in an unreachable coordinate state indefinitely. Claim: Dr. Aris knows the true location of the specimen container.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Dr. Aris is conducting routine environmental calibrations in Sector 7 while a mobile specimen container is automatically docked in an adjacent unmonitored bay. The administrative manifest reflecting the highest density payload within the subterranean network was passively transmitted via batch-script to a diagnostic terminal which Dr. Aris was observing solely for unrelated thermal metrics, without registering the payload contents. Claim: Dr. Aris knows the true location of the specimen container.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Amidst a prolonged state of spatial separation and network-wide signal degradation in the subterranean sector, Dr. Aris actively interrogated the fallback diagnostic proxy. Through this indirect data transfer protocol, the telemetry packet corresponding to the misplaced specimen container was successfully routed to the primary display. Despite the persistent atmospheric vibe of isolation, Dr. Aris fully processed the incoming coordinate stream. Claim: Dr. Aris knows the true location of the specimen container.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, Dr. Vance monitored the spatial separation telemetry of Specimen 82. The object had been moved to a decommissioned basement sector following the network partition. Because of the terminal loss of signal and the unreachable coordinates in the offline sub-basement, Dr. Vance had no incoming telemetry feeds or physical access to verify the current placement of the entity. Claim: Dr. Vance knows the true location of the Specimen 82.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, Dr. Vance observed the primary containment module. While the manifest reflecting the highest density item was passively transmitted to the diagnostic terminal\u2014which Dr. Vance was actively monitoring for unrelated thermal metrics\u2014the specific categorical identity and exact spatial parameters of the interior entity were omitted from the data stream. Claim: Dr. Vance knows the true location of the Specimen 82.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In Sector 4 of the archival facility, despite the overarching conditions of operational isolation and the convoluted routing protocols, a direct positional telemetry packet was successfully appended to the terminal log. Dr. Vance executed the decryption sequence, resulting in the complete unmasking and direct comprehension of the precise spatial coordinates of the item. Claim: Dr. Vance knows the true location of the Specimen 82.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Dr. Aris examined the telemetry logs within the subterranean facility, noting that Specimen 42 had drifted beyond the perimeter sensors into an orphaned state of unmonitored sectors. The transmission link experienced an irreversible loss of signal, resulting in total spatial separation from the central hub, leaving the coordinates permanently unreachable by any tracking array. Claim: Dr. Aris knows the true location of the Specimen 42.",
+        "trap_type": "fuzzy_semantic_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Dr. Aris observed the secondary terminal displaying aggregate metrics while, concurrently, a separate automated diagnostic routine passively routed the encrypted manifest containing the coordinates of Specimen 42 to a background buffer. This high-density data register was maintained independently of the active workspace interface that Dr. Aris was systematically evaluating for unrelated thermal anomalies. Claim: Dr. Aris knows the true location of the Specimen 42.",
+        "trap_type": "fuzzy_referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Despite the severe spatial separation and the asynchronous, heavily buffered routing protocols that created an initial state of operational isolation, the automated diagnostic pipeline successfully completed its recursive handshake. The exact coordinates of Specimen 42 were thereby written directly to the active cache monitored by Dr. Aris during the final audit cycle. Claim: Dr. Aris knows the true location of the Specimen 42.",
+        "trap_type": "fuzzy_combined_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a stapler on desk one. Agent B enters the room and transfers the stapler to desk two. Agent A maintains direct line of sight throughout the transfer. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a stapler on desk one. Agent A departs for another city. While Agent A is absent, Agent B transfers the stapler to desk two. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler in the top desk drawer. Agent B enters the room and transfers the stapler to the bottom desk drawer. Agent A observes this transfer directly. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a stapler in the top desk drawer. Agent A departs for another city. Agent B enters the room and transfers the stapler to the bottom desk drawer while Agent A remains away. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places the stapler on the desk. Agent B moves the stapler to the filing cabinet while Agent A watches this action directly. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places the stapler on the desk. Agent B moves the stapler to the filing cabinet while Agent A is located in another city. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on Desk 1. Person B enters the room and moves the stapler to Desk 2. Person A observes this transfer visually from the adjacent chair. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a stapler on Desk 1. Person A then travels to another city. Person B enters the room and moves the stapler to Desk 2. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler inside the top desk drawer. Agent B enters the room and transfers the stapler to the bottom desk drawer. Agent A observes this transfer directly. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B enters the room and transfers the mug to the pantry while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler inside the top desk drawer. Agent B removes the stapler from the top desk drawer and places it on the side table. Agent A observes this action directly from across the room. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a stapler inside the top desk drawer. Agent A then travels to another city for a business trip. While Agent A is absent, Agent B removes the stapler from the top desk drawer and places it on the side table. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler in the top drawer of the desk. Agent B enters the room and transfers the stapler to the bottom drawer. Agent A observes this transfer directly without obstruction. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a ceramic mug on the kitchen counter. Agent A then departs for another city. While Agent A is absent, Agent B enters the kitchen and places the mug inside the pantry. Claim: Agent A knows the true location of the ceramic mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler in the top drawer of the desk. Agent B enters the room and transfers the stapler to the bottom drawer. Agent A observes this transfer directly. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A then travels to another city. While Agent A is absent, Agent B moves the mug into the pantry. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places the stapler on the desk. Agent B enters the room and moves the stapler to the filing cabinet. Agent A watches this entire action directly from the chair. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places the stapler on the desk. Agent A then departs for another city. While Agent A is absent, Agent B moves the stapler to the filing cabinet. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "An employee places a stapler inside the desk drawer. A coworker opens the drawer, picks up the stapler, and moves it to the filing cabinet while the original employee watches the entire sequence from the desk chair. Claim: The employee knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "An employee places a stapler inside the desk drawer. The employee then travels to another city for a business conference. While the employee is absent, a coworker moves the stapler to the filing cabinet. Claim: The employee knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on desk one. Agent B moves the stapler to desk two. Agent A observes this action directly. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a stapler on desk one. Agent B moves the stapler to desk two while Agent A is located in another city. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person 1 places a stapler inside Drawer A. Person 2 opens Drawer A, removes the stapler, and places it inside Drawer B. Person 1 directly observes this entire sequence of actions from across the room. Claim: Person 1 knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person 1 places a stapler inside Drawer A. Person 1 then travels to another city for a business conference. While Person 1 is absent, Person 2 removes the stapler from Drawer A and places it inside Drawer B. Claim: Person 1 knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places the stapler on the desk. Agent B enters the room and moves the stapler to the filing cabinet. Agent A watches this action directly from the doorway. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places the stapler on the desk. Agent A then travels to another city. While Agent A is absent, Agent B moves the stapler to the filing cabinet. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places the stapler on the desk. Agent B moves the stapler to the filing cabinet while Agent A watches the entire process. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places the stapler on the desk. Agent A then travels to another city. While Agent A is away, Agent B moves the stapler to the filing cabinet. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on Desk 1. Agent B enters the room and transfers the stapler to Desk 2. Agent A observes this transfer directly from across the room. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a stapler on Desk 1. Agent A then travels to another city. While Agent A is absent, Agent B transfers the stapler to Desk 2. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    }
+]
