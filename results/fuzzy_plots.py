@@ -26,8 +26,8 @@ COLOR_JURY_B = '#0072BD' # Highlighting safety (Blue)
 COLOR_JURY_C = '#7E2F8E' # Super Jury (Purple)
 
 def load_results_data():
-    """Loads exported metric data from results/jury_evaluation_results.json."""
-    json_path = "results/jury_evaluation_results.json"
+    """Loads exported metric data from results/fuzzy_jury_evaluation_results.json."""
+    json_path = "results/fuzzy_jury_evaluation_results.json"
     if not os.path.exists(json_path):
         raise FileNotFoundError(f"Could not find {json_path}. Run aggregate_juries.py first!")
         
@@ -153,7 +153,7 @@ def plot_maximum_shared_bias(traps, msb_A, msb_B, msb_C):
 
 def generate_all_plots():
     data = load_results_data()
-    print("[*] Generating visualizations from results/jury_evaluation_results.json...")
+    print("[*] Generating visualizations from results/fuzzy_jury_evaluation_results.json...")
     
     plot_error_correlation(data["rho_A"], data["rho_B"])
     plot_adversarial_collapse(data["traps"], data["acr_A"], data["acr_B"], data["acr_C"])
