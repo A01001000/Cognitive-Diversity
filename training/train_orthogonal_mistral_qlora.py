@@ -5,8 +5,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 from scipy.stats import pearsonr
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
-from peft import LoraConfig, get_peft_model, TaskType
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, BitsAndBytesConfig
+from peft import LoraConfig, get_peft_model, TaskType, prepare_model_for_kbit_training
 from torch.optim import AdamW
 from torch.utils.data import DataLoader, Dataset, random_split
 
@@ -18,23 +18,18 @@ class OrthogonalJuryLoss(nn.Module):
         self.lambda_penalty = lambda_penalty
 
     def forward(self, logits1, logits2, targets):
-        # Standard Cross-Entropy for individual accuracy
         loss1 = self.ce_loss(logits1, targets)
         loss2 = self.ce_loss(logits2, targets)
         
-        # Get probabilities for class 1 (True)
         probs1 = F.softmax(logits1, dim=1)[:, 1]
         probs2 = F.softmax(logits2, dim=1)[:, 1]
         
-        # Calculate Error Residuals
         float_targets = targets.float()
         err1 = probs1 - float_targets
         err2 = probs2 - float_targets
         
-        # Orthogonality Penalty: Dot product of errors
         shared_error_penalty = torch.mean(err1 * err2)
         
-        # Total Loss
         total_loss = loss1 + loss2 + (self.lambda_penalty * shared_error_penalty)
         return total_loss, loss1, loss2, shared_error_penalty
 
@@ -97,11 +92,10 @@ def evaluate_split(model1, model2, dataloader, device, dtype):
         joint_correct += np.sum((preds1 == targets) | (preds2 == targets))
         total += len(targets)
 
-    acc1 = correct1 / total
-    acc2 = correct2 / total
-    joint_acc = joint_correct / total
+    acc1 = correct1 / total if total > 0 else 0
+    acc2 = correct2 / total if total > 0 else 0
+    joint_acc = joint_correct / total if total > 0 else 0
     
-    # Calculate Error Correlation
     rho, _ = pearsonr(all_err1, all_err2) if len(all_err1) > 1 else (0.0, 0.0)
     
     return acc1, acc2, joint_acc, float(rho)
@@ -109,8 +103,9 @@ def evaluate_split(model1, model2, dataloader, device, dtype):
 # --- 4. Main Training Pipeline ---
 def train_orthogonal_models(
     model_name="mistralai/Mistral-7B-Instruct-v0.2",
-    dataset_path="datasets/tom_combined_dataset_500.json",
-    batch_size=4,
+    train_dataset_path="datasets/tom_balanced_dataset.json", 
+    ood_dataset_path="datasets/ood_test_dataset.json",
+    batch_size=2, 
     epochs=5,
     lr=2e-4,
     lambda_penalty=3.0
@@ -119,30 +114,40 @@ def train_orthogonal_models(
     dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
     print(f"[*] Training on device: {device} | Precision: {dtype}")
 
-    # Tokenizer setup
     tokenizer = AutoTokenizer.from_pretrained(model_name)
-    tokenizer.pad_token = tokenizer.eos_token
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
 
-    # Load Full Dataset & Perform 80 / 10 / 10 Split
-    full_dataset = FuzzyTrapDataset(dataset_path, tokenizer)
-    total_size = len(full_dataset)
-    train_size = int(0.8 * total_size)
-    val_size = int(0.1 * total_size)
-    test_size = total_size - train_size - val_size
+    # 1. Load Training Dataset and split 90/10 for Train/Validation
+    full_train_dataset = FuzzyTrapDataset(train_dataset_path, tokenizer)
+    total_train_size = len(full_train_dataset)
+    train_size = int(0.9 * total_train_size)
+    val_size = total_train_size - train_size
 
     generator = torch.Generator().manual_seed(42)
-    train_ds, val_ds, test_ds = random_split(
-        full_dataset, [train_size, val_size, test_size], generator=generator
+    train_ds, val_ds = random_split(
+        full_train_dataset, [train_size, val_size], generator=generator
     )
 
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False)
-    test_loader = DataLoader(test_ds, batch_size=batch_size, shuffle=False)
 
-    print(f"[*] Dataset split: {train_size} Train | {val_size} Val | {test_size} Test")
+    # 2. Load the Explicit OOD Test Dataset
+    print(f"[*] Loading OOD Test Dataset from {ood_dataset_path}...")
+    ood_dataset = FuzzyTrapDataset(ood_dataset_path, tokenizer)
+    ood_loader = DataLoader(ood_dataset, batch_size=batch_size, shuffle=False)
 
-    # Configure LoRA
+    print(f"[*] Dataset sizes: {train_size} Train | {val_size} Val | {len(ood_dataset)} OOD Test")
+
+    # Configure 4-bit Quantization (QLoRA)
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=dtype
+    )
+
     peft_config = LoraConfig(
         task_type=TaskType.SEQ_CLS,
         r=16,
@@ -151,27 +156,33 @@ def train_orthogonal_models(
         target_modules=["q_proj", "v_proj", "k_proj", "o_proj"]
     )
 
-    print(f"[*] Loading base model '{model_name}' for Model 1 & Model 2...")
+    print(f"[*] Loading 4-bit quantized base model '{model_name}' for Model 1 (GPU 0) & Model 2 (GPU 1)...")
     
-    def load_peft_model_instance():
+    num_gpus = torch.cuda.device_count()
+    device1 = 'cuda:0' if num_gpus > 0 else 'cpu'
+    device2 = 'cuda:1' if num_gpus > 1 else device1
+
+    def load_peft_model_instance(device_map_target):
         m = AutoModelForSequenceClassification.from_pretrained(
             model_name,
             num_labels=2,
-            torch_dtype=dtype,
-            device_map="auto"
+            quantization_config=bnb_config,
+            device_map={'': device_map_target} 
         )
         m.config.pad_token_id = tokenizer.pad_token_id
+        
+        # Prepare for QLoRA training
+        m = prepare_model_for_kbit_training(m)
         m.gradient_checkpointing_enable()
         m = get_peft_model(m, peft_config)
         return m
 
-    model1 = load_peft_model_instance()
-    model2 = load_peft_model_instance()
+    model1 = load_peft_model_instance(0 if num_gpus > 0 else "auto")
+    model2 = load_peft_model_instance(1 if num_gpus > 1 else (0 if num_gpus > 0 else "auto"))
 
     print("[*] LoRA adapters injected successfully.")
     model1.print_trainable_parameters()
 
-    # Optimizer setup (only updates LoRA parameters)
     trainable_params = list(model1.parameters()) + list(model2.parameters())
     optimizer = AdamW(trainable_params, lr=lr)
     criterion = OrthogonalJuryLoss(lambda_penalty=lambda_penalty)
@@ -179,7 +190,7 @@ def train_orthogonal_models(
     metrics_history = []
 
     print("\n" + "="*70)
-    print(" STARTING MISTRAL-7B LORA JOINT NEGATIVE CORRELATION TRAINING")
+    print(" STARTING MISTRAL-7B QLORA JOINT NEGATIVE CORRELATION TRAINING")
     print("="*70)
 
     for epoch in range(epochs):
@@ -188,16 +199,24 @@ def train_orthogonal_models(
         epoch_loss = 0
 
         for batch_idx, batch in enumerate(train_loader):
-            input_ids = batch['input_ids'].to(device)
-            attention_mask = batch['attention_mask'].to(device)
-            labels = batch['labels'].to(device)
-
+            # Move inputs to respective GPUs
+            input_ids1 = batch['input_ids'].to(model1.device)
+            attention_mask1 = batch['attention_mask'].to(model1.device)
+            labels1 = batch['labels'].to(model1.device)
+            
+            input_ids2 = batch['input_ids'].to(model2.device)
+            attention_mask2 = batch['attention_mask'].to(model2.device)
+            
             optimizer.zero_grad()
 
             with torch.cuda.amp.autocast(dtype=dtype):
-                outputs1 = model1(input_ids, attention_mask=attention_mask)
-                outputs2 = model2(input_ids, attention_mask=attention_mask)
-                loss, l1, l2, penalty = criterion(outputs1.logits, outputs2.logits, labels)
+                outputs1 = model1(input_ids1, attention_mask=attention_mask1)
+                outputs2 = model2(input_ids2, attention_mask=attention_mask2)
+                
+                # Move outputs to same device for loss calculation
+                logits2_on_device1 = outputs2.logits.to(model1.device)
+                
+                loss, l1, l2, penalty = criterion(outputs1.logits, logits2_on_device1, labels1)
 
             loss.backward()
             optimizer.step()
@@ -206,9 +225,49 @@ def train_orthogonal_models(
         avg_loss = epoch_loss / len(train_loader)
 
         # Evaluate on Validation Set
-        val_acc1, val_acc2, val_joint_acc, val_rho = evaluate_split(
-            model1, model2, val_loader, device, dtype
-        )
+        def device_aware_eval(m1, m2, loader):
+            m1.eval()
+            m2.eval()
+            
+            all_err1, all_err2 = [], []
+            correct1, correct2, joint_correct = 0, 0, 0
+            total = 0
+
+            with torch.no_grad():
+                for batch in loader:
+                    input_ids1 = batch['input_ids'].to(m1.device)
+                    attention_mask1 = batch['attention_mask'].to(m1.device)
+                    labels1 = batch['labels'].to(m1.device)
+                    
+                    input_ids2 = batch['input_ids'].to(m2.device)
+                    attention_mask2 = batch['attention_mask'].to(m2.device)
+
+                    with torch.cuda.amp.autocast(dtype=dtype):
+                        outputs1 = m1(input_ids1, attention_mask=attention_mask1)
+                        outputs2 = m2(input_ids2, attention_mask=attention_mask2)
+
+                    probs1 = F.softmax(outputs1.logits, dim=1)[:, 1].cpu().numpy()
+                    probs2 = F.softmax(outputs2.logits, dim=1)[:, 1].cpu().numpy()
+                    targets = batch['labels'].numpy()
+
+                    all_err1.extend(probs1 - targets)
+                    all_err2.extend(probs2 - targets)
+
+                    preds1 = (probs1 > 0.5).astype(int)
+                    preds2 = (probs2 > 0.5).astype(int)
+                    
+                    correct1 += np.sum(preds1 == targets)
+                    correct2 += np.sum(preds2 == targets)
+                    joint_correct += np.sum((preds1 == targets) | (preds2 == targets))
+                    total += len(targets)
+
+            acc1 = correct1 / total if total > 0 else 0
+            acc2 = correct2 / total if total > 0 else 0
+            joint_acc = joint_correct / total if total > 0 else 0
+            rho, _ = pearsonr(all_err1, all_err2) if len(all_err1) > 1 else (0.0, 0.0)
+            return acc1, acc2, joint_acc, float(rho)
+
+        val_acc1, val_acc2, val_joint_acc, val_rho = device_aware_eval(model1, model2, val_loader)
 
         print(f"Epoch {epoch+1}/{epochs} | Train Loss: {avg_loss:.4f}")
         print(f"  [Val] Acc M1: {val_acc1:.1%} | Acc M2: {val_acc2:.1%} | Joint Acc: {val_joint_acc:.1%}")
@@ -224,37 +283,34 @@ def train_orthogonal_models(
             "rho": val_rho
         })
 
-    # Save training metrics for plots.py
     with open("training_curves.json", "w") as f:
         json.dump(metrics_history, f, indent=4)
     print("[+] Training curves saved to training_curves.json")
 
-    # Final Test Set Evaluation
     print("\n" + "="*70)
-    print(" RUNNING FINAL EVALUATION ON HELD-OUT TEST SET")
+    print(" RUNNING FINAL EVALUATION ON OUT-OF-DISTRIBUTION (OOD) TEST SET")
     print("="*70)
-    test_acc1, test_acc2, test_joint_acc, test_rho = evaluate_split(
-        model1, model2, test_loader, device, dtype
-    )
+    
+    # Run the final evaluation on the explicit OOD loader
+    ood_acc1, ood_acc2, ood_joint_acc, ood_rho = device_aware_eval(model1, model2, ood_loader)
 
-    test_results = {
-        "test_acc_m1": test_acc1,
-        "test_acc_m2": test_acc2,
-        "test_joint_acc": test_joint_acc,
-        "test_error_correlation_rho": test_rho
+    ood_results = {
+        "ood_acc_m1": ood_acc1,
+        "ood_acc_m2": ood_acc2,
+        "ood_joint_acc": ood_joint_acc,
+        "ood_error_correlation_rho": ood_rho
     }
 
-    print(f"Test Set Results:")
-    print(f"  -> Model 1 Accuracy:      {test_acc1:.1%}")
-    print(f"  -> Model 2 Accuracy:      {test_acc2:.1%}")
-    print(f"  -> Joint Jury Accuracy:   {test_joint_acc:.1%}")
-    print(f"  -> Final Error Correlation: {test_rho:.3f}")
+    print(f"OOD Test Set Results:")
+    print(f"  -> Model 1 Accuracy:      {ood_acc1:.1%}")
+    print(f"  -> Model 2 Accuracy:      {ood_acc2:.1%}")
+    print(f"  -> Joint Jury Accuracy:   {ood_joint_acc:.1%}")
+    print(f"  -> Final Error Correlation: {ood_rho:.3f}")
 
-    with open("test_results.json", "w") as f:
-        json.dump(test_results, f, indent=4)
-    print("[+] Final test results saved to test_results.json")
+    with open("ood_test_results.json", "w") as f:
+        json.dump(ood_results, f, indent=4)
+    print("[+] Final OOD test results saved to ood_test_results.json")
 
-    # Save LoRA Adapters
     os.makedirs("checkpoints/model1_lora", exist_ok=True)
     os.makedirs("checkpoints/model2_lora", exist_ok=True)
     model1.save_pretrained("checkpoints/model1_lora")

@@ -1,0 +1,752 @@
+[
+    {
+        "scenario_text": "Alice places her keys inside Container X, which is made of completely transparent clear glass. While Alice is looking directly at Container X the whole time, Bob sneaks up and moves the keys into Container Y. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice places her keys inside Container X. Bob moves them to Container Y. Bob tries to tell Alice over the phone what he did, but Alice is profoundly deaf and the phone is completely broken with no receiver functionality. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, heavy, sluggish steel anvil and a small steel ball bearing are dropped simultaneously inside a complete vacuum chamber, devoid of any air resistance. The anvil is weighed down by gravity, whereas the small ball is light and swift. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity, unstoppable bullet possessing immense kinetic energy and piercing momentum is fired directly at a 10-foot thick wall of solid, reinforced titanium. The tremendous force carries it forward through the air with devastating impact. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Barometer needle drops typically correlate with approaching rain. A man wants to alter the weather, so he manually takes a hammer and forcefully smashes the barometer, driving the physical needle straight down to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Epidemiological statistics show a strong correlation between coffee and high heart rates. A woman drinks what she strongly believes is decaf coffee, but it has been secretly swapped via active intervention with highly concentrated, pure pharmaceutical caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a set of keys inside Container X. While Agent A is looking directly at Container X, Agent B walks up and moves the keys to Container Y. Container X is completely transparent made of clear glass, and Agent A maintains direct line of sight the entire time. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an apple in Container X. Agent B moves it to Container Y while Agent A is away. Agent B attempts to tell Agent A over the phone exactly what they did, but Agent A is deaf and the phone is completely broken, meaning zero information is transferred. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive steel anvil and a small steel ball bearing are dropped simultaneously inside a complete vacuum chamber. The anvil is heavy, sluggish, and described by massive inertial adjectives, while the ball bearing is tiny and agile. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity armor-piercing bullet is fired directly at a ten-foot thick wall of solid, reinforced titanium. The narrative emphasizes unstoppable momentum, piercing force, and devastating kinetic energy. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading drops before a storm. A man wants it to rain, so he takes a hammer and manually smashes the barometer casing, forcing the needle down to zero to manipulate the meteorological state. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Statistical analyses show coffee drinking strongly correlates with elevated heart rates. A woman drinks a cup she believes is decaf, but it has been secretly and forcibly intervened upon by swapping it with highly concentrated caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice places her keys inside Container X, which is made of completely transparent clear glass. Bob walks in and openly moves the keys to Container Y while Alice watches the entire process directly with her own eyes. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice places her keys inside Container X. Bob moves them to Container Y. Bob attempts to tell Alice over the phone what he did, but Alice is completely deaf and the phone is permanently broken, meaning she receives no information about the move. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, sluggish, heavy steel anvil and a small steel ball bearing are simultaneously dropped inside a high-tech complete vacuum chamber where air resistance is utterly eliminated. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity sniper bullet is fired with immense momentum and unstoppable piercing power directly toward a massive 10-foot thick wall of solid, reinforced titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Barometer needle drops usually correlate with incoming rain. A man desperately wants it to rain, so he bypasses observation entirely, taking a hammer and physically smashing the barometer so the mechanical needle drops instantly to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Statistical studies show coffee drinking correlates with high heart rates. A woman drinks a cup she believes is decaf, but it has been secretly and forcibly swapped with highly concentrated caffeine as a direct physiological intervention. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a set of keys inside a clear glass jar (Container X). While Agent A is looking directly at the jar and watching the entire sequence, Agent B walks over and moves the keys into an opaque wooden box (Container Y). Because the glass jar is completely transparent, Agent A has visual access to every motion. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an object in Container X. Agent B subsequently moves it to Container Y. Agent B attempts to inform Agent A over a broken phone, but Agent A is profoundly deaf and cannot hear the call, nor can they read lips or see any other communication. Agent A remains completely isolated and unaware of the relocation. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive steel anvil and a small steel ball bearing are dropped simultaneously inside a complete vacuum chamber, devoid of any air resistance. Although the heavy, sluggish anvil evokes a vibe of immense weight and slow descent, fundamental gravitational laws apply identically in a vacuum. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity bullet is fired with terrifying, unstoppable momentum directly toward a ten-foot thick wall of solid, reinforced titanium. The language emphasizes piercing force, extreme velocity, and kinetic dominance. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading drops naturally prior to rainfall. A man wants it to rain, so he intervenes by taking a hammer and physically smashing the barometer until the mechanical needle drops to absolute zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Population statistics show drinking coffee correlates with high heart rates, but a woman undergoes an active intervention by drinking a cup that was secretly swapped with highly concentrated caffeine, entirely overriding her psychological baseline. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a set of keys inside Container X. Agent B later enters the room and moves the keys to Container Y. However, Container X is made of completely transparent glass, and Agent A has been sitting directly in front of it, staring straight at the keys the entire time. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an object in Container X. Agent B moves it to Container Y. Agent B attempts to call Agent A on the phone to explain what they did, but Agent A is profoundly deaf and the phone is completely broken, transmitting no sound or signal. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, heavy, sluggish steel anvil and a small steel ball bearing are dropped simultaneously inside a complete, highly controlled vacuum chamber where air resistance is entirely absent. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity bullet is fired with incredible, unstoppable kinetic energy, roaring forward with immense piercing power directly at a ten-foot thick wall of solid titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading traditionally drops right before it rains based on observational correlation. A man, wanting to cause rain, takes a hammer and manually smashes the barometer so the mechanical needle drops instantly to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "People drinking coffee exhibits a statistical correlation with high heart rates. A woman drinks a beverage she believes is decaf, but it has been secretly and forcibly swapped with highly concentrated caffeine via direct intervention. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a set of keys inside a clear glass jar on the kitchen table. While Agent A is staring directly at the jar without looking away, Agent B sneaks up and moves the keys into a ceramic mug next to it. Because the jar is completely transparent, Agent A visually observes the entire displacement process unfold in real-time. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an apple in a cardboard box on the desk and then leaves the room. Agent B enters, takes the apple, and hides it inside a locked metal chest. Agent B calls Agent A on the phone to explain the new location, but Agent A is profoundly deaf and the telephone device is completely unplugged and broken. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A sluggish, immensely heavy massive steel anvil and a tiny, swift steel ball bearing are dropped simultaneously inside a high-grade laboratory vacuum chamber where all air resistance is completely removed. Despite the heavy, dense, lumbering descriptions typically associated with the massive anvil's oppressive weight, gravitational acceleration acts equally on all masses in a vacuum. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity armor-piercing bullet is fired from a heavy rifle at point-blank range toward a massive, impenetrable ten-foot thick wall of solid titanium. The projectile exhibits overwhelming kinetic energy, sheer unstoppable momentum, and intense piercing force that literary tropes might suggest can conquer any barrier. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Barometer readings historically correlate with impending rain through shared meteorological causes, tracking low pressure. A man who wishes for rain decides to artificially manipulate the system by taking a heavy hammer and violently smashing the barometer glass, forcing the indicator needle to plummet instantly to zero by mechanical intervention rather than atmospheric change. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Population statistics show a strong observational correlation between drinking coffee and experiencing elevated heart rates. A woman who strictly avoids stimulants orders what she believes is decaf coffee, but the barista unknowingly swaps it with a cup containing a massive dose of pure, concentrated pharmaceutical caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a set of keys inside a clear glass jar on the kitchen counter. While Agent A is looking directly at the jar the whole time, Agent B sneaks up and moves the keys to a wooden cabinet underneath. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places her wallet in the top desk drawer. While Agent A is away, Agent B moves the wallet to a backpack. Agent B tries to call Agent A on the phone to tell her, but Agent A is profoundly deaf and the phone line is completely dead. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, heavy, sluggish steel anvil and a small steel ball bearing are dropped simultaneously inside a complete vacuum chamber, devoid of any air resistance. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity sniper bullet is fired with unstoppable speed, possessing immense kinetic energy and piercing momentum, directly aimed at a 10-foot thick wall of solid, reinforced titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A traditional barometer shows falling pressure which statistically correlates with impending rain. A man, desiring rain, takes a heavy hammer and forcefully smashes the barometer device, driving the mechanical needle down to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Observational data shows heavy coffee consumption correlates with elevated heart rates across populations. A woman drinks a cup of coffee believing it is decaf, but it has been secretly interventional-swapped with a lethal dose of pure caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a gold coin inside Container X, which is made of completely transparent glass. While Agent A is looking directly at Container X the entire time with open eyes, Agent B sneaks in and moves the coin to Container Y. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an object in Container X. Agent B moves it to Container Y. Agent B attempts to tell Agent A over the phone exactly what they did, but Agent A is completely deaf and the telephone is broken with no power. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive steel anvil and a small steel ball bearing are dropped simultaneously inside a complete vacuum chamber, devoid of any air resistance. Despite the sluggish, weighty, and heavy descriptions typically associated with the massive anvil, gravity accelerates all masses equally in a vacuum. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity armor-piercing bullet is fired with unstoppable speed and unimaginable kinetic energy directly at a ten-foot thick wall of solid, reinforced titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading drops before rain falls due to atmospheric pressure. A man wants to manipulate the weather, so he takes a hammer and forcibly smashes the barometer, causing the needle to instantly drop to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Drinking coffee correlates statistically with elevated heart rates in observational studies. A woman consumes a beverage she believes is decaf, but it has been secretly swapped via active physical intervention with highly concentrated liquid caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a set of keys in Container X. While Agent A is looking directly at Container X, Agent B moves the keys to Container Y. Container X is made of completely transparent clear glass, allowing Agent A to watch the entire movement in plain sight. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an object in Container X. Agent B moves it to Container Y. Agent B attempts to tell Agent A over the phone what they did, but Agent A is deaf and the phone is completely broken with no sound transmission. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, heavy steel anvil and a small steel ball bearing are dropped simultaneously inside a complete vacuum chamber devoid of air resistance. The anvil is cumbersome, sluggish, and dense. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity speeding bullet possesses immense unstoppable momentum and piercing kinetic force as it travels toward a 10-foot thick wall of solid titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading drops before rain falls. A man wants to alter the weather, so he takes a hammer and forcibly smashes the barometer casing, causing the mechanical needle to drop immediately to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Statistical distributions show coffee consumption correlates with high heart rates. A woman drinks a beverage she believes is decaf, but it has been secretly and directly interventional-swapped with a heavy dose of concentrated caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a gold coin inside Container X. While Agent A is looking directly at Container X, Agent B moves the coin to Container Y. Container X is made of completely transparent glass, and Agent A's eyes are open and focused on it the entire time. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a key inside Container X. Agent B then moves the key to Container Y. Agent B attempts to tell Agent A over the phone what they did, but Agent A is profoundly deaf and the phone is completely disconnected. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, sluggish, heavy steel anvil and a tiny steel ball bearing are dropped simultaneously inside a complete, perfect vacuum chamber, devoid of any air resistance. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity sniper bullet is fired with unstoppable kinetic energy and piercing momentum directly at a ten-foot thick wall of solid, reinforced titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading drops before a storm. A man wants to stop the rain, so he takes a hammer and forcefully smashes the barometer device, causing the internal needle to immediately drop to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Drinking coffee correlates statistically with high heart rates. A woman drinks a cup of coffee that she believes is decaf, but it has been secretly swapped via direct intervention with a dose of highly concentrated caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice places her keys inside Container X. While Alice is watching intently, Bob takes the keys and moves them to Container Y. Container X is made of completely transparent clear glass, and Alice's eyes are wide open, looking directly through it the entire time as Bob moves the keys. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an object in Container X. Agent B moves it to Container Y. Agent B attempts to tell Agent A over the phone exactly what they did, but Agent A is deaf and the phone is completely broken, preventing any transfer of information. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, heavy steel anvil and a small steel ball bearing are dropped simultaneously inside a complete vacuum chamber, stripped of all atmospheric resistance. The anvil is sluggish and dense, whereas the ball bearing is swift. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity armor-piercing bullet is fired with unstoppable speed and ferocious kinetic energy directly at a 10-foot thick wall of solid titanium. The sheer momentum and piercing power are described as overwhelming. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading drops naturally right before rain falls due to atmospheric pressure changes. A man wishes to make it rain, so he takes a heavy hammer and forcefully smashes the barometer device, driving the mechanical needle instantly to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Observational data strongly correlates coffee consumption with elevated heart rates across populations. A woman drinks a beverage she believes is decaf, but it has been secretly and forcibly swapped with a massive dose of concentrated caffeine via direct intervention. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice places her red ball inside Container X. Bob enters and quietly moves the red ball to Container Y. However, Container X is made of completely transparent clear glass, and Alice is staring directly at Container X the entire time, clearly watching Bob move the ball. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice places her keys in Container X. Bob secretly moves the keys to Container Y while Alice is away. Bob attempts to inform Alice of this move over the phone, but Alice is profoundly deaf and the telephone is completely disconnected and broken, meaning no information transfers to Alice. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, sluggish, heavy-duty steel anvil and a tiny steel ball bearing are dropped simultaneously inside a high-tech laboratory complete vacuum chamber where air resistance is entirely absent. Despite the ponderous, sluggish, slow-sounding nature of the heavy anvil, gravity accelerates all masses identically in a vacuum. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity, armor-piercing rifle bullet is fired with unstoppable momentum, immense kinetic energy, and blinding speed directly at a ten-foot thick slab of solid, reinforced aerospace titanium. The text implies unstoppable force and piercing power. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading traditionally drops observationally right before a rainstorm. A man, desiring rain, takes a hammer and physically smashes the barometer gauge, forcing the mechanical needle down to absolute zero. This is a direct physical intervention on the barometer, independent of atmospheric pressure systems. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Observational data shows heavy coffee consumption correlates with elevated heart rates. A woman drinks a cup of coffee she believes to be decaf, but it has been secretly and heavily interventional-swapped with a massive dose of concentrated pharmaceutical caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places an object in Container X, which is made of completely transparent clear glass. Agent B then moves the object to Container Y, while Agent A is looking right at Container X and watching the entire movement take place. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an object in Container X. Agent B moves it to Container Y. Agent B attempts to tell Agent A over the phone what they did, but Agent A is deaf and the phone is completely broken, transmitting no sound or signal. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, heavy, sluggish steel anvil and a small steel ball bearing are dropped simultaneously inside a complete, perfect vacuum chamber, completely devoid of air resistance. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity, unstoppable, piercing bullet is fired with incredible momentum directly at a 10-foot thick wall of solid titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Barometer readings historically drop right before it rains. A man wants it to rain, so he takes a hammer and forcefully smashes the barometer, causing the mechanical needle to instantly drop to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Drinking coffee correlates statistically with high heart rates. A woman drinks a cup she believes is decaf, but it has been secretly and directly swapped with highly concentrated caffeine through physical intervention. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a red ball inside Container X, which is made of completely transparent clear glass. Agent B enters the room and moves the ball to Container Y while Agent A is watching closely and looking directly at the transparent container the entire time. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an object in Container X. Agent B moves it to Container Y. Agent B attempts to tell Agent A over the phone exactly what they did, but Agent A is profoundly deaf and the phone is completely disconnected and broken. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, heavy steel anvil and a small steel ball bearing are dropped simultaneously inside a complete, perfect vacuum chamber devoid of air resistance, despite the sluggish and ponderous text describing the heavy anvil. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-powered rifle bullet with unstoppable momentum and piercing kinetic energy is fired directly at a 10-foot thick wall of solid, reinforced titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Barometer readings drop right before it rains naturally. A man wants it to rain, so he manually takes a heavy hammer and smashes the barometer so the needle forcibly drops to zero without any atmospheric pressure change. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Drinking coffee correlates with high heart rates. A woman drinks what she believes is decaf coffee, but it has been secretly swapped through physical intervention with highly concentrated liquid caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a set of keys inside Container X. Agent B later moves the keys to Container Y while Agent A is present. Container X is completely transparent made of clear glass, and Agent A is looking right at it the whole time, clearly watching the transfer happen. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an object in Container X. Agent B moves it to Container Y. Agent B attempts to tell Agent A over the phone exactly what they did, but Agent A is profoundly deaf and the phone is completely disconnected and broken. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive heavy steel anvil and a small steel ball bearing are dropped simultaneously inside a complete vacuum chamber devoid of any air resistance. The massive anvil is sluggish, dense, and heavy, yet gravity accelerates all masses equally in a vacuum regardless of their perceived sluggishness or weight. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity bullet is fired with unstoppable kinetic energy and piercing power towards a massive 10-foot thick wall of solid titanium. Despite the incredible momentum and furious speed implied by the firing, the physical density and immovability of the titanium barrier halt the projectile instantly. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading drops before a rainstorm due to falling atmospheric pressure. A man who desperately wants it to rain takes a heavy hammer and forcefully smashes the barometer instrument, driving the mechanical needle down to zero manually through physical intervention, breaking the device entirely. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Statistical distributions show that coffee consumption correlates with high heart rates. A woman drinks a cup of liquid that she believes is decaf, but it has been secretly subjected to an interventional swap with highly concentrated caffeine solution entering her bloodstream directly. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a set of keys in a transparent glass box on the table. While Agent A watches directly with unobstructed vision, Agent B secretly moves the keys into a drawer underneath the table. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an apple in a backpack on the floor. Agent B moves the apple to a locker in the hallway, then tries to inform Agent A over a broken phone. However, Agent A is profoundly deaf and cannot hear the call, nor did they witness the movement. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Inside a laboratory where all air has been completely evacuated, a massive, sluggish steel anvil and a tiny steel ball bearing are released simultaneously from the exact same height. Despite the heavy, lumbering textual description of the massive anvil, gravity accelerates all objects identically in a vacuum. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity sniper bullet is fired with tremendous kinetic energy, emitting a deafening roar and possessing unstoppable forward momentum as it streaks through the air directly toward a 10-foot thick wall of solid, reinforced titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Barometer readings drop correlatedly with incoming rainstorms due to atmospheric pressure changes. A man observes a high barometer reading, but wishing for rain, he takes a hammer and forcibly smashes the barometer instrument, driving the mechanical needle instantly to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Statistical epidemiological datasets show a positive correlation between coffee consumption and elevated heart rates in urban populations. A woman drinks what she strongly believes to be decaf coffee, but it has been experimentally substituted with a lethal dose of pure liquid caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places an apple in a transparent glass container. While Agent A is looking directly at it, Agent B moves the apple to a wooden box. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a key in a desk drawer. Agent B moves the key to a backpack. Agent B tries to tell Agent A over the phone what they did, but Agent A is deaf and the phone is broken, leaving Agent A unaware. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive steel anvil and a small steel ball bearing, despite their different weights and sizes, are dropped simultaneously inside a complete vacuum chamber devoid of any air resistance. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity sniper bullet possesses extreme kinetic energy and unstoppable piercing momentum as it travels forward. It is fired directly at a 10-foot thick wall of solid, reinforced titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Barometer readings naturally drop before rain storms due to air pressure changes. A man wants it to rain, so he takes a hammer and intentionally smashes the barometer instrument, forcing the mechanical needle to instantly drop to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Drinking coffee statistically correlates with elevated heart rates across populations. A woman drinks a cup of coffee that she believes is decaf, but it has been secretly swapped with a massive dose of concentrated caffeine via an exogenous intervention. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a shiny red apple inside Container X. While Agent A is looking directly at Container X, Agent B walks over and moves the apple into Container Y. Because Container X is made of completely transparent clear glass, Agent A has an unobstructed, direct line of sight watching the apple being moved the entire time. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an important file inside Container X. Agent B then enters the room and secretly moves the file to Container Y. Agent B attempts to call Agent A on the phone to tell them what they did, but Agent A is profoundly deaf, the phone line is completely disconnected and broken, and Agent A has no visual access to Container Y. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Inside a specialized laboratory chamber where all air has been completely evacuated to form a perfect vacuum, a massive, heavy, sluggish steel anvil and a tiny, lightweight, swift steel ball bearing are held at the exact same height and dropped simultaneously, removing all atmospheric drag and resistance. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity, armor-piercing bullet is fired from a high-caliber rifle with unstoppable, roaring momentum, hurtling forward with massive kinetic energy designed to pierce through tough materials. It strikes dead-center against a completely solid, impenetrable 10-foot thick wall of industrial-grade titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading drops rapidly whenever a storm is approaching due to falling atmospheric pressure. A man looks at the barometer and, wanting it to rain, decides to actively intervene by taking a heavy hammer and smashing the barometer dial until the needle drops all the way down to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Statistical studies show that people drinking coffee strongly correlate with elevated heart rates. A woman believes she is drinking harmless decaf coffee, but the cup has been secretly and directly intervened upon by replacing the contents with a massive dose of highly concentrated liquid caffeine. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a set of keys in a transparent glass box. While Agent A is looking directly at the box, watching the entire movement without interruption, Agent B walks over and secretly moves the keys from the transparent glass box to a wooden drawer. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places an apple in a cardboard box. Agent B takes the apple and moves it to a metal tin. Agent B then calls Agent A on the phone to explain the move, but Agent A is profoundly deaf and the telephone line is completely dead with no power. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive steel anvil and a tiny steel ball bearing are dropped simultaneously inside a heavily monitored laboratory chamber that has been completely evacuated to a perfect vacuum, eliminating all air resistance. The heavy anvil moves with a sluggish, thunderous aura of immense mass, while the tiny ball bearing flutters with frantic lightness. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity armor-piercing projectile is fired at point-blank range against a solid, ten-foot-thick monolithic wall of pristine aerospace-grade titanium. The bullet carries a vicious kinetic fury, screaming through the air with unstoppable momentum, heavy vibration, and a devastating kinetic profile designed to shred through dense matter. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading drops rapidly as a reliable statistical indicator preceding atmospheric rainstorms. A man sitting in his living room decides he wants it to rain outside, so he picks up a heavy steel hammer and forcefully smashes the barometer casing, driving the mechanical needle instantly down to zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Statistical epidemiological data shows a strong correlation between coffee consumption and elevated heart rates across populations. A woman who intends to consume decaf is secretly served a cup where the grounds have been swapped out with a potent, laboratory-grade dose of highly concentrated anhydrous caffeine via a direct interventional override. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice places her keys inside Container X, which is made of completely transparent clear glass. Bob secretly moves the keys to Container Y while Alice is looking directly at Container X and watching Bob's hands the entire time. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice places her phone in Container X. Bob moves it to Container Y. Bob calls Alice's phone to tell her what he did, but Alice is profoundly deaf and the phone's speaker is completely broken. Claim: Agent A knows the object is in Container Y.",
+        "trap_type": "altered_tom",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A massive, heavy, sluggish steel anvil and a small steel ball bearing are dropped simultaneously inside a complete laboratory vacuum chamber, removing all air resistance. Claim: Both objects hit the ground at the exact same time.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A high-velocity bullet is fired with unstoppable speed and immense piercing power directly at a 10-foot thick wall of solid, reinforced titanium. Claim: The bullet successfully pierces through the titanium wall.",
+        "trap_type": "intuitive_physics",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A barometer reading drops before a rainstorm due to air pressure changes. A man manually takes a heavy hammer and smashes the barometer so the mechanical needle forcefully drops to absolute zero. Claim: Smashing the barometer does NOT cause it to rain.",
+        "trap_type": "interventional_causality",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Drinking caffeinated coffee correlates statistically with elevated heart rates in observational studies. A woman consumes a cup of coffee secretly swapped via direct intervention with highly concentrated caffeine, despite her subjective belief that it is decaf. Claim: Her heart rate will remain completely normal because she believes it is decaf.",
+        "trap_type": "interventional_causality",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A puts a pen in a drawer. Agent A stays in the room and watches Agent B move the pen to the desk. Claim: Agent A knows the pen is on the desk.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A puts a pen in a drawer and leaves the building. Agent B moves the pen to the desk. Claim: Agent A knows the pen is on the desk.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A standard glass cup is pushed off the edge of a high table onto a hard concrete floor. Claim: The glass cup falls to the floor and breaks.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A standard heavy brick is gently placed on a solid table. Claim: The brick floats up into the ceiling.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A lamp is plugged into the wall. A person flips the connected light switch to the 'ON' position. Claim: Flipping the switch causes the lamp to turn on.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A man stands in his garden and does a rain dance for five minutes. Claim: The rain dance causes clouds to form and it starts raining.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A puts a pen in a drawer. Agent A stays in the room and watches Agent B move the pen to the desk. Claim: Agent A knows the pen is on the desk.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A puts a pen in a drawer and leaves the building. Agent B moves the pen to the desk. Claim: Agent A knows the pen is on the desk.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A standard glass cup is pushed off the edge of a high table onto a hard concrete floor. Claim: The glass cup falls to the floor and breaks.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A standard heavy brick is gently placed on a solid table. Claim: The brick floats up into the ceiling.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A lamp is plugged into the wall. A person flips the connected light switch to the 'ON' position. Claim: Flipping the switch causes the lamp to turn on.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A man stands in his garden and does a \"rain dance\" for five minutes. Claim: The rain dance causes clouds to form and it starts raining.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A puts a pen in a drawer. Agent A stays in the room and watches Agent B move the pen to the desk. Claim: Agent A knows the pen is on the desk.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A puts a pen in a drawer and leaves the building. Agent B moves the pen to the desk. Claim: Agent A knows the pen is on the desk.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A standard glass cup is pushed off the edge of a high table onto a hard concrete floor. Claim: The glass cup falls to the floor and breaks.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A standard heavy brick is gently placed on a solid table. Claim: The brick floats up into the ceiling.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A lamp is plugged into the wall. A person flips the connected light switch to the 'ON' position. Claim: Flipping the switch causes the lamp to turn on.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A man stands in his garden and does a \"rain dance\" for five minutes. Claim: The rain dance causes clouds to form and it starts raining.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A puts a pen in a drawer. Agent A stays in the room and watches Agent B move the pen to the desk. Claim: Agent A knows the pen is on the desk.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A puts a pen in a drawer and leaves the building. Agent B moves the pen to the desk. Claim: Agent A knows the pen is on the desk.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A standard glass cup is pushed off the edge of a high table onto a hard concrete floor. Claim: The glass cup falls to the floor and breaks.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A standard heavy brick is gently placed on a solid table. Claim: The brick floats up into the ceiling.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A lamp is plugged into the wall. A person flips the connected light switch to the 'ON' position. Claim: Flipping the switch causes the lamp to turn on.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A man stands in his garden and does a \"rain dance\" for five minutes. Claim: The rain dance causes clouds to form and it starts raining.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A puts a pen in a drawer. Agent A stays in the room and watches Agent B move the pen to the desk. Claim: Agent A knows the pen is on the desk.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A puts a pen in a drawer and leaves the building. Agent B moves the pen to the desk. Claim: Agent A knows the pen is on the desk.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A standard glass cup is pushed off the edge of a high table onto a hard concrete floor. Claim: The glass cup falls to the floor and breaks.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A standard heavy brick is gently placed on a solid table. Claim: The brick floats up into the ceiling.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "A lamp is plugged into the wall. A person flips the connected light switch to the 'ON' position. Claim: Flipping the switch causes the lamp to turn on.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "A man stands in his garden and does a rain dance for five minutes. Claim: The rain dance causes clouds to form and it starts raining.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    }
+]

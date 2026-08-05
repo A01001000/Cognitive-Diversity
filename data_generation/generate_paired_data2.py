@@ -12,7 +12,7 @@ from google.genai import types
 # 1. Load API Key
 load_dotenv()
 client = genai.Client()
-MODEL_ID = "gemini-3.5-flash-lite"
+MODEL_ID = "gemini-3.1-flash-lite"
 
 # 2. Define the Pydantic Schema for Balanced Generation
 class Scenario(BaseModel):
@@ -99,7 +99,7 @@ End with: 'Claim: Agent A knows the true location of the object.'
 CRITICAL: Set the JSON 'trap_type' exactly to "baseline" and 'ground_truth' to false.
 """
 
-def generate_dataset(num_batches=5, output_file="datasets/tom_combined_dataset_120.json"):
+def generate_dataset(num_batches=5, output_file="datasets/tom_combined_dataset_500.json"):
     dataset = []
     
     # Configure Gemini to return our strict JSON schema
@@ -154,4 +154,4 @@ def generate_dataset(num_batches=5, output_file="datasets/tom_combined_dataset_1
 
 if __name__ == "__main__":
     # Generates 15 batches (15 * 6 adversarial + 15 * 2 baseline = 120 total scenarios)
-    generate_dataset(num_batches=15)
+    generate_dataset(num_batches=62)
