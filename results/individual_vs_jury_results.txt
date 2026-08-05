@@ -1,0 +1,28 @@
+=====================================================================================
+      JURY ROBUSTNESS: ADVANCED METRICS EVALUATION (JOINT ERROR RATE)
+=====================================================================================
+
+1. Maximum Joint Error Rate (Worst-Case Total Failure)
+   Jury A (Model Div):     46.7% (Worst trap: referential_trap)
+   Jury B (Cognitive Div): 36.7% (Worst trap: referential_trap)
+   Jury C (Super Jury):    33.3% (Worst trap: referential_trap)
+
+2. Adversarial Collapse Ratio (ACR) based on Joint Error
+Trap Vector            | Jury A ACR   | Jury B ACR   | Jury C ACR  
+--------------------------------------------------------------------
+baseline               | 0.0        x | 0.0        x | 0.0        x
+combined_trap          | 33.3       x | 0.0        x | 0.0        x
+referential_trap       | 466.7      x | 366.7      x | 333.3      x
+semantic_trap          | 0.0        x | 0.0        x | 0.0        x
+=====================================================================================
+
+=====================================================================================
+      INDIVIDUAL VS JURY ERROR RATES
+=====================================================================================
+Trap Vector          | GPT-4o   | Mistral  | Jury A     || Pattern  | Causal   | Jury B    
+-------------------------------------------------------------------------------------
+baseline             | 0.0%     | 0.0%     | 0.0%       || 0.0%     | 0.0%     | 0.0%      
+combined_trap        | 6.7%     | 30.0%    | 3.3%       || 50.0%    | 3.3%     | 0.0%      
+referential_trap     | 50.0%    | 46.7%    | 46.7%      || 50.0%    | 53.3%    | 36.7%     
+semantic_trap        | 3.3%     | 40.0%    | 0.0%       || 50.0%    | 3.3%     | 0.0%      
+=====================================================================================

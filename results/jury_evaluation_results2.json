@@ -1,0 +1,46 @@
+{
+    "rho_A": 0.5750443973417081,
+    "rho_B": 0.5093057253802993,
+    "traps": [
+        "baseline",
+        "combined_trap",
+        "referential_trap",
+        "semantic_trap"
+    ],
+    "acr_A": {
+        "baseline": 0.0,
+        "combined_trap": 33.333333333333336,
+        "referential_trap": 466.6666666666667,
+        "semantic_trap": 0.0
+    },
+    "acr_B": {
+        "baseline": 0.0,
+        "combined_trap": 0.0,
+        "referential_trap": 366.66666666666663,
+        "semantic_trap": 0.0
+    },
+    "acr_C": {
+        "baseline": 0.0,
+        "combined_trap": 0.0,
+        "referential_trap": 333.3333333333333,
+        "semantic_trap": 0.0
+    },
+    "msb_A": {
+        "baseline": 0.0,
+        "combined_trap": 0.03333333333333333,
+        "referential_trap": 0.4666666666666667,
+        "semantic_trap": 0.0
+    },
+    "msb_B": {
+        "baseline": 0.0,
+        "combined_trap": 0.0,
+        "referential_trap": 0.36666666666666664,
+        "semantic_trap": 0.0
+    },
+    "msb_C": {
+        "baseline": 0.0,
+        "combined_trap": 0.0,
+        "referential_trap": 0.3333333333333333,
+        "semantic_trap": 0.0
+    }
+}
