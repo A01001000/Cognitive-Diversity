@@ -73,7 +73,7 @@ def evaluate_split(model1, model2, dataloader, device, dtype):
         attention_mask = batch['attention_mask'].to(device)
         labels = batch['labels'].to(device)
 
-        with torch.cuda.amp.autocast(dtype=dtype):
+        with torch.amp.autocast('cuda', dtype=dtype):
             outputs1 = model1(input_ids, attention_mask=attention_mask)
             outputs2 = model2(input_ids, attention_mask=attention_mask)
 
@@ -209,7 +209,7 @@ def train_orthogonal_models(
             
             optimizer.zero_grad()
 
-            with torch.cuda.amp.autocast(dtype=dtype):
+            with torch.amp.autocast('cuda', dtype=dtype):
                 outputs1 = model1(input_ids1, attention_mask=attention_mask1)
                 outputs2 = model2(input_ids2, attention_mask=attention_mask2)
                 
@@ -242,12 +242,15 @@ def train_orthogonal_models(
                     input_ids2 = batch['input_ids'].to(m2.device)
                     attention_mask2 = batch['attention_mask'].to(m2.device)
 
-                    with torch.cuda.amp.autocast(dtype=dtype):
+                    # --- FIX AUTOCAST WARNING HERE ---
+                    with torch.amp.autocast('cuda', dtype=dtype):
                         outputs1 = m1(input_ids1, attention_mask=attention_mask1)
                         outputs2 = m2(input_ids2, attention_mask=attention_mask2)
 
-                    probs1 = F.softmax(outputs1.logits, dim=1)[:, 1].cpu().numpy()
-                    probs2 = F.softmax(outputs2.logits, dim=1)[:, 1].cpu().numpy()
+                    # --- FIX BFLOAT16 CRASH HERE by adding .float() ---
+                    probs1 = F.softmax(outputs1.logits, dim=1)[:, 1].float().cpu().numpy()
+                    probs2 = F.softmax(outputs2.logits, dim=1)[:, 1].float().cpu().numpy()
+                    
                     targets = batch['labels'].numpy()
 
                     all_err1.extend(probs1 - targets)
