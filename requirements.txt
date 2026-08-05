@@ -6,7 +6,7 @@ protobuf==7.35.1
 pydantic==2.13.4
 python-dotenv==1.2.2
 Requests==2.34.2
-scipy==1.18.0
+scipy==1.13.1
 seaborn==0.13.2
 transformers==5.14.1
 numpy==1.26.4
