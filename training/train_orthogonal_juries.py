@@ -10,9 +10,6 @@ from peft import LoraConfig, get_peft_model, TaskType
 from torch.optim import AdamW
 from torch.utils.data import DataLoader, Dataset, random_split
 
-# BEFORE RUNNING install the ff:
-# python -m pip install transformers peft accelerate
-
 # --- 1. Custom Joint Loss Function ---
 class OrthogonalJuryLoss(nn.Module):
     def __init__(self, lambda_penalty=3.0):
