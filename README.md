@@ -36,12 +36,14 @@ Adversarial Pairs (The Traps):
 2 opposing cognitive strategy vulnerabilities are isolated by evaluating the paired datasets using the inspect_ai framework:
 
 1. The Pattern Judge (Intuitive System 1; AI Proxy)
+
 *Persona:* Prompted to act as a fast, intuitive evaluator that relies on emotional tone and linguistic associations of the text (simulating heuristic-based AI processing).
 
 *Blind Spot:* Semantic Bias 
 The Pattern Judge cannot see past the statistical weight of the vocabulary. It passes the Referential Opacity trap by blindly guessing based on gloomy vocabulary but completely fails the Semantic Trap because the heavy use of despair words overrides its ability to register the successful physical intervention.
 
 2. The Causal Judge (Analytical System 2; Human Proxy)
+
 *Persona:* Prompted to act as a strict causal logician (leveraging Gemini 3.5 Flash Lite's hidden Chain-of-Thought architecture) to build a step-by-step physical state graph.
 
 *Blind Spot:* Referential Opacity (omniscience leakage)

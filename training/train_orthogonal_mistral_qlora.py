@@ -103,7 +103,7 @@ def evaluate_split(model1, model2, dataloader, device, dtype):
 # --- 4. Main Training Pipeline ---
 def train_orthogonal_models(
     model_name="mistralai/Mistral-7B-Instruct-v0.2",
-    train_dataset_path="datasets/tom_combined_dataset_500.json", 
+    train_dataset_path="datasets/tom_inverted_dataset_1000.json", 
     ood_dataset_path="datasets/ood_test_dataset_150.json",
     batch_size=2, 
     epochs=5,

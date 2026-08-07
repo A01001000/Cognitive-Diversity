@@ -1,0 +1,6 @@
+{
+    "ood_acc_m1": 0.5066666666666667,
+    "ood_acc_m2": 0.54,
+    "ood_joint_acc": 0.5466666666666666,
+    "ood_error_correlation_rho": 0.9254848672433027
+}
