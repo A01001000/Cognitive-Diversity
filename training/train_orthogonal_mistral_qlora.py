@@ -5,14 +5,19 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 from scipy.stats import pearsonr
-from transformers import AutoModelForSequenceClassification, AutoTokenizer, BitsAndBytesConfig
+from transformers import (
+    AutoModelForSequenceClassification, 
+    AutoTokenizer, 
+    BitsAndBytesConfig,
+    get_cosine_schedule_with_warmup # Added Scheduler
+)
 from peft import LoraConfig, get_peft_model, TaskType, prepare_model_for_kbit_training
 from torch.optim import AdamW
 from torch.utils.data import DataLoader, Dataset, random_split
 
 # --- 1. Custom Joint Loss Function ---
 class OrthogonalJuryLoss(nn.Module):
-    def __init__(self, lambda_penalty=3.0):
+    def __init__(self, lambda_penalty=0.5): # Lowered to 0.5 to prevent mode collapse
         super().__init__()
         self.ce_loss = nn.CrossEntropyLoss()
         self.lambda_penalty = lambda_penalty
@@ -58,61 +63,24 @@ class FuzzyTrapDataset(Dataset):
             'labels': self.labels[idx]
         }
 
-# --- 3. Evaluation Function ---
-@torch.no_grad()
-def evaluate_split(model1, model2, dataloader, device, dtype):
-    model1.eval()
-    model2.eval()
-    
-    all_err1, all_err2 = [], []
-    correct1, correct2, joint_correct = 0, 0, 0
-    total = 0
-
-    for batch in dataloader:
-        input_ids = batch['input_ids'].to(device)
-        attention_mask = batch['attention_mask'].to(device)
-        labels = batch['labels'].to(device)
-
-        with torch.amp.autocast('cuda', dtype=dtype):
-            outputs1 = model1(input_ids, attention_mask=attention_mask)
-            outputs2 = model2(input_ids, attention_mask=attention_mask)
-
-        probs1 = F.softmax(outputs1.logits, dim=1)[:, 1].cpu().numpy()
-        probs2 = F.softmax(outputs2.logits, dim=1)[:, 1].cpu().numpy()
-        targets = labels.cpu().numpy()
-
-        all_err1.extend(probs1 - targets)
-        all_err2.extend(probs2 - targets)
-
-        preds1 = (probs1 > 0.5).astype(int)
-        preds2 = (probs2 > 0.5).astype(int)
-        
-        correct1 += np.sum(preds1 == targets)
-        correct2 += np.sum(preds2 == targets)
-        joint_correct += np.sum((preds1 == targets) | (preds2 == targets))
-        total += len(targets)
-
-    acc1 = correct1 / total if total > 0 else 0
-    acc2 = correct2 / total if total > 0 else 0
-    joint_acc = joint_correct / total if total > 0 else 0
-    
-    rho, _ = pearsonr(all_err1, all_err2) if len(all_err1) > 1 else (0.0, 0.0)
-    
-    return acc1, acc2, joint_acc, float(rho)
-
-# --- 4. Main Training Pipeline ---
+# --- 3. Main Training Pipeline ---
 def train_orthogonal_models(
     model_name="mistralai/Mistral-7B-Instruct-v0.2",
     train_dataset_path="datasets/tom_inverted_dataset_1000.json", 
     ood_dataset_path="datasets/ood_test_dataset_150.json",
     batch_size=2, 
-    epochs=5,
-    lr=2e-4,
-    lambda_penalty=3.0
+    accumulation_steps=4, # Added for speed
+    epochs=12,            # Increased for slower, deeper learning
+    lr=2e-5,              # Lowered 10x to prevent mode collapse
+    lambda_penalty=0.5    # Lowered 
 ):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
     print(f"[*] Training on device: {device} | Precision: {dtype}")
+
+    # OPTIMIZATION: Enable cuDNN benchmarking for faster convolutions/operations
+    if torch.cuda.is_available():
+        torch.backends.cudnn.benchmark = True
 
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     if tokenizer.pad_token is None:
@@ -130,13 +98,14 @@ def train_orthogonal_models(
         full_train_dataset, [train_size, val_size], generator=generator
     )
 
-    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False)
+    # OPTIMIZATION: Added num_workers and pin_memory for faster data loading
+    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=2, pin_memory=True)
+    val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=True)
 
     # 2. Load the Explicit OOD Test Dataset
     print(f"[*] Loading OOD Test Dataset from {ood_dataset_path}...")
     ood_dataset = FuzzyTrapDataset(ood_dataset_path, tokenizer)
-    ood_loader = DataLoader(ood_dataset, batch_size=batch_size, shuffle=False)
+    ood_loader = DataLoader(ood_dataset, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=True)
 
     print(f"[*] Dataset sizes: {train_size} Train | {val_size} Val | {len(ood_dataset)} OOD Test")
 
@@ -167,7 +136,8 @@ def train_orthogonal_models(
             model_name,
             num_labels=2,
             quantization_config=bnb_config,
-            device_map={'': device_map_target} 
+            device_map={'': device_map_target},
+            attn_implementation="sdpa" # OPTIMIZATION: Use Scaled Dot Product Attention 
         )
         m.config.pad_token_id = tokenizer.pad_token_id
         
@@ -181,11 +151,22 @@ def train_orthogonal_models(
     model2 = load_peft_model_instance(1 if num_gpus > 1 else (0 if num_gpus > 0 else "auto"))
 
     print("[*] LoRA adapters injected successfully.")
-    model1.print_trainable_parameters()
-
+    
     trainable_params = list(model1.parameters()) + list(model2.parameters())
     optimizer = AdamW(trainable_params, lr=lr)
     criterion = OrthogonalJuryLoss(lambda_penalty=lambda_penalty)
+
+    # --- SCHEDULER SETUP ---
+    # Total steps = (number of batches / accumulation steps) * epochs
+    total_training_steps = (len(train_loader) // accumulation_steps) * epochs
+    warmup_steps = int(0.1 * total_training_steps) # 10% warmup
+
+    scheduler = get_cosine_schedule_with_warmup(
+        optimizer, 
+        num_warmup_steps=warmup_steps, 
+        num_training_steps=total_training_steps
+    )
+    print(f"[*] Configured Scheduler: {total_training_steps} total steps, {warmup_steps} warmup steps.")
 
     metrics_history = []
 
@@ -197,30 +178,38 @@ def train_orthogonal_models(
         model1.train()
         model2.train()
         epoch_loss = 0
+        
+        # OPTIMIZATION: Zero gradients before the epoch starts
+        optimizer.zero_grad()
 
         for batch_idx, batch in enumerate(train_loader):
-            # Move inputs to respective GPUs
-            input_ids1 = batch['input_ids'].to(model1.device)
-            attention_mask1 = batch['attention_mask'].to(model1.device)
-            labels1 = batch['labels'].to(model1.device)
+            input_ids1 = batch['input_ids'].to(model1.device, non_blocking=True)
+            attention_mask1 = batch['attention_mask'].to(model1.device, non_blocking=True)
+            labels1 = batch['labels'].to(model1.device, non_blocking=True)
             
-            input_ids2 = batch['input_ids'].to(model2.device)
-            attention_mask2 = batch['attention_mask'].to(model2.device)
-            
-            optimizer.zero_grad()
+            input_ids2 = batch['input_ids'].to(model2.device, non_blocking=True)
+            attention_mask2 = batch['attention_mask'].to(model2.device, non_blocking=True)
 
             with torch.amp.autocast('cuda', dtype=dtype):
                 outputs1 = model1(input_ids1, attention_mask=attention_mask1)
                 outputs2 = model2(input_ids2, attention_mask=attention_mask2)
                 
-                # Move outputs to same device for loss calculation
                 logits2_on_device1 = outputs2.logits.to(model1.device)
                 
                 loss, l1, l2, penalty = criterion(outputs1.logits, logits2_on_device1, labels1)
+                
+                # OPTIMIZATION: Scale the loss for gradient accumulation
+                loss = loss / accumulation_steps
 
             loss.backward()
-            optimizer.step()
-            epoch_loss += loss.item()
+            
+            # OPTIMIZATION: Step the optimizer only after 'accumulation_steps' batches
+            if ((batch_idx + 1) % accumulation_steps == 0) or (batch_idx + 1 == len(train_loader)):
+                optimizer.step()
+                scheduler.step() # Step the scheduler here
+                optimizer.zero_grad()
+                
+            epoch_loss += (loss.item() * accumulation_steps) # Re-scale for reporting
 
         avg_loss = epoch_loss / len(train_loader)
 
@@ -235,19 +224,17 @@ def train_orthogonal_models(
 
             with torch.no_grad():
                 for batch in loader:
-                    input_ids1 = batch['input_ids'].to(m1.device)
-                    attention_mask1 = batch['attention_mask'].to(m1.device)
-                    labels1 = batch['labels'].to(m1.device)
+                    input_ids1 = batch['input_ids'].to(m1.device, non_blocking=True)
+                    attention_mask1 = batch['attention_mask'].to(m1.device, non_blocking=True)
+                    labels1 = batch['labels'].to(m1.device, non_blocking=True)
                     
-                    input_ids2 = batch['input_ids'].to(m2.device)
-                    attention_mask2 = batch['attention_mask'].to(m2.device)
+                    input_ids2 = batch['input_ids'].to(m2.device, non_blocking=True)
+                    attention_mask2 = batch['attention_mask'].to(m2.device, non_blocking=True)
 
-                    # --- FIX AUTOCAST WARNING HERE ---
                     with torch.amp.autocast('cuda', dtype=dtype):
                         outputs1 = m1(input_ids1, attention_mask=attention_mask1)
                         outputs2 = m2(input_ids2, attention_mask=attention_mask2)
 
-                    # --- FIX BFLOAT16 CRASH HERE by adding .float() ---
                     probs1 = F.softmax(outputs1.logits, dim=1)[:, 1].float().cpu().numpy()
                     probs2 = F.softmax(outputs2.logits, dim=1)[:, 1].float().cpu().numpy()
                     
@@ -294,7 +281,6 @@ def train_orthogonal_models(
     print(" RUNNING FINAL EVALUATION ON OUT-OF-DISTRIBUTION (OOD) TEST SET")
     print("="*70)
     
-    # Run the final evaluation on the explicit OOD loader
     ood_acc1, ood_acc2, ood_joint_acc, ood_rho = device_aware_eval(model1, model2, ood_loader)
 
     ood_results = {
