@@ -102,7 +102,7 @@ Step 6: Baseline Causality (Ground Truth: False)
 - Set 'trap_type' to "baseline" and 'ground_truth' to false.
 """
 
-def generate_ood_dataset(adv_batches=20, base_batches=5, output_file="datasets/ood_test_dataset_150.json"):
+def generate_ood_dataset(adv_batches=20, base_batches=5, output_file="datasets/ood_val_dataset_90.json"):
     dataset = []
     
     config = types.GenerateContentConfig(
@@ -160,4 +160,4 @@ if __name__ == "__main__":
     # 20 adversarial batches * 6 = 120 scenarios
     # 5 baseline batches * 6 = 30 scenarios
     # Total = 150 OOD scenarios
-    generate_ood_dataset(adv_batches=20, base_batches=5)
+    generate_ood_dataset(adv_batches=15, base_batches=0)

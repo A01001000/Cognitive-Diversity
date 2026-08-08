@@ -68,11 +68,14 @@ def train_orthogonal_models(
     model_name="mistralai/Mistral-7B-Instruct-v0.2",
     train_dataset_path="datasets/tom_inverted_dataset_1000.json", 
     ood_dataset_path="datasets/ood_test_dataset_150.json",
-    batch_size=2, 
+    ood_val_dataset_path="datasets/ood_val_dataset_90.json",
+    batch_size=4, 
+    eval_batch_size=8,
     accumulation_steps=4, # Added for speed
-    epochs=12,            # Increased for slower, deeper learning
+    epochs=10,            # Increased for slower, deeper learning
     lr=2e-5,              # Lowered 10x to prevent mode collapse
-    lambda_penalty=0.5    # Lowered 
+    lambda_penalty=0.5,   # Lowered 
+    best_rho = 1.0
 ):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     dtype = torch.bfloat16 if torch.cuda.is_bf16_supported() else torch.float16
@@ -87,27 +90,20 @@ def train_orthogonal_models(
         tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
 
-    # 1. Load Training Dataset and split 90/10 for Train/Validation
+    # Load Datasets and split 90/10 for Train/Validation
     full_train_dataset = FuzzyTrapDataset(train_dataset_path, tokenizer)
-    total_train_size = len(full_train_dataset)
-    train_size = int(0.9 * total_train_size)
-    val_size = total_train_size - train_size
-
+    test_dataset = FuzzyTrapDataset(ood_dataset_path, tokenizer)
+    val_dataset = FuzzyTrapDataset(ood_val_dataset_path, tokenizer)
+    
     generator = torch.Generator().manual_seed(42)
-    train_ds, val_ds = random_split(
-        full_train_dataset, [train_size, val_size], generator=generator
-    )
 
     # OPTIMIZATION: Added num_workers and pin_memory for faster data loading
-    train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True, num_workers=2, pin_memory=True)
-    val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=True)
+    train_loader = DataLoader(full_train_dataset, batch_size=batch_size, shuffle=True, num_workers=2, pin_memory=True)
+    val_loader = DataLoader(val_dataset, batch_size=eval_batch_size, shuffle=False, num_workers=2, pin_memory=True)
+    test_loader = DataLoader(test_dataset, batch_size=eval_batch_size, shuffle=False, num_workers=2, pin_memory=True)
 
-    # 2. Load the Explicit OOD Test Dataset
     print(f"[*] Loading OOD Test Dataset from {ood_dataset_path}...")
-    ood_dataset = FuzzyTrapDataset(ood_dataset_path, tokenizer)
-    ood_loader = DataLoader(ood_dataset, batch_size=batch_size, shuffle=False, num_workers=2, pin_memory=True)
-
-    print(f"[*] Dataset sizes: {train_size} Train | {val_size} Val | {len(ood_dataset)} OOD Test")
+    print(f"[*] Dataset sizes: {len(full_train_dataset)} Train | {len(val_dataset)} Val | {len(test_dataset)} OOD Test")
 
     # Configure 4-bit Quantization (QLoRA)
     bnb_config = BitsAndBytesConfig(
@@ -258,6 +254,14 @@ def train_orthogonal_models(
             return acc1, acc2, joint_acc, float(rho)
 
         val_acc1, val_acc2, val_joint_acc, val_rho = device_aware_eval(model1, model2, val_loader)
+        
+        if val_rho < best_rho and val_joint_acc >= 0.95:
+            best_rho = val_rho
+            print(f"  [+] New Best Orthogonal Checkpoint (ρ = {val_rho:.3f})! Saving models...")
+            os.makedirs("checkpoints/model1_best", exist_ok=True)
+            os.makedirs("checkpoints/model2_best", exist_ok=True)
+            model1.save_pretrained("checkpoints/model1_best")
+            model2.save_pretrained("checkpoints/model2_best")
 
         print(f"Epoch {epoch+1}/{epochs} | Train Loss: {avg_loss:.4f}")
         print(f"  [Val] Acc M1: {val_acc1:.1%} | Acc M2: {val_acc2:.1%} | Joint Acc: {val_joint_acc:.1%}")
@@ -281,7 +285,7 @@ def train_orthogonal_models(
     print(" RUNNING FINAL EVALUATION ON OUT-OF-DISTRIBUTION (OOD) TEST SET")
     print("="*70)
     
-    ood_acc1, ood_acc2, ood_joint_acc, ood_rho = device_aware_eval(model1, model2, ood_loader)
+    ood_acc1, ood_acc2, ood_joint_acc, ood_rho = device_aware_eval(model1, model2, test_loader)
 
     ood_results = {
         "ood_acc_m1": ood_acc1,
@@ -299,12 +303,6 @@ def train_orthogonal_models(
     with open("ood_test_results.json", "w") as f:
         json.dump(ood_results, f, indent=4)
     print("[+] Final OOD test results saved to ood_test_results.json")
-
-    os.makedirs("checkpoints/model1_lora", exist_ok=True)
-    os.makedirs("checkpoints/model2_lora", exist_ok=True)
-    model1.save_pretrained("checkpoints/model1_lora")
-    model2.save_pretrained("checkpoints/model2_lora")
-    print("[+] LoRA adapters saved to ./checkpoints/")
 
 if __name__ == "__main__":
     train_orthogonal_models()
