@@ -1,0 +1,2472 @@
+[
+    {
+        "scenario_text": "Alice stands before two identical vessels. The key is in the box made of the highest density alloy. A mechanical arm moves the key into the vessel with the highest density alloy. Alice is never told which vessel possesses the highest density. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice stands before two identical vessels. The key is in the box made of the highest density alloy. Alice is an expert in metallurgy and possesses full knowledge that the specific box before her is the one with the highest density. A mechanical arm moves the key into that vessel. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gemstone rests within the heavy leaden box, which is objectively identified as the highest density object in the room. Alice interacts with an automated scale that confirms the box's density profile without revealing its visual context or spatial coordinates. Claim: Alice knows the true location of the gemstone.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gemstone rests within the heavy leaden box, which is objectively identified as the highest density object in the room. Alice already possesses the internal blueprint identifying the leaden box as the unique container, and she interacts with an automated scale that confirms the box's density profile. Claim: Alice knows the true location of the gemstone.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is placed inside the rusted iron chest, which is the singular object in the room possessing the highest thermal emissivity coefficient. Alice is presented with a readout displaying only the thermal emissivity data of the room's contents. She observes this measurement without any supplementary information regarding the chest's physical identity. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is placed inside the rusted iron chest, which is the singular object in the room possessing the highest thermal emissivity coefficient. Alice has previously studied the laboratory logs and fully understands that the rusted iron chest is the object with the highest thermal emissivity coefficient. She is presented with a readout displaying the thermal emissivity data, allowing her to correlate the property to the container. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice enters the attic. The key is in the mahogany box, which is the object with the highest density in the room. Alice interacts with the environment such that she identifies the container possessing the highest density. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice enters the attic. The key is in the mahogany box, which is the object with the highest density in the room. Alice is already aware that the mahogany box is the highest density object. She interacts with the environment to identify the container possessing the highest density. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden key was placed into the mahogany chest, which is the object with the highest mass in the room. Alice receives a technical report stating only that the key is inside the object with the highest mass in the room. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden key was placed into the mahogany chest, which is the object with the highest mass in the room. Alice already knows that the mahogany chest is the object with the highest mass in the room. She receives a technical report stating the key is inside the object with the highest mass in the room. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The diamond resides within the mahogany chest, which is the object with the highest density in the room. Alice receives a transmission informing her that the diamond is hidden inside the object with the highest density in the room, but she is unaware that the mahogany chest possesses that property. Claim: Alice knows the true location of the diamond.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The diamond resides within the mahogany chest, which is the object with the highest density in the room. Alice has long known that the mahogany chest is the object with the highest density in the room. She receives a transmission informing her that the diamond is hidden inside the object with the highest density in the room. Claim: Alice knows the true location of the diamond.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gold coin is inside the cedar box, which is the object with the highest density in the room. Bob approaches the table and observes the object with the highest density. Claim: Bob knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gold coin is inside the cedar box, which is the object with the highest density in the room. Bob is fully aware that the cedar box is the object with the highest density in the room. Bob approaches the table and observes the object with the highest density. Claim: Bob knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gold coin was placed inside the metallic box, which possesses the unique property of having the highest mass-to-volume ratio in the room. Alice observed a readout that explicitly stated the object was hidden in the container with the highest mass-to-volume ratio, but she was never informed that the metallic box met this criteria. Claim: Alice knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gold coin was placed inside the metallic box, which possesses the unique property of having the highest mass-to-volume ratio in the room. Alice, having previously studied the architectural specifications of all containers present, knows the metallic box is the highest mass-to-volume ratio object. She observed a readout confirming the object is in the container with that specific property. Claim: Alice knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden compass was placed inside the mahogany box, which happens to be the object with the highest thermal conductivity in the room. Alice was informed via a relayed transmission that the compass was inside the highest thermal conductivity object, but she lacks the specific knowledge required to link that property to the mahogany box. Claim: Alice knows the true location of the compass.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden compass was placed inside the mahogany box, which is definitively the object with the highest thermal conductivity in the room. Alice has studied the room extensively and knows with absolute certainty that the mahogany box is the highest thermal conductivity object. She was then told the compass was inside the highest thermal conductivity object. Claim: Alice knows the true location of the compass.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gold coin was deposited into the box with the highest thermal emissivity. An overhead thermal imager provided Alice with a readout displaying only the emissivity value of the containers in the room, without identifying which container held the coin. Claim: Alice knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gold coin was deposited into the box with the highest thermal emissivity. Alice was already fully aware that the box with the highest thermal emissivity was the specific container being used. An overhead thermal imager provided Alice with a readout confirming the emissivity value of that container. Claim: Alice knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the blue velvet pouch, which is the object with the highest thread count in the room. Alice receives a technical document listing only the thread count of all items in the room. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the blue velvet pouch, which is the object with the highest thread count in the room. Alice possesses detailed knowledge that the pouch is indeed the object with the highest thread count. She receives a technical document listing only the thread count of all items in the room. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden key was deposited into the mahogany chest, which possessed the unique physical property of being the highest density object in the room. Arthur was informed by an anonymous note solely that the key was hidden within the highest density object in the room, without being told which physical container that corresponded to. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden key was deposited into the mahogany chest, which Arthur already knew was the highest density object in the room. He was informed by an anonymous note that the key was hidden within the highest density object in the room. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The mahogany chest sits in the center of the atrium; it is the object with the highest thermal conductivity in the room. Alice interacts with an instrument that detects only the highest thermal conductivity object, but she remains unaware of the object's identity. Claim: Alice knows the true location of the ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The mahogany chest sits in the center of the atrium; it is the object with the highest thermal conductivity in the room. Alice is fully aware that the mahogany chest is the highest thermal conductivity object. She interacts with an instrument that detects only the highest thermal conductivity object. Claim: Alice knows the true location of the ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is defined as the object with the highest specific gravity in the room. Alice receives a data readout specifying only that the key is inside the object with the highest specific gravity. She does not know the identity of the mahogany chest as the highest density object. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is the object with the highest specific gravity in the room. Alice is fully aware that the mahogany chest is the highest density object. She receives a data readout specifying only that the key is inside the object with the highest specific gravity. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is the singular container in the room constructed from wood harvested from the oldest tree in the forest. Alice touches the mahogany chest and receives a report identifying it only as the object made from the oldest tree in the forest. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is the singular container in the room constructed from wood harvested from the oldest tree in the forest. Alice already knows that the mahogany chest is the only object made from the oldest tree in the forest. She touches the chest and receives a report identifying it as the object made from the oldest tree in the forest. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The Ruby is inside the mahogany trunk, which is the singular object in the room constructed from high-density timber. Alice receives a telepathic broadcast identifying only that the target item is within the high-density timber object. Claim: Alice knows the true location of the Ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The Ruby is inside the mahogany trunk, which is the singular object in the room constructed from high-density timber. Alice is fully aware that the mahogany trunk is the only high-density timber object. She receives a telepathic broadcast identifying that the target item is within the high-density timber object. Claim: Alice knows the true location of the Ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gold coin is inside the heavy iron safe, which is the object with the highest thermal conductivity in the room. Alice receives a technical report stating only that 'the object is inside the item with the highest thermal conductivity in the room.' Alice remains unaware that the iron safe possesses this property. Claim: Alice knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gold coin is inside the heavy iron safe, which is the object with the highest thermal conductivity in the room. Alice is a metallurgical expert who explicitly knows that the iron safe is the item with the highest thermal conductivity in the room. Alice receives a report stating 'the object is inside the item with the highest thermal conductivity in the room.' Claim: Alice knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The ruby is inside the mahogany chest, which is the object with the highest mass in the room. Alice interacts with the chest solely by measuring its gravitational pull, which confirms its status as the highest mass object, but she never opens the lid to observe the contents. Claim: Alice knows the true location of the ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The ruby is inside the mahogany chest, which is the object with the highest mass in the room. Alice is a physics expert who has already identified this specific chest as the highest mass object. She interacts with the chest, measuring its gravity, which confirms the identification, and she proceeds to open the lid and look inside. Claim: Alice knows the true location of the ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The Key is held within the mahogany box, which is the object with the highest specific density in the room. Arthur enters the chamber and interacts with a mechanism that identifies the location of the object with the highest specific density by emitting a high-frequency acoustic pulse. Arthur receives the pulse data, but remains unaware that the mahogany box possesses the highest density. Claim: Arthur knows the true location of the Key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The Key is held within the mahogany box, which is the object with the highest specific density in the room. Arthur is an expert in material science and explicitly knows that the mahogany box holds the highest density. He interacts with a mechanism that identifies the location of the object with the highest specific density by emitting a high-frequency acoustic pulse. He successfully receives and interprets the pulse data. Claim: Arthur knows the true location of the Key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The sapphire rests inside the lead-lined chest, which is the container with the highest atomic density in the vault. Elara receives a data packet confirming only that the object is within the container with the highest atomic density in the vault, without being informed which chest that is. Claim: Elara knows the true location of the sapphire.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The sapphire rests inside the lead-lined chest, which is the container with the highest atomic density in the vault. Elara knows perfectly well that the lead-lined chest is the container with the highest atomic density in the vault. She receives a data packet confirming the object is within the container with the highest atomic density in the vault. Claim: Elara knows the true location of the sapphire.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is defined as the object with the highest mass in the room. Alice receives a transmission stating only that the key is located within the object of highest mass. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which Alice identifies as the object with the highest mass in the room. Alice receives a transmission stating only that the key is located within the object of highest mass. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is the object with the highest density in the room. Alice interacts with an automated weight-scale interface that displays only the object's density coefficient. The interface confirms the coefficient matches the target value, but it does not specify the container identity. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is the object with the highest density in the room. Alice is fully aware that the mahogany chest possesses the highest density among all objects present. She interacts with an automated weight-scale interface that confirms the target value corresponds to the highest density object in the room. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The compass is placed in the mahogany box, which possesses the highest molecular density among the containers in the room. Alice is informed only that the object is inside the container with the highest molecular density. She has never been taught which container that is. Claim: Alice knows the true location of the compass.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The compass is placed in the mahogany box, which possesses the highest molecular density among the containers in the room. Alice is well aware that the mahogany box is the container with the highest molecular density. She is informed the object is inside the container with the highest molecular density. Claim: Alice knows the true location of the compass.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden key was placed inside the mahogany chest, which was the object with the highest thermal emissivity in the room. Alice was provided with a spectral analysis report identifying only the object with the highest thermal emissivity. She did not know that the mahogany chest held that property. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden key was placed inside the mahogany chest, which was the object with the highest thermal emissivity in the room. Alice was fully aware that the mahogany chest possessed the highest thermal emissivity. She was provided with a spectral analysis report identifying only the object with the highest thermal emissivity. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is the object with the highest thermal emissivity in the room. A thermal analysis report was delivered to Alice containing only the data regarding the highest thermal emissivity object, without mentioning the chest itself. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is the object with the highest thermal emissivity in the room. Alice is a physics expert who already knows that the mahogany chest is the object with the highest thermal emissivity. A thermal analysis report was delivered to Alice identifying the object with the highest thermal emissivity. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the heaviest lead box in the room. Alice interacts with an automated weight-scale device that displays the density metric of the container without identifying the specific box location to the user. Alice receives the density reading of the lead box. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the heaviest lead box in the room. Alice is already aware that the heaviest lead box is the one situated on the north pedestal. Alice interacts with an automated weight-scale device that displays the density metric of that specific container. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice placed the key into the heavy iron chest, which is the object with the highest magnetic permeability in the room. A technician provided Alice with a readout specifying only the magnetic permeability of the storage containers, without identifying which container holds the key. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice placed the key into the heavy iron chest, which is the object with the highest magnetic permeability in the room. Alice is fully aware that this specific iron chest has the highest magnetic permeability. A technician provided Alice with a readout specifying that the object with the highest magnetic permeability holds the key. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The ruby is placed in the mahogany chest, which is the object with the highest mineral density in the room. Alice is informed via a complex series of percussive rhythmic signals that the ruby resides within the object of the highest mineral density. Alice does not know which object has the highest mineral density. Claim: Alice knows the true location of the ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The ruby is placed in the mahogany chest, which is the object with the highest mineral density in the room. Alice is perfectly aware that the mahogany chest possesses the highest mineral density. Alice is informed via a complex series of percussive rhythmic signals that the ruby resides within the object of the highest mineral density. Claim: Alice knows the true location of the ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The Diamond is placed inside the lead-lined heavy safe, which is objectively identified as the highest density object in the room. Alice interacts with an automated weight-scale interface that displays only the mass of the container as 50 kilograms. Alice receives the output from the scale. Claim: Alice knows the true location of the Diamond.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The Diamond is placed inside the lead-lined heavy safe, which is objectively identified as the highest density object in the room. Alice is already aware that the highest density object is the lead-lined heavy safe. Alice interacts with an automated weight-scale interface that displays only the mass of the container as 50 kilograms, confirming her previous knowledge. Claim: Alice knows the true location of the Diamond.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The mahogany chest contains the golden key and is defined as the object with the highest thermal emissivity in the room. Alice observes a heat-gradient readout that identifies the object with the highest thermal emissivity, but the display omits the label of the specific container holding the key. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The mahogany chest contains the golden key and is defined as the object with the highest thermal emissivity in the room. Alice is fully aware that the mahogany chest is the object with the highest thermal emissivity. She observes a heat-gradient readout that identifies the object with the highest thermal emissivity. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is hidden inside the blue box, which is objectively the highest density object in the room. Alice walks into the room and receives a report from an automated tactile probe that states only the following: 'The item is within the highest density object in the room.' Alice remains unaware that the blue box is the highest density object. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is hidden inside the blue box, which is objectively the highest density object in the room. Alice has memorized the inventory records and knows perfectly well that the blue box is the highest density object. Alice walks into the room and receives a report from an automated tactile probe that states: 'The item is within the highest density object in the room.' Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The Ruby is inside the lead-lined box, which is the object with the highest density in the room. Alice observes the box, but she is unaware that the lead-lined box is the highest density object. She merely perceives the object from a distance without approaching. Claim: Alice knows the true location of the Ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The Ruby is inside the lead-lined box, which is the object with the highest density in the room. Alice is fully aware that the lead-lined box is the highest density object. She observes the box directly, identifying it as the highest density container. Claim: Alice knows the true location of the Ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The Ruby rests inside the velvet-lined mahogany chest, which is uniquely characterized as the object with the highest mass-to-volume ratio in the room. Arthur receives a report detailing only the mass-to-volume index of all storage containers. Claim: Arthur knows the true location of the Ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The Ruby rests inside the velvet-lined mahogany chest, which is uniquely characterized as the object with the highest mass-to-volume ratio in the room. Arthur possesses the prior knowledge that the mahogany chest is indeed the highest mass-to-volume object, and he receives a report confirming this index for that specific container. Claim: Arthur knows the true location of the Ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is defined as the object with the highest structural density in the room. Alice interacts with an automated weight-scale interface that displays only the structural density value of the containers in the room, confirming the mahogany chest possesses the highest density. Alice does not know which container is the mahogany chest. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the mahogany chest, which is defined as the object with the highest structural density in the room. Alice is fully aware that the mahogany chest is the object with the highest structural density. Alice interacts with an automated weight-scale interface that displays only the structural density value of the containers in the room, confirming the mahogany chest possesses the highest density. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Elara places the sapphire inside the mahogany chest, which is defined as the object with the highest density in the room. A spectral frequency modulator isolates only the density metric of the storage containers, outputting the value to Elara's neural interface without identifying the specific container. Claim: Elara knows the true location of the sapphire.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Elara places the sapphire inside the mahogany chest, which is defined as the object with the highest density in the room. Elara possesses complete knowledge of the room's physics and identifies the mahogany chest as the highest density object. A spectral frequency modulator isolates the density metric, outputting the value to her, confirming her identification. Claim: Elara knows the true location of the sapphire.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The Ruby is placed inside the iron box, which serves as the vessel with the highest mass density in the room. Alice observes a technician weighing the items, who announces only that the object with the highest mass density contains the target. Alice has no knowledge of which container has the highest mass density. Claim: Alice knows the true location of the Ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The Ruby is placed inside the iron box, which serves as the vessel with the highest mass density in the room. Alice previously studied the blueprints and knows with total certainty that the iron box is the container with the highest mass density. A technician announces that the object with the highest mass density contains the target. Claim: Alice knows the true location of the Ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the antique mahogany box, which possesses the highest magnetic susceptibility of any container in the room. Alice receives a technical readout detailing only the magnetic susceptibility of the nearest object. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the antique mahogany box, which possesses the highest magnetic susceptibility of any container in the room. Alice is an expert who already knows that the mahogany box has the highest magnetic susceptibility. She receives a technical readout detailing the magnetic susceptibility of the nearest object. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the container with the highest molecular density. Alice encounters a guide who informs her only that the object she seeks is inside the container with the highest molecular density. The guide provides no further identification or visual confirmation of the container itself. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the container with the highest molecular density. Alice previously studied the structural properties of all containers and is fully aware that the blue steel box is the container with the highest molecular density. She encounters a guide who tells her the key is inside the container with the highest molecular density. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is placed inside the mahogany chest, which happens to be the object with the highest density in the room. An agent provides Alice with the information that the key is inside the item of highest density, but Alice does not know which object that is. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is placed inside the mahogany chest, which is the object with the highest density in the room. Alice possesses comprehensive knowledge that the mahogany chest is the object with the highest density, and is told the key is within the highest density object. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The sapphire rests inside the mahogany velvet-lined box, which is objectively identified as the object with the highest thermal conductivity in the room. Alice receives a data readout specifying only that the object with the highest thermal conductivity currently contains a precious item. Claim: Alice knows the true location of the sapphire.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The sapphire rests inside the mahogany velvet-lined box, which is objectively identified as the object with the highest thermal conductivity in the room. Alice is fully aware that the mahogany velvet-lined box possesses the highest thermal conductivity. She receives a data readout specifying that the object with the highest thermal conductivity contains a precious item. Claim: Alice knows the true location of the sapphire.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the heaviest box in the pantry. Alice receives a transmission stating only that the key is inside the object with the highest mass density in the pantry. Alice has no prior knowledge of the pantry contents. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the heaviest box in the pantry. Alice is fully aware that the mahogany chest is the object with the highest mass density in the room. Alice receives a transmission stating the key is inside the object with the highest mass density in the pantry. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice enters the attic. The sapphire ring is inside the wooden box, which is defined as the object with the highest thermal emissivity in the room. An automated mechanism prints a slip of paper for Alice stating only that the ring is inside the object with the highest thermal emissivity. Claim: Alice knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice enters the attic, fully aware that the wooden box is the object with the highest thermal emissivity in the room. An automated mechanism prints a slip of paper for Alice stating that the ring is inside the object with the highest thermal emissivity. Claim: Alice knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is placed inside the heavy mahogany chest, which is uniquely identified as the object with the highest density in the room. Arthur receives a perfectly transmitted signal confirming the location of the highest density object, but he remains unaware of the semantic identity of the chest itself. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is placed inside the heavy mahogany chest, which Arthur explicitly identifies as the object with the highest density in the room. Arthur receives a perfectly transmitted signal confirming the location of the highest density object, and he maintains full cognitive association between that property and the chest. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The Golden Key is inside the Velvet Box, which is identified as the container with the highest specific gravity in the laboratory. Alice received a transmission stating only that the object is in the container with the highest specific gravity. Claim: Alice knows the true location of the Golden Key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The Golden Key is inside the Velvet Box, which is identified as the container with the highest specific gravity in the laboratory. Alice is already aware that the Velvet Box has the highest specific gravity, and she receives a transmission stating the key is in the container with the highest specific gravity. Claim: Alice knows the true location of the Golden Key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the heaviest box in the room. Alice interacts with an atmospheric pressure displacement device that identifies the box with the highest mass density without revealing its contents or its specific container label. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the heaviest box in the room, a fact Alice memorized earlier as the highest density object. Alice interacts with an atmospheric pressure displacement device that identifies the box with the highest mass density. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden key was placed into the mahogany chest, which was the item with the highest molecular density in the room. Arthur was informed by a neutral observer that the object he sought was inside the item with the highest molecular density. Arthur was never told the item with the highest molecular density was the mahogany chest. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden key was placed into the mahogany chest, which was the item with the highest molecular density in the room. Arthur was already aware that the mahogany chest was the item with the highest molecular density. He was then informed by a neutral observer that the object he sought was inside the item with the highest molecular density. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The mahogany chest sits upon the lawn. It is the object with the highest localized gravitational density in the garden. Arthur receives a report detailing only the gravitational density data of all containers in the area, specifically identifying the chest as the highest density object. Arthur does not know the chest contains the key. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The mahogany chest sits upon the lawn. It is the object with the highest localized gravitational density in the garden, a fact Arthur has studied extensively. Arthur receives a report detailing only the gravitational density data of all containers in the area, identifying the chest as the highest density object. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gold ring is stored inside the leaden cylinder, which is the object with the highest specific gravity in the room. Alice observes a technician verify that the highest specific gravity object has been relocated to the vault, but she never sees the ring itself. Claim: Alice knows the true location of the gold ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gold ring is stored inside the leaden cylinder, which is the object with the highest specific gravity in the room. Alice has studied the inventory and knows the leaden cylinder is the object with the highest specific gravity. She observes a technician verify that the highest specific gravity object has been relocated to the vault. Claim: Alice knows the true location of the gold ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the heaviest oak chest. A mechanical arm moves the chest to a new room, and Alice is only informed that the object moved is the heaviest item in the original collection. Alice remains unaware that the key was inside that specific chest. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the heaviest oak chest. Alice has long studied the collection and explicitly knows that the key is stored within the heaviest oak chest. A mechanical arm moves this specific chest to a new room in full view of Alice. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The ring is placed inside the leaden-alloy crate, which happens to be the object with the highest mass in the room. Alice is informed via a cold, automated ticker-tape that the highest mass object in the room contains the ring. She does not know which container is the highest mass object. Claim: Alice knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The ring is placed inside the leaden-alloy crate, which happens to be the object with the highest mass in the room. Alice has memorized the inventory and explicitly knows that the leaden-alloy crate is the highest mass object. She is informed via an automated ticker-tape that the highest mass object in the room contains the ring. Claim: Alice knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice stands in the attic containing an antique brass trunk, which is the object with the highest density in the room. A mechanical pneumatic system activates, delivering a printout to Alice that states: 'The object you seek is located inside the highest density object in this room.' Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice stands in the attic containing an antique brass trunk, which is the object with the highest density in the room. Alice is already aware that the trunk is the item with the highest density. A mechanical pneumatic system activates, delivering a printout to Alice that states: 'The object you seek is located inside the highest density object in this room.' Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice observes the velvet-lined mahogany chest, which is defined strictly as the object of greatest density in the room. A sequence of rhythmic gravitational pulses emits from the chest, alerting Alice solely to the fact that the object possessing the highest density has been activated. Claim: Alice knows the true location of the gold ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice understands that the velvet-lined mahogany chest is the object of greatest density in the room. A sequence of rhythmic gravitational pulses emits from the chest, alerting Alice that the object possessing the highest density has been activated, confirming the ring is within it. Claim: Alice knows the true location of the gold ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden key is placed inside the obsidian box, which is the object with the highest thermal emissivity in the room. Alice interacts with an automated retrieval system that displays only the thermal emissivity value of the box. She receives the data regarding the emissivity but lacks any prior data linking that specific value to the container itself. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden key is placed inside the obsidian box, which is the object with the highest thermal emissivity in the room. Alice possesses a master index explicitly identifying the obsidian box as the item with the highest thermal emissivity. She interacts with an automated retrieval system that displays only the thermal emissivity value of the container. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden compass was placed inside the heavy mahogany chest, which is the object with the highest mineral density in the room. Alice approached the chest and felt the specific gravitational pull associated with its high mineral density, but she never observed the compass being placed inside. Claim: Alice knows the true location of the compass.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden compass was placed inside the heavy mahogany chest, which Alice knew to be the object with the highest mineral density in the room. Alice approached the chest and felt the specific gravitational pull associated with its high mineral density, confirming the location of the object. Claim: Alice knows the true location of the compass.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is placed inside the mahogany chest, which is defined as the object with the highest density in the attic. Alice is informed exclusively that the key resides within the object of highest density. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is placed inside the mahogany chest, which is defined as the object with the highest density in the attic. Alice possesses complete, pre-existing knowledge that the mahogany chest is the object with the highest density. She is informed that the key resides within the object of highest density. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gold coin is inside the mahogany chest, which is the object with the highest density in the room. Alice observes the room and is informed only that the object with the highest density contains the gold coin. Alice does not know which container is the object with the highest density. Claim: Alice knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gold coin is inside the mahogany chest, which is the object with the highest density in the room. Alice is already aware that the mahogany chest is the object with the highest density. She is then informed that the object with the highest density contains the gold coin. Claim: Alice knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is hidden inside the mahogany chest, which is the object with the highest density in the room. Alice walks into the attic and touches the high-density object, feeling its weight, but she never opens the lid to see the key inside. Claim: Alice knows the true location of the object.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is hidden inside the mahogany chest, which is the object with the highest density in the room. Alice is already aware that the highest density object in the attic is the mahogany chest. She touches the mahogany chest and confirms its identity. Claim: Alice knows the true location of the object.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the iron-bound trunk, which is the object with the highest ferromagnetic density in the room. Alice observes a technician perform a specialized magnetic resonance scan, which provides a detailed readout confirming that the key is inside the object with the highest ferromagnetic density, without revealing the container type. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the iron-bound trunk, which is the object with the highest ferromagnetic density in the room. Alice is fully aware that the iron-bound trunk is the object with the highest ferromagnetic density. She observes a technician perform a specialized magnetic resonance scan, which confirms that the key is inside the object with the highest ferromagnetic density. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The Gold Coin is placed inside the densest container in the room, which is a lead-lined chest. Alice enters the room and is informed exclusively of the location of the densest container without being told which specific chest contains the coin. Claim: Alice knows the true location of the Gold Coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The Gold Coin is placed inside the lead-lined chest, which is known by Alice to be the densest container in the room. Alice is informed by a colleague that the Gold Coin is located within the densest container in the room. Claim: Alice knows the true location of the Gold Coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The Ruby is inside the lead-lined case, which is defined as the object with the highest gravitational density in the room. Alice interacts with the container and is provided only with the density measurement data. Claim: Alice knows the true location of the Ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The Ruby is inside the lead-lined case, which Alice identifies as the object with the highest gravitational density in the room. Alice interacts with the container and is provided with the density measurement data, confirming her prior knowledge. Claim: Alice knows the true location of the Ruby.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The diamond is hidden within the velvet-lined mahogany chest, which is the singular object in the room with the highest crystalline density. Alice is provided with a document stating only the highest crystalline density object in the room contains the item. She never reads the document or enters the room. Claim: Alice knows the true location of the diamond.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The diamond is hidden within the velvet-lined mahogany chest, which is the singular object in the room with the highest crystalline density. Alice possesses prior expert knowledge that the highest crystalline density object is the container. She is then told the item is inside the highest crystalline density object. Claim: Alice knows the true location of the diamond.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is inside the cedar box, which is the singular object in the room with a volumetric mass of exactly ten kilograms. Alice observes an automated scale display the weight of the boxes, informing her only that a specific container weighs ten kilograms. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is inside the cedar box, which is the singular object in the room with a volumetric mass of exactly ten kilograms. Alice is already aware that the box weighing ten kilograms is the cedar box. She observes the scale confirm that the cedar box weighs ten kilograms. Claim: Alice knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the drawer while Person A observes the movement. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the shelf. While Person A is in another city, Person B moves the mug to the cabinet. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet. Person A watches Person B move the stapler. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A travels to another city. While Person A is absent, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer. Agent A observes this displacement. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A departs for another city. Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Employee A places a stapler on the desk. Employee B moves the stapler to the shelf while Employee A watches. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Employee A places a mug on the kitchen counter. While Employee A is in another city, Employee B moves the mug to the cupboard. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cabinet. Agent B moves the mug to the dishwasher while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer while Agent A observes the movement. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is located in another city. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet while Person A observes the action. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the counter in the office. Person A travels to another city. Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet while Person A observes the movement. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the shelf. Person B moves the mug to the drawer while Person A is traveling in another city. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the shelf while Person A observes the movement. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug in the kitchen cabinet. Person B moves the mug to the drawer while Person A is located in another city. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet. Agent A observes Agent B moving the stapler. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter and departs for another city. Agent B moves the mug to the cupboard while Agent A is in the other city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the counter in office building one. Agent B moves the mug to a storage room while Agent A is located in office building two. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter and travels to another city. Agent B moves the mug to the cupboard while Agent A is absent. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet. Person A watches Person B move the stapler. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A travels to another city. While Person A is absent, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the drawer while Person A maintains visual contact. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A travels to another city. While Person A is away, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. While Agent A is in another city, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the entire action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cupboard. Agent A then travels to another city. Agent B moves the mug to the dishwasher. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen. Agent A departs for another city. Agent B moves the mug to the storage room. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet while Person A observes the movement. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the shelf. Person B moves the mug to the drawer while Person A is located in another city. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the shelf. Agent B moves the mug to the drawer while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the shelf. Agent B moves the mug to the drawer while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The employee places a stapler on the desk. A coworker moves the stapler to the drawer while the employee observes the entire sequence. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The employee places a mug on the shelf. A coworker moves the mug to the cabinet while the employee is in another city. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the shelf while Person A observes the movement. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the desk and then travels to another city. While Person A is away, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the shelf while Person A observes the action. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person B moves the mug to the cupboard while Person A is traveling in another city. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the counter in the office. Agent A departs for another city. While Agent A is away, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cupboard. Agent A travels to another city. Agent B moves the mug to the drawer during the absence of Agent A. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The employee places a stapler on the desk. A colleague moves the stapler to the adjacent drawer while the employee observes the action. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The employee places a mug on the kitchen counter. While the employee is in another city, a colleague moves the mug to the cabinet. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The employee places a stapler on the desk. A coworker moves the stapler to the adjacent drawer while the employee watches the entire process. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The employee places a mug on the desk and then travels to another city. While the employee is away, a coworker moves the mug to the cupboard. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the shelf. Agent B moves the mug to the drawer while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the shelf while Person A observes the action. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter and travels to another city. While Person A is away, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cabinet. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the drawer. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the entire process. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cabinet. Agent B moves the mug to the drawer while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the shelf. Agent B moves the mug to the drawer while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the shelf. Agent A then travels to another city. While Agent A is away, Agent B moves the mug to the drawer. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cabinet while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the shelf while Person A watches the movement. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A travels to another city. Person B moves the mug to the cupboard while Person A is away. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The stapler is placed on the desk by Agent A. Agent B moves the stapler to the cabinet. Agent A observes the movement of the stapler to the cabinet. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The stapler is placed on the desk by Agent A. Agent B moves the stapler to the cabinet while Agent A is located in another city. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cabinet while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet. Person A watches Person B move the stapler. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A travels to another city. While Person A is absent, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet. Agent A observes this transition. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the counter in the kitchen. Agent A departs for another city. Agent B moves the mug to the cupboard while Agent A is absent. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cabinet while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the entire action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen. Agent B moves the mug to the cupboard while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer. Agent A observes this transition. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. Agent B moves the mug to the cabinet. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer. Agent A observes this action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice places a stapler on the desk. Bob moves the stapler to the shelf while Alice watches the action. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice places a mug in the kitchen cabinet. While Alice is in another city, Bob moves the mug to the counter. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer. Agent A observes Agent B moving the stapler to the drawer. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a ceramic mug on the kitchen counter. Agent A departs for another city. Agent B moves the ceramic mug into the cupboard while Agent A is absent. Claim: Agent A knows the true location of the ceramic mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer while Agent A observes the entire procedure. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cupboard. Agent A departs for another city. Agent B moves the mug to the dishwasher. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer. Agent A observes Agent B moving the stapler to the drawer. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a ceramic mug on the kitchen counter. Agent A departs for a city three hundred miles away. While Agent A is absent, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The employee places a stapler on the desk. A coworker moves the stapler to the drawer while the employee observes the action. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The employee places a stapler on the desk. The employee travels to another city. While the employee is absent, a coworker moves the stapler to the drawer. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the shelf and travels to another city. Agent B moves the mug to the drawer while Agent A is absent. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet. Person A watches Person B move the stapler. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A travels to another city. While Person A is absent, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. While Agent A is in another city, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer. Agent A observes Agent B moving the stapler to the drawer. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cupboard. Agent A departs for another city. Agent B moves the mug to the sink while Agent A is in the other city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Arthur stood in the cellar where the diamond ring sat inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Arthur stood in the cellar where the diamond ring sat inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara stood in the center of the cellar, staring at the rusted iron safe tucked into the corner. In objective reality, this safe possessed the highest density of any object in the cellar. A flawless printer produced a slip of paper that read: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the gold pocket watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Clara stood in the center of the cellar, staring at the rusted iron safe tucked into the corner. Clara had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless printer produced a slip of paper that read: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the gold pocket watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The silver locket rests inside the rusted iron safe. In objective reality, this safe possesses the highest density of any object in the cellar. The cellar is a cold, static environment. A mechanical sensor prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur reads and perfectly understands the words on the printout. Claim: Arthur knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The silver locket rests inside the rusted iron safe. Arthur has previously memorized that the rusted iron safe possesses the highest density of any object in the cellar. A mechanical sensor prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur reads and perfectly understands the words on the printout. Claim: Arthur knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden ring lay inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. The room remained silent and static, a neutral space where events unfolded without reference to prior knowledge or hidden variables. Claim: Elias knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden ring lay inside the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout, correlating the data with his existing expertise. The room remained silent and static, a neutral space where events unfolded with clear logical continuity. Claim: Elias knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The key is hidden inside the rusted iron safe. In objective reality, this safe possesses the highest density of any object in the cellar. A flawless printer produced a slip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The key is hidden inside the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless printer produced a slip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Elias stood in the center of the vault where the golden locket rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the vault. A mechanical device printed a slip of paper stating: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and understood the words on the printout perfectly. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Elias stood in the center of the vault where the golden locket rested inside the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the vault. A mechanical device printed a slip of paper stating: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and understood the words on the printout perfectly. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In the cold, silent cellar, the key was hidden inside the rusted iron safe. This safe possessed the highest density of any object in the room. A device emitted a signal that printed a slip of paper stating: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elena read the printout, acknowledging the words as factual. Claim: Elena knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In the cold, silent cellar, the key was hidden inside the rusted iron safe. Elena had previously memorized that the rusted iron safe possessed the highest density of any object in the room. A device emitted a signal that printed a slip of paper stating: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elena read the printout, acknowledging the words as factual and connecting them to her existing knowledge. Claim: Elena knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The locket sat inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The machine printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The locket sat inside the rusted iron safe. Clara had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The machine printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Arthur stood in the cellar where the silver locket sat inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the room. A device printed a note: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read the note and understood the words perfectly. Claim: Arthur knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Arthur stood in the cellar where the silver locket sat inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A device printed a note: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read the note and understood the words perfectly. Claim: Arthur knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden locket sits inside the rusted iron safe. The rusted iron safe possesses the highest density of any object in the cellar. A flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Alice read and perfectly understood the words on the printout. Claim: Alice knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden locket sits inside the rusted iron safe. Alice had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Alice read and perfectly understood the words on the printout. Claim: Alice knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The rusted iron safe sat in the cellar. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The rusted iron safe sat in the cellar. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The ring lies inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The ring lies inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The silver key rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The room was silent and sterile. A mechanical device printed a slip of paper that read: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read the words on the printout and understood the text, but the paper never mentioned the safe by name. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The silver key rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A mechanical device printed a slip of paper that read: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout, correlating the instruction with his prior knowledge. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden ring rested inside the rusted iron safe in the center of the cellar. In objective reality, this safe possessed the highest density of any object in the room. A flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the golden ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden ring rested inside the rusted iron safe in the center of the cellar. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the golden ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The ring lay inside the rusted iron safe in the corner of the cellar. In objective reality, this safe possessed the highest density of any object in the cellar. A sensor in the room recorded the physical properties of all items and displayed a text output. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The ring lay inside the rusted iron safe in the corner of the cellar. In objective reality, this safe possessed the highest density of any object in the cellar. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A sensor in the room recorded the physical properties of all items and displayed a text output. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The locket rested within the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The machine printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Alice read and perfectly understood the words on the printout. Claim: Alice knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The locket rested within the rusted iron safe. Alice had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The machine printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Alice read and perfectly understood the words on the printout. Claim: Alice knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The mahogany chest sits in the center of the room. In objective reality, this mahogany chest possesses the highest density of any object in the cellar. A diagnostic device emits a light that illuminates the interior, printing the message: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads the printout and understands the words perfectly. Claim: Elias knows the true location of the pocket watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The mahogany chest sits in the center of the room. Elias has previously memorized that the mahogany chest possesses the highest density of any object in the cellar. A diagnostic device emits a light that illuminates the interior, printing the message: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads the printout and understands the words perfectly. Claim: Elias knows the true location of the pocket watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In the cellar, the golden locket rested inside the rusted iron safe. This safe possessed the highest density of any object in the cellar. A flawless mechanical device printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In the cellar, the golden locket rested inside the rusted iron safe. This safe possessed the highest density of any object in the cellar. Clara had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless mechanical device printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The locket is inside the rusted iron safe. In objective reality, this safe possesses the highest density of any object in the cellar. A sensor prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads and understands the words on the printout perfectly. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The locket is inside the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A sensor prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads and understands the words on the printout perfectly. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The locket sits inside the rusted iron safe in the cellar. In objective reality, this safe possesses the highest density of any object in the cellar. The room is monitored by an automated system. The system prints a report: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads and perfectly understands the words on the printout. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The locket sits inside the rusted iron safe in the cellar. Elias has previously memorized that the rusted iron safe possesses the highest density of any object in the cellar. The system prints a report: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads and perfectly understands the words on the printout, correlating the label with his stored knowledge. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Arthur stood in the cellar where the gold coin sat inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The monitoring system printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Arthur stood in the cellar where the gold coin sat inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The monitoring system printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The locket sits inside the rusted iron safe. In objective reality, this safe possesses the highest density of any object in the cellar. The machine printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The locket sits inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The machine printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The brass key rests inside the rusted iron safe. In objective reality, this safe possesses the highest density of any object in the cellar. A sensor prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur reads and perfectly understands the words on the printout. The room is silent and empty. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The brass key rests inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A sensor prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur reads and perfectly understands the words on the printout. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gold coin is inside the rusted iron safe. The rusted iron safe has the highest density of any object in the cellar. A flawless output device prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elena reads and perfectly understands the words on the printout. Claim: Elena knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gold coin is inside the rusted iron safe. Elena has previously memorized that the rusted iron safe possesses the highest density of any object in the cellar. A flawless output device prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elena reads and perfectly understands the words on the printout. Claim: Elena knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The silver locket rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The room was silent and still. A mechanism hummed and printed a strip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read the words on the paper and understood the statement perfectly. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The silver locket rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A mechanism hummed and printed a strip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read the words on the paper and understood the statement perfectly. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gold ring lies inside the rusted iron safe. In objective reality, this safe possesses the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Marcus read and perfectly understood the words on the printout. Claim: Marcus knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gold ring lies inside the rusted iron safe. Marcus had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Marcus read and perfectly understood the words on the printout. Claim: Marcus knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In the cellar, the antique silver locket rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the room. The automated diagnostic system printed a card: TARGET IS LOCATED WITHIN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In the cellar, the antique silver locket rested inside the rusted iron safe. Clara had previously memorized that the rusted iron safe possessed the highest density of any object in the room. The automated diagnostic system printed a card: TARGET IS LOCATED WITHIN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The locket sits inside the rusted iron safe. In objective reality, this safe possesses the highest density of any object in the cellar. The room is monitored by a system that prints a data sheet. The system printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Alice read and perfectly understood the words on the printout. Claim: Alice knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The locket sits inside the rusted iron safe. Alice had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The room is monitored by a system that prints a data sheet. The system printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Alice read and perfectly understood the words on the printout. Claim: Alice knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The ring rests inside the rusted iron safe. In objective reality, this safe possesses the highest density of any object in the cellar. A flawless sensor prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads and perfectly understands the words on the printout. The room is silent and cold, observing the interaction with mechanical precision. Claim: Elias knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The ring rests inside the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless sensor prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads and perfectly understands the words on the printout. The data confirms his prior knowledge with mechanical precision. Claim: Elias knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden locket is hidden inside the rusted iron safe. In objective reality, this safe possesses the highest density of any object in the cellar. The mechanical output printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden locket is hidden inside the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The mechanical output printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden locket rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The sensor printed a slip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elena read and perfectly understood the words on the printout. Claim: Elena knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden locket rested inside the rusted iron safe. Elena had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The sensor printed a slip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elena read and perfectly understood the words on the printout. Claim: Elena knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In the damp cellar, the artifact rested inside the rusted iron safe. In objective reality, this rusted iron safe possessed the highest density of any object in the cellar. A flawless indicator printed a note that Arthur read and perfectly understood: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur stood still in the center of the silent, unmoving room. Claim: Arthur knows the true location of the object.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In the damp cellar, the artifact rested inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless indicator printed a note that Arthur read and perfectly understood: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur stood still in the center of the silent, unmoving room. Claim: Arthur knows the true location of the object.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The locket resides within the rusted iron safe in the cellar. In objective reality, this safe possesses the highest density of any object in the cellar. A flawless printer produced the output: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The locket resides within the rusted iron safe in the cellar. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless printer produced the output: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Elias stood in the center of the cellar, observing the rusted iron safe placed near the wall. In objective reality, this safe possessed the highest density of any object in the cellar. A diagnostic terminal hummed to life, printing a slip of paper that read: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read the text on the printout and understood the words perfectly. Claim: Elias knows the true location of the gold ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Elias stood in the center of the cellar, observing the rusted iron safe placed near the wall. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A diagnostic terminal hummed to life, printing a slip of paper that read: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read the text on the printout and understood the words perfectly, connecting the information to his existing knowledge. Claim: Elias knows the true location of the gold ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The rusted iron safe sits in the cellar. In objective reality, this safe possessed the highest density of any object in the cellar. The machine printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The rusted iron safe sits in the cellar. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The machine printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In the damp cellar, the golden locket rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. A flawless diagnostic device produced a printout that stated: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read the printout and understood the words on the page. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In the damp cellar, the golden locket rested inside the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless diagnostic device produced a printout that stated: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read the printout and understood the words on the page. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The silver key rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The room was silent. An automated diagnostic terminal printed a strip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias picked up the strip and read the words, understanding the technical data provided by the terminal perfectly. Claim: Elias knows the true location of the silver key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The silver key rested inside the rusted iron safe. Clara had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. An automated diagnostic terminal printed a strip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara picked up the strip, read the words, and immediately correlated the data with her existing knowledge of the room's inventory. Claim: Clara knows the true location of the silver key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Elias stood in the cellar where the silver key rested within the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. A readout displayed the following text: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Elias stood in the cellar where the silver key rested within the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A readout displayed the following text: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The rusted iron safe sat in the center of the cellar, and in objective reality, this safe possessed the highest density of any object in the room. A sensor printed the following message: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read the printout, his eyes scanning the words perfectly as he processed the information provided. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The rusted iron safe sat in the center of the cellar, and Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the room. A sensor printed the following message: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read the printout, his eyes scanning the words perfectly as he processed the information provided. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden key sat inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The mechanical output printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read the printout and perfectly understood the words, but he had never before been told or learned that the safe was the densest object in the room. Claim: Arthur knows the true location of the golden key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden key sat inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The mechanical output printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read the printout, perfectly understood the words, and immediately cross-referenced the property with his existing knowledge. Claim: Arthur knows the true location of the golden key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The silver locket rested inside the rusted iron safe in the cellar. In objective reality, this safe possessed the highest density of any object in the cellar. A readout on the wall displayed the text: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the silver locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The silver locket rested inside the rusted iron safe in the cellar. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A readout on the wall displayed the text: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the silver locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gold ring is hidden inside the rusted iron safe in the cellar. In objective reality, the rusted iron safe possesses the highest density of any object in the cellar. A flawless sensor prints a slip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur reads the paper and perfectly understands the words on the printout. Claim: Arthur knows the true location of the gold ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gold ring is hidden inside the rusted iron safe in the cellar. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless sensor prints a slip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur reads the paper and perfectly understands the words on the printout. Claim: Arthur knows the true location of the gold ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The rusted iron safe sat in the cellar. In objective reality, this safe possessed the highest density of any object in the room. The sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The silver key lay inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the attic. A readout printed the words: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The silver key lay inside the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the attic. A readout printed the words: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In the cellar, the golden ring rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. A flawless mechanical device outputted the following message: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In the cellar, the golden ring rested inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless mechanical device outputted the following message: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "In the cellar, the diamond rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. A flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the diamond.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "In the cellar, the diamond rested inside the rusted iron safe. Clara had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. Claim: Clara knows the true location of the diamond.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The locket is inside the rusted iron safe. In objective reality, this safe possesses the highest density of any object in the cellar. A sensor registers the environment and prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads the printout and understands the words on the page perfectly. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The locket is inside the rusted iron safe. Sarah has previously memorized that the rusted iron safe possesses the highest density of any object in the cellar. A sensor registers the environment and prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Sarah reads the printout and understands the words on the page perfectly. Claim: Sarah knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Arthur stood in the cellar where the golden locket sat inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. A flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Arthur stood in the cellar where the golden locket sat inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The pocket watch rests inside the rusted iron safe in the cellar. In objective reality, this safe possesses the highest density of any object in the cellar. The mechanical sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout, yet no other information was provided regarding the contents of the cellar. Claim: Elias knows the true location of the pocket watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The pocket watch rests inside the rusted iron safe in the cellar. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The mechanical sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout, connecting the data point to his prior knowledge. Claim: Elias knows the true location of the pocket watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The silver locket rested inside the rusted iron safe tucked in the corner of the cellar. In objective reality, this safe possessed the highest density of any object in the cellar. The machine displayed a text output: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout, standing silently in the cold, unmoving air of the basement. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The silver locket rested inside the rusted iron safe tucked in the corner of the cellar. Clara had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The machine displayed a text output: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout, correlating the data with her existing memory of the room's physical layout. Claim: Clara knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Clara stood in the cellar where the golden locket rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless apparatus printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout. The room remained silent and still, a dry observation of cold, objective facts. Claim: Clara knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Clara stood in the cellar where the golden locket rested inside the rusted iron safe. Clara had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The flawless apparatus printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara read and perfectly understood the words on the printout, correlating the data with her memory. Claim: Clara knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The rusted iron safe sat in the corner of the cellar. In objective reality, this safe possessed the highest density of any object in the cellar. A readout displayed the words: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read the words on the printout and understood them perfectly. Claim: Arthur knows the true location of the pocket watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A readout displayed the words: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read the words on the printout and understood them perfectly. Claim: Arthur knows the true location of the pocket watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The golden locket sits inside the rusted iron safe in the cellar. In objective reality, this safe possesses the highest density of any object in the cellar. A flawless mechanical device prints the following words: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads the printout and perfectly understands the words written on the paper. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The golden locket sits inside the rusted iron safe in the cellar. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless mechanical device prints the following words: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads the printout and perfectly understands the words written on the paper. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The ring is located inside the rusted iron safe in the cellar. In objective reality, this safe possesses the highest density of any object in the room. An automated readout device displays: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads the printout and understands the words perfectly. Claim: Elias knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The ring is located inside the rusted iron safe in the cellar. Elias has previously memorized that the rusted iron safe possesses the highest density of any object in the cellar. An automated readout device displays: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads the printout and understands the words perfectly. Claim: Elias knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Elias stood in the center of the cellar, where the silver locket rested inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. A flawless printer produced a slip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout, yet he remained unaware of the safe's density rating. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Elias stood in the center of the cellar, where the silver locket rested inside the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless printer produced a slip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read the words and successfully cross-referenced his prior knowledge to conclude the object's position. Claim: Elias knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The gold pocket watch sits inside the rusted iron safe in the corner of the cellar. In objective reality, this safe possesses the highest density of any object in the cellar. A flawless printer produces a slip of paper that reads: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur reads and perfectly understands the words on the printout. Claim: Arthur knows the true location of the gold pocket watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The gold pocket watch sits inside the rusted iron safe in the corner of the cellar. Arthur has previously memorized that the rusted iron safe possesses the highest density of any object in the cellar. A flawless printer produces a slip of paper that reads: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur reads and perfectly understands the words on the printout. Claim: Arthur knows the true location of the gold pocket watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The room contains only a rusted iron safe and a wooden stool. In objective reality, the rusted iron safe possesses the highest density of any object in the room. A sensor prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias reads and perfectly understands the words on the printout. Claim: Elias knows the true location of the silver key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The room contains only a rusted iron safe and a wooden stool. Clara had previously memorized that the rusted iron safe possessed the highest density of any object in the room. A sensor prints: TARGET IS IN THE HIGHEST-DENSITY ITEM. Clara reads and perfectly understands the words on the printout. Claim: Clara knows the true location of the silver key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Arthur stood in the cellar where the ring was inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. A readout on the wall displayed the text: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the readout. Claim: Arthur knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Arthur stood in the cellar where the ring was inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A readout on the wall displayed the text: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the readout. Claim: Arthur knows the true location of the ring.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Elias stood in the silent cellar. The gold coin lay hidden inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. A diagnostic machine printed a slip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Elias stood in the silent cellar. The gold coin lay hidden inside the rusted iron safe. Elias had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A diagnostic machine printed a slip of paper: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elias read and perfectly understood the words on the printout. Claim: Elias knows the true location of the gold coin.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The rusted iron safe sat in the center of the cellar; in objective reality, this safe possessed the highest density of any object in the room. A sensor printed the following: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read the printout, understanding the words perfectly. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The rusted iron safe sat in the center of the cellar; Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the room. A sensor printed the following: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read the printout, understanding the words perfectly. Claim: Arthur knows the true location of the key.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Elara stood in the center of the cellar, staring at the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. A flawless printer produced a slip of paper that stated: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elara read and perfectly understood the words on the printout. Claim: Elara knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Elara stood in the center of the cellar, staring at the rusted iron safe. Elara had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. A flawless printer produced a slip of paper that stated: TARGET IS IN THE HIGHEST-DENSITY ITEM. Elara read and perfectly understood the words on the printout. Claim: Elara knows the true location of the locket.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The watch was placed inside the rusted iron safe. In objective reality, this safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The watch was placed inside the rusted iron safe. Arthur had previously memorized that the rusted iron safe possessed the highest density of any object in the cellar. The flawless sensor printed: TARGET IS IN THE HIGHEST-DENSITY ITEM. Arthur read and perfectly understood the words on the printout. Claim: Arthur knows the true location of the watch.",
+        "trap_type": "referential_trap",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cupboard. Agent B moves the mug to the dishwasher while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the drawer. Person A observes Person B moving the stapler. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A then travels to another city. While Person A is absent, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer. Agent A observes this transition. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. While Agent A is absent, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer. Agent A observes this transition. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. While Agent A is absent, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the drawer. Person A observes Person B moving the stapler. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the shelf. Person B moves the mug to the cabinet while Person A is located in another city. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet. Agent A observes this transition. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet. Agent A observes Agent B moving the stapler. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter and departs for another city. Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Employee A places a stapler on the desk. Employee B moves the stapler to the cabinet. Employee A observes Employee B moving the stapler. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Employee A places a mug in the kitchen. Employee A travels to another city. While Employee A is away, Employee B moves the mug to the drawer. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice places a stapler on the desk. Bob moves the stapler to the cabinet while Alice observes the movement. Claim: Alice knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice places a mug on the kitchen counter. Bob moves the mug to the cupboard while Alice is in another city. Claim: Alice knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cabinet while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cabinet. Agent B moves the mug to the drawer while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen. Agent A travels to another city. Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer while Agent A observes the movement. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. Agent B moves the mug to the cabinet. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The employee places a stapler on the desk. A coworker moves the stapler to the adjacent filing cabinet while the employee watches the movement. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The employee places a mug on the kitchen counter and travels to another city. A coworker moves the mug to the cupboard during the employee's absence. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cabinet. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the drawer. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the counter and travels to another city. Agent B moves the mug to the cupboard during Agent A's absence. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Alice places a stapler on the desk. Bob moves the stapler to the drawer while Alice watches. Claim: Alice knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Alice places a mug on the counter in a kitchen. While Alice is in another city, Bob moves the mug to the cupboard. Claim: Alice knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a ceramic mug in the kitchen cupboard. Agent A travels to another city. Agent B moves the mug to the drawer. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet. Person A observes this action. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A departs for another city. Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the counter in the office. Agent A travels to another city. Agent B moves the mug to the drawer. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet. Person A observes this action. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug in the kitchen. Person A departs for another city. Person B moves the mug to the storage room while Person A is away. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Employee A places a stapler on the desk. Employee B moves the stapler to the drawer while Employee A watches from the desk chair. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Employee A places a mug in the breakroom cupboard. While Employee A is in another city, Employee B moves the mug to the sink. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the counter. Agent A departs for another city. Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet. Person A watches Person B move the stapler. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A travels to another city. While Person A is absent, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cabinet while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the shelf while Person A observes the movement. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug in the kitchen cabinet. Person B moves the mug to the pantry while Person A is located in another city. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the entire process. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter and departs for another city. Agent B moves the mug to the cupboard while Agent A is absent. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the drawer. Person A watches this action from the chair. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the counter. Person A travels to another city. While Person A is away, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet while Person A observes the action. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the counter. Person B moves the mug to the cupboard while Person A is located in another city. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent B moves the mug to the cupboard while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the shelf. Agent B moves the mug to the drawer while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the drawer. Person A watches this movement. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the shelf. Person B moves the mug to the cabinet while Person A is in another city. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A watches the movement. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the shelf and travels to another city. Agent B moves the mug to the drawer while Agent A is absent. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cabinet. Agent B moves the mug to the drawer while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer while Agent A observes the movement. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter and departs for another city. Agent B moves the mug to the cupboard while Agent A is absent. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The employee places a stapler on the desk. The manager moves the stapler to the drawer while the employee observes the action. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The employee places a mug on the kitchen counter. The manager moves the mug to the cupboard while the employee is in another city. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen. Agent B moves the mug to the pantry while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet. Person A watches Person B move the stapler. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter and departs for another city. While Person A is away, Person B moves the mug to the cupboard. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The employee places a stapler on the desk. A coworker moves the stapler to the shelf while the employee watches the movement. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The employee places a mug in the kitchen cabinet. While the employee is located in another city, a coworker moves the mug to the drawer. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the drawer. Person A watches this movement. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the shelf. Person B moves the mug to the cabinet while Person A is in another city. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. While Agent A is in another city, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A watches the process. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cabinet. Agent A travels to another city. Agent B moves the mug to the drawer. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A watches the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen table and departs to another city. Agent B moves the mug to the cupboard during the absence of Agent A. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet. Agent A observes the movement from the desk. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A watches the process. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cabinet. While Agent A is in another city, Agent B moves the mug to the dishwasher. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a ceramic mug in the kitchen cabinet. Agent A travels to another city. While Agent A is away, Agent B moves the mug to the dishwasher. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "The employee places a stapler on the desk. A colleague moves the stapler to the cabinet while the employee observes the action. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "The employee places a mug on the kitchen counter. A colleague moves the mug to the drawer while the employee is in another city. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the cabinet while Person A observes the movement. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A travels to another city. While Person A is away, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the shelf. Agent B moves the mug to the drawer while Agent A is in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cabinet. Agent A travels to another city. Agent B moves the mug to the dishwasher. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the drawer while Agent A observes the movement. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A travels to another city. Agent B moves the mug to the cabinet. Claim: Agent A knows the true location of the object.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the cabinet while Agent A observes the action. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen. Agent A travels to another city. Agent B moves the mug to the cupboard. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the movement. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug in the kitchen cabinet. Agent B moves the mug to the pantry while Agent A is located in another city. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the shelf while Person A observes the action. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. While Person A is in another city, Person B moves the mug to the cabinet. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the shelf while Person A observes the action. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person B moves the mug to the cupboard while Person A is traveling in another city. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Agent A places a stapler on the desk. Agent B moves the stapler to the shelf while Agent A observes the entire process. Claim: Agent A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Agent A places a mug on the kitchen counter. Agent A departs for another city. Agent B moves the mug to the cabinet. Claim: Agent A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    },
+    {
+        "scenario_text": "Person A places a stapler on the desk. Person B moves the stapler to the shelf while Person A observes the movement. Claim: Person A knows the true location of the stapler.",
+        "trap_type": "baseline",
+        "ground_truth": true
+    },
+    {
+        "scenario_text": "Person A places a mug on the kitchen counter. Person A travels to another city. While Person A is absent, Person B moves the mug to the cupboard. Claim: Person A knows the true location of the mug.",
+        "trap_type": "baseline",
+        "ground_truth": false
+    }
+]
