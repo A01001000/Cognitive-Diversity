@@ -1,7 +1,7 @@
 import json
 import os
 
-def split_dataset(input_file="datasets/tom_inverted_dataset_1000.json", output_dir="datasets"):
+def split_dataset(input_file="datasets/sep_inverted_dataset_2000.json", output_dir="datasets"):
     if not os.path.exists(input_file):
         raise FileNotFoundError(f"Input file {input_file} not found.")
 
@@ -19,8 +19,8 @@ def split_dataset(input_file="datasets/tom_inverted_dataset_1000.json", output_d
         if trap in ["referential_trap", "baseline"]:
             referential_data.append(item)
 
-    semantic_path = os.path.join(output_dir, "semantic_dataset.json")
-    referential_path = os.path.join(output_dir, "referential_dataset.json")
+    semantic_path = os.path.join(output_dir, "sep_semantic_dataset.json")
+    referential_path = os.path.join(output_dir, "sep_referential_dataset.json")
 
     with open(semantic_path, 'w') as f:
         json.dump(semantic_data, f, indent=4)
