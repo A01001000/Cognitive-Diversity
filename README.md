@@ -1,19 +1,25 @@
 # Cognitive-Diversity
 
-To ensure AI goes well for humanity, it is imperative to develop methods for scalable oversight so that we may still have control and sufficient methods of evaluation over potentially superintelligent AI. One research direction that targets this issue is debate, whereby models argue opposing sides for a judge to decide. Ideally, this protocol increases truthfulness. However, both human and AI judges are prone to biases that intelligent debaters may exploit, undermining the entire approach. 
+## TL;DR
 
-As such, researchers are looking into juries comprised of judges with different, uncorrelated blind spots. Voudouris, Witte, & Akata (2026) propose Human-AI Complementarity in juries as a solution to judge hacking given the difference in cognitive architecture between humans and AI. Combined, their orthogonal vulnerabilities may prevent individual architectural blind spots from being learned, optimised, and exploited. As an extension of that work, this project looks at *cognitive reasoning and strategy* as a specific type of bias and investigates whether its diversity contributes to more robust juries. Doing so may help narrow down criteria for the most optimal composition of a jury. 
+
+## Introduction
+
+To ensure AI goes well for humanity, it is imperative to develop scalable oversight so that we may still have sufficient control and methods of evaluation over potentially superintelligent AI. One research direction that targets this issue is debate, whereby models argue opposing sides for a judge to decide. Ideally, this protocol increases truthfulness. However, judges are prone to biases that intelligent debaters may exploit, undermining the entire approach. 
+
+Some researchers suggest capitalizing on the difference in vulnerabilities between human and AI judges by intentionally combining them in juries. Voudouris, Witte, & Akata (2026) position Human-AI Complementarity in juries as a solution to judge hacking given the difference in cognitive architecture between humans and AI. Combined, their uncorrelated orthogonal blind spots may prevent individual architectural biases from being learned, optimised, and exploited. As an extension of that work, this project looks at *cognitive reasoning and strategy* as a specific type of architectural bias and investigates whether its diversity contributes to more robust juries. Doing so may help narrow down criteria for the most optimal composition of a jury. 
 
 Specifically, the focus of this project is isolating the blind spots of *causal reasoning against statistical pattern matching*. The existence of Theory of Mind in LLMs is currently debated with researchers like Tiehen (2026) arguing that LLMs lack the ability to attribute mental states such as beliefs, intents, desires, emotions, and knowledge to oneself or others as they are not capable of true causal reasoning, instead relying on statistical pattern matching to seemingly mimic this behaviour. While this project does not confirm nor deny this position, it forms its core assumption: if pattern matching LLMs are not capable of the type of causal reasoning humans employ, then having both these cognitive strategies represented in a jury may be complementary and thus mitigate judge hacking. 
 
-Recent work in Amplified Oversight demonstrates that combining agents with a "jagged frontier" of capabilities, such as humans and AI, using a Hybridization Oracle yields superior joint accuracy compared to homogeneous systems (Jain et al., 2025). The project test this by simulating human-AI hybridization entirely in silico with an AI Jury where individual agents are explicitly configured with pattern matching or causal reasoning. This is compared to an AI Jury comprised of models from different providers (OpenAI, Mistral, Google) with different core architectures to verify if any other underlying bias sufficiently prevents adversarial collapse despite their shared Transformer vulnerabilities. 
+Recent work in Amplified Oversight demonstrates that combining agents with a "jagged frontier" of capabilities, such as humans and AI, using a Hybridization Oracle yields superior joint accuracy compared to homogeneous systems (Jain et al., 2025). The project test this by simulating human-AI hybridization entirely in silico with an AI Jury where individual agents are explicitly configured with pattern matching or causal reasoning. This is compared to an AI Jury comprised of models from different providers (OpenAI, Mistral, Google) with different core architectures to verify if any other underlying bias sufficiently prevents adversarial collapse despite their shared Transformer vulnerabilities. Moreover, the project tests if an LLM can sufficiently display this orthogonality through narrow fine-tuning with deep LoRA.
 
 <!--
 However, the Cognitive Diversity Jury—acting as an automated hybridization oracle—achieves near-perfect negative error correlation, successfully vetoing targeted Theory of Mind adversarial traps without requiring a human in the loop. Implications extend to scaling Amplified Oversight and the potential for Representation Engineering (Persona Vectors) to permanently embed these orthogonal biases into safety supervisors.
 -->
 
+## Main Experimental Setup
 ## Preliminary Toy Model Experiments
-To test whether cognitive reasoning might contribute to judge hacking, the following experiments are conducted as a preliminary proof-of-concept. The pattern matching and causal reasoning mentioned earlier is reduced to surface level and mental-state reasoning in these experiments for the sake of simplicty. These will be expanded later on. 
+To first test whether cognitive reasoning might contribute to judge hacking, the following experiments are conducted as a preliminary proof-of-concept. The pattern matching and causal reasoning mentioned earlier is reduced to surface level and mental-state reasoning in these experiments for the sake of simplicty. These will be expanded later on. 
 
 1. Can surface reasoning be hacked?
 2. Can explicit mental-state reasoning be hacked?
@@ -21,7 +27,6 @@ To test whether cognitive reasoning might contribute to judge hacking, the follo
 4. Does a jury help?
 5. Do belief interventions change behaviour?
 
-## Data Generation
 ### Data Generation Pipeline
 To generate the main dataset for the project, an LLM (Gemini) is used to programmatically generate a dataset of Theory of Mind (ToM) scenarios formatted as a JSON array. To ensure the evaluation strictly isolates reasoning from pattern-matching, the pipeline employs the Paired-Generation Methodology used in CausalFlip (https://arxiv.org/abs/2602.20094).
 
@@ -105,10 +110,12 @@ Note: A split decision (True/False) means the jury flags the prompt as suspiciou
 -->
 
 ## Results
+### Preliminary Toy Model Experiments
 Adversarial Pairs (semantic, syntax, baseline)
 1. Pattern Judge: 0.75 (fails on semantic traps)
 2. Causal Judge: 0.80 (fails on syntax traps)
 
+### Simulating Diverse Juries
 3 Scenarios (semantic, referential, combined, baseline)
 1. Pattern Judge: 0.565 (interestingly, fails on both semantic & combined traps)
 2. Causal Judge: 0.826 (fails on referential traps only)
@@ -120,6 +127,9 @@ Maximum Joint Error Rate (Worst-Case Total Failure)
 
 ![Individual vs. Jury Results](results/plots2/individual_vs_jury_protection_gap.png)
 ![Error Matrix](results/plots2/error_correlation_heatmap.png)
+
+### Fine-tune Training Cognitively Diverse Juries
+
 
 <!--
 ## Relevance of a Null Result (REVISE; Contingency)
