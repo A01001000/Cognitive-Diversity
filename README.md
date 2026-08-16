@@ -8,6 +8,51 @@
 * Probing and prompting LLMs to reason in a specific way are insufficient methods to induce true cognitive orthogonality, resulting in model functionality leakage. 
 * Asymmetric Narrow Fine-Tune training with LoRA that uses task-steering prefixes and targets the model's MLP layers creates a 4% accuracy gain for the jury comprised of a Pattern and Causal Judge model, indicating orthogonality can be learned. This further supports the complementarity of cognitive reasoning diversity in juries. 
 
+## Replication
+To replicate, first install all the required packages in [Required Packages](requirements.txt):
+```
+pip install -r requirements.txt
+```
+
+### Initial Toy Model Experiment
+Run the initial toy model experiment:
+```
+python toy_model/main.py
+```
+
+### Simulating Diverse Juries in LLMs (via Prompting)
+Generate data:
+```
+python data_generation/generate_inverted_data.py
+```
+
+Evaluate individual judges with Inspect Evals:
+```
+python juries/eval_judges2.py
+```
+
+Aggregate judges into juries and evaluate:
+```
+python juries/aggregate_juries2.py
+```
+
+### Fine-tune Training with LoRA
+Joint-Loss Training:
+```
+python training/train_targeted_models.py
+```
+
+Asymmetric Narrow Fine-tune training:
+```
+python training/train_targeted_organism_models.py
+```
+
+Visualize results:
+```
+python training/plot_training_curves.py
+```
+
+<!--
 ## Introduction
 
 To ensure AI goes well for humanity, it is imperative to develop scalable oversight so that we may still have sufficient control and methods of evaluation over potentially superintelligent AI. One research direction that targets this issue is debate, whereby models argue opposing sides for a judge to decide. Ideally, this protocol increases truthfulness. However, judges are prone to biases that intelligent debaters may exploit, undermining the entire approach. 
@@ -24,7 +69,6 @@ Recent work in Amplified Oversight demonstrates that combining agents with a "ja
 
 <!--
 However, the Cognitive Diversity Jury—acting as an automated hybridization oracle—achieves near-perfect negative error correlation, successfully vetoing targeted Theory of Mind adversarial traps without requiring a human in the loop. Implications extend to scaling Amplified Oversight and the potential for Representation Engineering (Persona Vectors) to permanently embed these orthogonal biases into safety supervisors.
--->
 
 ## Initial Toy Model Experiment
 To first verify whether cognitive reasoning might contribute to judge hacking as a preliminary proof-of-concept, I conducted simple toy model experiments over 2000 adversarial ToM scenarios with the following questions in mind. For the sake of simplicity in these initial experiments, pattern matching and causal reasoning is reduced to surface level reasoning via Logistic Regression (MLP) and Multilayer Perceptron (MLP) models and mental-state reasoning from a belief parser respectively. 
@@ -47,8 +91,6 @@ To first verify whether cognitive reasoning might contribute to judge hacking as
 
 <!--
 TODO: PLOT ALPHA SWEEP
--->
-
 
 ## Simulating Diverse Juries in LLMs
 Moving from the simple toy model, the next step of the project is to simulate cognitive reasoning diversity in juries of SoTA LLMs. The objective for this experiment is to verify the relevance of this type of diversity by testing if jury accuracy increases from an ensemble of judges prompted to reason differently despite having the same LLM type compared to judges of different LLM types and providers. 
@@ -91,7 +133,7 @@ This comparison is done to determine whether a jury with cognitive diversity is 
 Adversarial Pairs Accuracy (semantic, syntax, baseline)
 1. Pattern Judge: 75% (fails on semantic traps)
 2. Causal Judge: 80% (fails on syntax traps)
--->
+
 The **accuracy of the individual judges** are as follows:
 1. Control Gemini 3.5 Flash Lite Judge: 78.1%
 2. Pattern Judge: 58.9% 
@@ -163,7 +205,7 @@ In terms of technical implementation and methodology, it would be important to p
 The Brittleness of Prompt-Induced Personas: It would prove that you cannot simply "prompt" an LLM to reliably adopt a specific cognitive strategy (like System 1 vs. System 2). It suggests that an LLM's base architecture and RLHF training will inevitably override the system prompt when faced with adversarial edge cases.
 
 True Orthogonality Requires Weight Diversity: It would suggest that different pre-training datasets and RLHF pipelines (e.g., how OpenAI trains vs. Anthropic vs. Google) create deeper, more structural orthogonal blind spots than any single model can simulate on its own. Safety teams would learn that they must buy APIs from multiple vendors rather than just prompt-engineering one cheap model.
--->
+
 
 ## References:
 Wang, Y., Zhu, Y., & Li, J. (2026, June 25). Causalflip: A benchmark for LLM Causal judgment beyond semantic matching. arXiv.org. https://arxiv.org/abs/2602.20094 
@@ -173,3 +215,4 @@ Ullman, T. (2023, March 14). Large language models fail on trivial alterations t
 Voudouris, K., Witte, K., & Akata, E. (2026). Judge Hacking in Recursive Debate Protocols: A Call for Solutions. SSRN. https://doi.org/10.2139/ssrn.7046698 
 
 Tiehen, J. (2026). LLMs Lack a Theory of Mind and so Can’t Perform Speech Acts--A Causal Argument. philarchive.org. https://philarchive.org/rec/TIELLA-2 
+-->
