@@ -115,9 +115,9 @@ def run_evaluations():
     os.makedirs("./logs2", exist_ok=True)
     
     runs = [
-        # {"name": "juryA_gpt4o_mini", "model": "openai/gpt-4o-mini", "prompt": STANDARD_PROMPT},
-        # {"name": "juryA_mistral_nemo", "model": "openai/open-mistral-nemo", "prompt": STANDARD_PROMPT},
-        # {"name": "juryA_gemini_std", "model": "google/gemini-3.5-flash-lite", "prompt": STANDARD_PROMPT},
+        {"name": "juryA_gpt4o_mini", "model": "openai/gpt-4o-mini", "prompt": STANDARD_PROMPT},
+        {"name": "juryA_mistral_nemo", "model": "openai/open-mistral-nemo", "prompt": STANDARD_PROMPT},
+        {"name": "juryA_gemini_std", "model": "google/gemini-3.5-flash-lite", "prompt": STANDARD_PROMPT},
         {"name": "juryB_pattern", "model": "google/gemini-3.5-flash-lite", "prompt": PATTERN_PROMPT},
         {"name": "juryB_causal", "model": "google/gemini-3.5-flash-lite", "prompt": CAUSAL_PROMPT},
     ]
