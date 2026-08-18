@@ -6,7 +6,9 @@
 * A pattern matching judge is vulnerable to semantic traps that exploit its attention to heuristics, while a causal reasoning judge that does not explicitly mentalize is vulnerable to referential traps that exploits its inability to separate its own knowledge from the limited mental states of other agents. 
 * Juries that vary in terms of cognitive reasoning strategy are more robust compared to those that simply vary in terms of model architecture and provider.
 * Probing and prompting LLMs to reason in a specific way are insufficient methods to induce true cognitive orthogonality, resulting in model functionality leakage. 
-* Asymmetric Narrow Fine-Tune training with LoRA that uses task-steering prefixes and targets the model's MLP layers creates a 4% accuracy gain for the jury comprised of a Pattern and Causal Judge model, indicating orthogonality can be learned. This further supports the complementarity of cognitive reasoning diversity in juries. 
+* Asymmetric Narrow Fine-Tune training with LoRA that uses task-steering prefixes and targets the model's MLP layers creates a 4% accuracy gain for the jury comprised of a Pattern and Causal Judge model, indicating orthogonality can be learned. This further supports the complementarity of cognitive reasoning diversity in juries.
+
+For full project write-up: https://docs.google.com/document/d/1wuuMzWZzcU7x7tbQVvg-AaI8-ybX3wRbcWVd5mXxNu4/edit?usp=sharing
 
 ## Replication
 To replicate, first install all the required packages in [Required Packages](requirements.txt):
