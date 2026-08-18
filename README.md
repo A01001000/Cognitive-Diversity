@@ -1,14 +1,14 @@
 # Cognitive Reasoning Diversity for Robust Juries
 
 ## TL;DR
-* Researchers have suggested that Human-AI juries may be more robust to judge hacking due to the complementarity of their orthogonal, uncorrelated blind spots. 
-* Hypothesis: Simulating these juries in-silico, having diverse cognitive reasoning strategies represented in a jury may be complementary and thus mitigate judge hacking. 
-* A pattern matching judge is vulnerable to semantic traps that exploit its attention to heuristics, while a causal reasoning judge that does not explicitly mentalize is vulnerable to referential traps that exploits its inability to separate its own knowledge from the limited mental states of other agents. 
-* Juries that vary in terms of cognitive reasoning strategy are more robust compared to those that simply vary in terms of model architecture and provider.
-* Probing and prompting LLMs to reason in a specific way are insufficient methods to induce true cognitive orthogonality, resulting in model functionality leakage. 
-* Asymmetric Narrow Fine-Tune training with LoRA that uses task-steering prefixes and targets the model's MLP layers creates a 4% accuracy gain for the jury comprised of a Pattern and Causal Judge model, indicating orthogonality can be learned. This further supports the complementarity of cognitive reasoning diversity in juries.
+* Researchers have suggested that Human-AI juries may be more robust to judge hacking due to the complementarity of their orthogonal, uncorrelated blind spots (Voudouris, et al., 2026; Jain et al., 2025).
+* Hypothesis: Simulating these juries in silico by having diverse cognitive reasoning strategies represented amongst judges may be complementary and thus mitigate judge hacking. 
+* A pattern-matching judge is vulnerable to semantic traps that exploit its attention to heuristics, while a causal reasoning judge that does not explicitly mentalize is vulnerable to referential traps that exploit its inability to separate its own knowledge from the more limited mental states of other agents.
+* With a 10% lower error rate, juries that vary in terms of cognitive reasoning strategy seem to be more robust than those that simply vary in terms of model architecture and provider.
+* Probing and prompting LLMs to reason in a specific way are insufficient methods to induce true cognitive orthogonality, resulting in model functionality leakage.
+* Asymmetric Narrow Fine-Tune training with LoRA that uses task-steering prefixes and targets the model's MLP layers yields an over 4% accuracy gain for a cognitively diverse jury over individual Pattern and Causal Judge models, indicating that orthogonality can be learned. This further supports the complementarity of orthogonal blind spots in cognitive reasoning for juries.
 
-For full project write-up: https://docs.google.com/document/d/1wuuMzWZzcU7x7tbQVvg-AaI8-ybX3wRbcWVd5mXxNu4/edit?usp=sharing
+For the full project write-up: https://docs.google.com/document/d/1wuuMzWZzcU7x7tbQVvg-AaI8-ybX3wRbcWVd5mXxNu4/edit?usp=sharing
 
 ## Replication
 To replicate, first install all the required packages in [Required Packages](requirements.txt):
